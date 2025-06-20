@@ -1,14 +1,14 @@
-import { cache } from "react"
-import { PokemonCard } from "@/registry/new-york/complex-component/components/pokemon-card"
-import { getPokemonList } from "@/registry/new-york/complex-component/lib/pokemon"
+import { cache } from "react";
+import { getPokemonList } from "./lib/pokemon";
+import { PokemonCard } from "./components/pokemon-card";
 
-const getCachedPokemonList = cache(getPokemonList)
+const getCachedPokemonList = cache(getPokemonList);
 
 export default async function Page() {
-  const pokemons = await getCachedPokemonList({ limit: 12 })
+  const pokemons = await getCachedPokemonList({ limit: 12 });
 
   if (!pokemons) {
-    return null
+    return null;
   }
 
   return (
@@ -19,5 +19,5 @@ export default async function Page() {
         ))}
       </div>
     </div>
-  )
+  );
 }
