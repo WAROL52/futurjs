@@ -11,10 +11,7 @@ export function createCodeDoc(props: CodeDocsProps) {
 }
 
 export function registryUrl(params: { componentName: string }) {
-  const baseUrl =
-    typeof window !== "undefined"
-      ? window.location.origin
-      : "http://localhost:3000/components/registry";
+  const baseUrl = "https://futurjs.vercel.app/registry";
   return `npx shadcn@latest add ${baseUrl}/${params.componentName}`;
 }
 
