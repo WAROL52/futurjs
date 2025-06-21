@@ -2,6 +2,8 @@ import { CodeDocsProps } from "@/components/code-docs/code-docs";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+export const BASE_URL = "https://futurjs.vercel.app";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -11,7 +13,7 @@ export function createCodeDoc(props: CodeDocsProps) {
 }
 
 export function registryUrl(params: { componentName: string }) {
-  const baseUrl = "https://futurjs.vercel.app/registry";
+  const baseUrl = `${BASE_URL}/registry`;
   return `npx shadcn@latest add ${baseUrl}/${params.componentName}`;
 }
 
