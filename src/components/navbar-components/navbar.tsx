@@ -18,33 +18,37 @@ import {
 } from "@/components/ui/popover";
 import ThemeToggle from "./theme-toggle";
 import { GithubLink } from "./github-link";
+import { REGISTRY_BUILD } from "@/generated/registry/registry";
 
 // Navigation links array to be used in both desktop and mobile menus
-const navigationLinks = [
+const navigationLinks: {
+  href: string;
+  label: string;
+  submenu?: boolean;
+  type?: string;
+  items?: {
+    href: string;
+    label: string;
+    description: string;
+  }[];
+}[] = [
   { href: "/", label: "Home" },
-  {
-    label: "Features",
-    submenu: true,
-    type: "description",
-    items: [
-      {
-        href: "/components",
-        label: "Components",
-        description: "Browse all components in the library.",
-      },
-      {
-        href: "/docs",
-        label: "Documentation",
-        description: "Learn how to use the library.",
-      },
-      {
-        href: "/layouts",
-        label: "Layouts",
-        description: "Pre-built layouts for common use cases.",
-      },
-    ],
-  },
-  { href: "/blocks", label: "Blocks" },
+  { href: "/docs", label: "Docs" },
+  ...Object.values(REGISTRY_BUILD).map((reg) => {
+    return {
+      href: `/docs/${reg.name}`,
+      label: reg.name,
+      submenu: true,
+      type: "description",
+      items: [
+        ...Object.values(reg.packages).map((pkg) => ({
+          href: `/docs${pkg.url}`,
+          label: pkg.name,
+          description: pkg.description,
+        })),
+      ],
+    };
+  }),
 ];
 
 export default function Navbar() {
@@ -99,7 +103,7 @@ export default function Navbar() {
                             {link.label}
                           </div>
                           <ul>
-                            {link.items.map((item, itemIndex) => (
+                            {link.items?.map((item, itemIndex) => (
                               <li key={itemIndex}>
                                 <NavigationMenuLink
                                   href={item.href}
@@ -163,7 +167,7 @@ export default function Navbar() {
                                 : "min-w-48"
                             )}
                           >
-                            {link.items.map((item, itemIndex) => (
+                            {link.items?.map((item, itemIndex) => (
                               <li key={itemIndex}>
                                 <NavigationMenuLink
                                   href={item.href}
