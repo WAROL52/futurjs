@@ -18,6 +18,7 @@ import {
 import { Registry, RegistryPackage } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { RegistrySwitcher } from "./registry-switcher";
 
 // This is sample data.
 const data = {
@@ -166,23 +167,10 @@ export function AppSidebarDoc({
 }: React.ComponentProps<typeof Sidebar> & { registry: Registry }) {
   const path = usePathname()
   return (
-    <Sidebar variant="inset" {...props}>
+    <Sidebar variant="inset" {...props} >
+      <div className="md:my-8"></div>
       <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <GalleryVerticalEnd className="size-4" />
-                </div>
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">Documentation</span>
-                  <span className="">v1.0.0</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <RegistrySwitcher/>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
