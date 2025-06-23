@@ -1,14 +1,7 @@
 import React from "react";
 
 import { AppSidebarDoc } from "@/components/app-sidebar-doc";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+
 import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
@@ -16,9 +9,15 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { getPackage, getRegistry } from "@/lib/utils";
+import Link from "next/link";
+import { BreadcrumbDoc } from "@/components/breadcrumb-doc";
 
 type Props = {
-  params: Promise<Record<string, string>>;
+  params: Promise<{
+    docName?: string;
+    packageName?: string;
+    registryName: string;
+  }>;
   searchParams: Promise<{
     [key: string]: string | string[] | undefined;
   }>;
@@ -28,7 +27,7 @@ type Props = {
 export default async function Layout(props: Props) {
   const params = await props.params;
   const searchParams = await props.searchParams;
-  const { registryName } = params;
+  const { registryName,docName,packageName } = params;
   const registry = getRegistry(registryName);
   if (!registry) {
     return <div>Package not found.</div>;
@@ -49,19 +48,7 @@ export default async function Layout(props: Props) {
             orientation="vertical"
             className="mr-2 data-[orientation=vertical]:h-4"
           />
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">
-                  Building Your Application
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          <BreadcrumbDoc/>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           {props.children}
