@@ -27,23 +27,7 @@ export default async function Page(props: Props) {
   }
   return (
     <div>
-      <h1>Page</h1>
-      <pre>Params: {JSON.stringify(params, null, 2)}</pre>
-      <pre>Search Params: {JSON.stringify(searchParams, null, 2)}</pre>
-      <pre>
-        doc:{" "}
-        {JSON.stringify(
-          getCodeDoc({
-            registryName: params.registryName,
-            packageName: params.packageName,
-            docName: params.docName,
-          }),
-          null,
-          2
-        )}
-      </pre>
       <CodeDocs {...codeDoc} />
-      <footer>Footer content here</footer>
     </div>
   );
 }
