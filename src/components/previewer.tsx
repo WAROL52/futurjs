@@ -11,7 +11,8 @@ export function Previewer({path}: PreviewerProps) {
 	if(!path) {
 		return null
 	}
-  return <DynamicComponent path={path} />;
+  return  <DynamicComponent path={path} />;
+
 }
 
 function DynamicComponent({ path }: {path:string}) {

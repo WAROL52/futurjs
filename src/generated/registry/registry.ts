@@ -6,12 +6,6 @@ export const REGISTRY_BUILD: RegistryBuild = {
     "name": "new-york",
     "description": "",
     "packages": {
-      "complex-component": {
-        "name": "complex-component",
-        "description": "",
-        "url": "/new-york/complex-component",
-        "codeDocs": []
-      },
       "example-form": {
         "name": "example-form",
         "description": "",
@@ -106,7 +100,17 @@ export const REGISTRY_BUILD: RegistryBuild = {
                 "path": "_exemples/field-range-date-time/preview.tsx"
               }
             ],
-            "exemples": []
+            "exemples": [
+              {
+                "title": "Page",
+                "description": "",
+                "props": {},
+                "language": "tsx",
+                "code": "import React from \"react\";\n\n// dossier:~/52/futurjs/_exemples/field-range-date-time\nexport default async function Page() {\n  return<div>Page _exemples/field-range-date-time/page.tsx</div>;\n}",
+                "filename": "page.tsx",
+                "path": "_exemples/field-range-date-time/page.tsx"
+              }
+            ]
           },
           {
             "title": "FieldFloat",

@@ -1,12 +1,13 @@
-import { cache } from "react";
+"use client";
+import { cache, use } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { getPokemon } from "../lib/pokemon";
 import { PokemonImage } from "./pokemon-image";
 
 const cachedGetPokemon = cache(getPokemon);
 
-export async function PokemonCard({ name }: { name: string }) {
-  const pokemon = await cachedGetPokemon(name);
+export function PokemonCard({ name }: { name: string }) {
+  const pokemon = use(getPokemon(name));
 
   if (!pokemon) {
     return null;

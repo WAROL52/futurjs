@@ -26,7 +26,6 @@ export type CodeViewerProps = {
 };
 
 export function CodeViewer({ codes }: CodeViewerProps) {
-  console.log("Rendering CodeViewer with codes:", codes);
 
   if (!codes || codes.length === 0) {
     return null;

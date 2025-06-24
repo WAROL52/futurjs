@@ -164,7 +164,9 @@ function CodeExample({ code }: { code: CodeView }) {
 
         <TabsContent value="preview" className="space-y-4">
           <Card>
-            <CardContent className="space-y-4">{"children"}</CardContent>
+            <CardContent className="space-y-4">
+              <Previewer path={code.path} />
+            </CardContent>
           </Card>
         </TabsContent>
 
