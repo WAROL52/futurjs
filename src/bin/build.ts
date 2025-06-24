@@ -6,6 +6,7 @@ import { get } from "http";
 
 export const REGISTRY_DIR_PATH = "registry";
 export const EXAMPLE_DIR_PATH = "_exemples";
+const PREVIEW_COMPONENTS: Record<string,string> = {}
 
 function getListDirName(path: string) {
   const dirNames: string[] = [];
@@ -42,6 +43,7 @@ async function getCodeSource(params: { filename: string; namebase: string }) {
   if (typeof Component !== "function") {
     return [];
   }
+  PREVIEW_COMPONENTS[path] = `() => import("../../../${path.split(".").slice(0, -1).join(".")}")`;
   return [
     {
       title: Component.title || Component.name || namebase,
@@ -174,6 +176,19 @@ async function getRegistryPackage(name: string, path: string) {
   };
 }
 
+function genPreviewComponentFile() {
+  const  txt = Object.entries(PREVIEW_COMPONENTS).map(([path, importFn]) => `\t"${path}":${importFn}`).join(",\n");
+  const fileContent = `
+import { PreviewComponents } from "@/types";
+
+export const PREVIEW_COMPONENTS: PreviewComponents = {
+${txt}
+};
+`;
+  writeFileSync("src/generated/registry/preview-components.tsx", fileContent);
+  consola.success("Preview components file generated!");
+}
+
 async function buildRegistry() {
   consola.start("Building project...");
 
@@ -197,6 +212,7 @@ export const REGISTRY_BUILD: RegistryBuild = ${JSON.stringify(build, null, 2)}
 
 	`
   );
+  genPreviewComponentFile()
   consola.success("Project built!");
 }
 

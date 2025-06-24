@@ -37,3 +37,4 @@ export type Registry = {
 };
 
 export type RegistryBuild = Record<string, Registry>;
+export type PreviewComponents = Record<string, (() => Promise<{default: React.ComponentType}>)|undefined>;

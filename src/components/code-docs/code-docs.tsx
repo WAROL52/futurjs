@@ -15,6 +15,7 @@ import { CodeSnippet } from "./code-snippet";
 import { CategoryType } from "@/lib/utils";
 import { CodeDocType, CodeView } from "@/types";
 import { PropsWithChildren } from "react";
+import { Previewer } from "../previewer";
 
 export type CodeDocsProps = PropsWithChildren<CodeDocType>;
 
@@ -62,7 +63,9 @@ export function CodeDocs({
 
         <TabsContent value="preview" className="space-y-4">
           <Card>
-            <CardContent className="space-y-4">{children}</CardContent>
+            <CardContent className="space-y-4">
+              <Previewer path={codes.at(0)?.path} />
+            </CardContent>
           </Card>
         </TabsContent>
 
