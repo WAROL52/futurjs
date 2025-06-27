@@ -15,7 +15,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
-import { Registry, RegistryPackage } from "@/types";
+import { RegistryFig, RegistryPackage } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RegistrySwitcher } from "./registry-switcher";
@@ -164,7 +164,7 @@ const data = {
 export function AppSidebarDoc({
   registry,...props
 
-}: React.ComponentProps<typeof Sidebar> & { registry: Registry }) {
+}: React.ComponentProps<typeof Sidebar> & { registry: RegistryFig }) {
   const path = usePathname()
   return (
     <Sidebar variant="inset" {...props} >

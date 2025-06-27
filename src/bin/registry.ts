@@ -1,25 +1,26 @@
-import { defineCommand, runMain } from "citty";
+import { BASE_URL } from "@/lib/utils";
+import { RegistryBuild } from "@/types";
+import { Registry, RegistryItem } from "shadcn/registry";
 
-const main = defineCommand({
-  meta: {
-    name: "hello",
-    version: "1.0.0",
-    description: "My Awesome CLI App",
-  },
-  args: {
-    name: {
-      type: "positional",
-      description: "Your name",
-      required: true,
-    },
-    friendly: {
-      type: "boolean",
-      description: "Use friendly greeting",
-    },
-  },
-  run({ args }) {
-    console.log(`${args.friendly ? "Hi" : "Greetings"} ${args.name}!`);
-  },
-});
-
-runMain(main);
+function normalizeRegistry(build: RegistryBuild): Registry {
+  return {
+    name: "futurejs",
+    homepage: BASE_URL,
+    items: Object.values(build)
+      .map((fig) => {
+        const i = Object.values(fig.packages)
+          .map((pkg) => {
+            return pkg.codeDocs.map((doc) => {
+              return {
+                name: doc.name,
+                description: doc.description,
+                type: "registry:component",
+              } as RegistryItem;
+            });
+          })
+          .flat();
+        return i;
+      })
+      .flat(),
+  };
+}

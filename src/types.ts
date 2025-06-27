@@ -29,12 +29,12 @@ export type RegistryPackage = {
   codeDocs: CodeDocType[];
 };
 
-export type Registry = {
+export type RegistryFig = {
   name: string;
   description: string;
   packages: Record<string, RegistryPackage>;
   url: string;
 };
 
-export type RegistryBuild = Record<string, Registry>;
+export type RegistryBuild = Record<string, RegistryFig>;
 export type PreviewComponents = Record<string, (() => Promise<{default: React.ComponentType}>)|undefined>;
