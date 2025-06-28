@@ -1,7 +1,7 @@
 "use client";
 
-export type ViewBlockChartProps = {};
+export type RecordsChartProps = {};
 
-export function ViewBlockChart({}: ViewBlockChartProps) {
-  return <div>ViewBlockChart</div>;
+export function RecordsChart({}: RecordsChartProps) {
+  return <div>RecordsChart</div>;
 }

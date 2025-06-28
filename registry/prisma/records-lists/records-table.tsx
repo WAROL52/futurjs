@@ -1,7 +1,7 @@
 "use client";
 
-export type ViewBlockRowProps = {};
+export type RecordsTableProps = {};
 
-export function ViewBlockRow({}: ViewBlockRowProps) {
-  return <div>ViewBlockRow</div>;
+export function RecordsTable({}: RecordsTableProps) {
+  return <div>RecordsTable</div>;
 }

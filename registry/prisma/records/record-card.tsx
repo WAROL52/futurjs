@@ -1,7 +1,7 @@
 "use client";
 
-export type ViewBlockCardProps = {};
+export type RecordCardProps = {};
 
-export function ViewBlockCard({}: ViewBlockCardProps) {
-  return <div>ViewBlockCard</div>;
+export function RecordCard({}: RecordCardProps) {
+  return <div>RecordCard</div>;
 }
