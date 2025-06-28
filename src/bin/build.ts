@@ -4,12 +4,13 @@ import { consola, createConsola } from "consola";
 import { readFile, readFileSync, readdirSync, writeFileSync } from "fs";
 import { get } from "http";
 
-export const REGISTRY_DIR_PATH = "registry";
-export const EXAMPLE_DIR_PATH = "_exemples";
-const PREVIEW_COMPONENTS: Record<string,string> = {}
+export const REGISTRY_DIR_PATH = "../registry";
+export const EXAMPLE_DIR_PATH = "../_exemples";
+const PREVIEW_COMPONENTS: Record<string, string> = {};
 
 function getListDirName(path: string) {
   const dirNames: string[] = [];
+
   try {
     const files = readdirSync(path, { withFileTypes: true });
     for (const file of files) {
@@ -39,11 +40,14 @@ async function getCodeSource(params: { filename: string; namebase: string }) {
   const { filename, namebase } = params;
   const path = `${EXAMPLE_DIR_PATH}/${namebase}/${filename}`;
   if (!fileExists(path)) return [];
-  const { default: Component } = await import("../../" + path);
+  const { default: Component } = await import(path);
   if (typeof Component !== "function") {
     return [];
   }
-  PREVIEW_COMPONENTS[path] = `() => import("../../../${path.split(".").slice(0, -1).join(".")}")`;
+  PREVIEW_COMPONENTS[path] = `() => import("../${path
+    .split(".")
+    .slice(0, -1)
+    .join(".")}")`;
   return [
     {
       title: Component.title || Component.name || namebase,
@@ -100,7 +104,7 @@ async function getCodeDocs(name: string, path: string) {
     await Promise.all(
       fileNames.map(async (fileName) => {
         const filePath = `${path}/${fileName}`;
-        const rest = await import("../../" + filePath);
+        const rest = await import(filePath);
 
         const namebase = fileName.split(".")[0];
         const componentName = namebase
@@ -177,7 +181,9 @@ async function getRegistryPackage(name: string, path: string) {
 }
 
 function genPreviewComponentFile() {
-  const  txt = Object.entries(PREVIEW_COMPONENTS).map(([path, importFn]) => `\t"${path}":${importFn}`).join(",\n");
+  const txt = Object.entries(PREVIEW_COMPONENTS)
+    .map(([path, importFn]) => `\t"${path}":${importFn}`)
+    .join(",\n");
   const fileContent = `
 import { PreviewComponents } from "@/types";
 
@@ -185,7 +191,7 @@ export const PREVIEW_COMPONENTS: PreviewComponents = {
 ${txt}
 };
 `;
-  writeFileSync("src/generated/registry/preview-components.tsx", fileContent);
+  writeFileSync("../generated/registry/preview-components.tsx", fileContent);
   consola.success("Preview components file generated!");
 }
 
@@ -195,16 +201,18 @@ async function buildRegistry() {
   const build = Object.fromEntries(
     (
       await Promise.all(
-        getRegistryDirNames().map(async (name) => [
-          name,
-          await getRegistryPackage(name, `${REGISTRY_DIR_PATH}/${name}`),
-        ])
+        getRegistryDirNames().map(async (name) => {
+          return [
+            name,
+            await getRegistryPackage(name, `${REGISTRY_DIR_PATH}/${name}`),
+          ];
+        })
       )
     ).filter(([_name, pkg]) => !!pkg) // Filter out null values
   );
 
   writeFileSync(
-    "src/generated/registry/registry.ts",
+    "../generated/registry/registry.ts",
     `
 import { RegistryBuild } from "@/types";
 
@@ -212,7 +220,7 @@ export const REGISTRY_BUILD: RegistryBuild = ${JSON.stringify(build, null, 2)}
 
 	`
   );
-  genPreviewComponentFile()
+  genPreviewComponentFile();
   consola.success("Project built!");
 }
 
