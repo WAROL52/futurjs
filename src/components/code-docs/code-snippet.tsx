@@ -17,9 +17,24 @@ export type CodeSnippetProps = {
 export function CodeSnippet({ snippet }: CodeSnippetProps) {
   const commands = [
     {
-      label: "shadcn",
-      icon: BoxIcon,
-      code: snippet,
+      label: "npm",
+      // icon: BoxIcon,
+      code: "npx shadcn@latest add " + snippet,
+    },
+    {
+      label: "yarn",
+      // icon: BoxIcon,
+      code: "yarn shadcn@latest add " + snippet,
+    },
+    {
+      label: "pnpm",
+      // icon: BoxIcon,
+      code: "pnpm dlx shadcn@latest add " + snippet,
+    },
+    {
+      label: "bun",
+      // icon: BoxIcon,
+      code: "bunx --bun shadcn@latest add " + snippet,
     },
   ];
   const [value, setValue] = useState(commands[0].label);
@@ -30,7 +45,7 @@ export function CodeSnippet({ snippet }: CodeSnippetProps) {
         <SnippetTabsList>
           {commands.map((command) => (
             <SnippetTabsTrigger key={command.label} value={command.label}>
-              <command.icon size={14} />
+              {/* {command?.icon && <command.icon size={14} />} */}
               <span>{command.label}</span>
             </SnippetTabsTrigger>
           ))}
@@ -51,7 +66,7 @@ export function CodeSnippet({ snippet }: CodeSnippetProps) {
       </SnippetHeader>
       {commands.map((command) => (
         <SnippetTabsContent key={command.label} value={command.label}>
-          npx shadcn@latest add {command.code}
+          {command.code}
         </SnippetTabsContent>
       ))}
     </Snippet>
