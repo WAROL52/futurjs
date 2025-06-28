@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-avatar",
+  "type": "registry:component",
+  "title": "ViewAvatar",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/views/view-avatar.tsx",
+      "content": "\"use client\";\n\nexport type ViewAvatarProps = {};\n\nexport function ViewAvatar({}: ViewAvatarProps) {\n  return <div>ViewAvatar</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

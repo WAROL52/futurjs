@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-date-time",
+  "type": "registry:component",
+  "title": "RecordFieldDateTime",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-scalars/record-field-date-time.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldDateTimeProps = {};\n\nexport function RecordFieldDateTime({}: RecordFieldDateTimeProps) {\n  return <div>RecordFieldDateTime</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

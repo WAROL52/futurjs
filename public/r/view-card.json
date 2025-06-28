@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-card",
+  "type": "registry:component",
+  "title": "ViewCard",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/views/view-card.tsx",
+      "content": "\"use client\";\n\nexport type ViewCardProps = {};\n\nexport function ViewCard({}: ViewCardProps) {\n  return <div>ViewCard</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-record",
+  "type": "registry:component",
+  "title": "PageRecord",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/pages/page-record.tsx",
+      "content": "\"use client\";\n\nexport type PageRecordProps = {};\n\nexport function PageRecord({}: PageRecordProps) {\n  return <div>PageRecord</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

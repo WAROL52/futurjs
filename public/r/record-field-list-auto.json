@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-list-auto",
+  "type": "registry:component",
+  "title": "RecordFieldListAuto",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-lists/record-field-list-auto.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldListAutoProps = {};\n\nexport function RecordFieldListAuto({}: RecordFieldListAutoProps) {\n  return <div>RecordFieldListAuto</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

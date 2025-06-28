@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-relational-auto",
+  "type": "registry:component",
+  "title": "FieldRelationalAuto",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/field-relationals/field-relational-auto.tsx",
+      "content": "\"use client\";\n\nexport type FieldRelationalAutoProps = {};\n\nexport function FieldRelationalAuto({}: FieldRelationalAutoProps) {\n  return <div>FieldRelationalAuto</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-many-to-one",
+  "type": "registry:component",
+  "title": "FieldManyToOne",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/field-relationals/field-many-to-one.tsx",
+      "content": "\"use client\";\n\nexport type FieldManyToOneProps = {};\n\nexport function FieldManyToOne({}: FieldManyToOneProps) {\n  return <div>FieldManyToOne</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-auto",
+  "type": "registry:component",
+  "title": "RecordAuto",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/records/record-auto.tsx",
+      "content": "\"use client\";\n\nexport type RecordAutoProps = {};\n\nexport function RecordAuto({}: RecordAutoProps) {\n  return <div>RecordAuto</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

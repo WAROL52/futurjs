@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-create",
+  "type": "registry:component",
+  "title": "FormCreate",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/forms/form-create.tsx",
+      "content": "\"use client\";\n\nexport type FormCreateProps = {};\n\nexport function FormCreate({}: FormCreateProps) {\n  return <div>FormCreate</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

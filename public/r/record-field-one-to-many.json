@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-one-to-many",
+  "type": "registry:component",
+  "title": "RecordFieldOneToMany",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-relationals/record-field-one-to-many.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldOneToManyProps = {};\n\nexport function RecordFieldOneToMany({}: RecordFieldOneToManyProps) {\n  return <div>RecordFieldOneToMany</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

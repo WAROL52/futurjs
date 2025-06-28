@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-popover",
+  "type": "registry:component",
+  "title": "ViewPopover",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/views/view-popover.tsx",
+      "content": "\"use client\";\n\nexport type ViewPopoverProps = {};\n\nexport function ViewPopover({}: ViewPopoverProps) {\n  return <div>ViewPopover</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

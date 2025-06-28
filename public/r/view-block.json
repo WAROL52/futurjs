@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-block",
+  "type": "registry:component",
+  "title": "ViewBlock",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/views/view-block.tsx",
+      "content": "\"use client\";\n\nexport type ViewBlockProps = {};\n\nexport function ViewBlock({}: ViewBlockProps) {\n  return <div>ViewBlock</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

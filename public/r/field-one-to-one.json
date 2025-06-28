@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-one-to-one",
+  "type": "registry:component",
+  "title": "FieldOneToOne",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/field-relationals/field-one-to-one.tsx",
+      "content": "\"use client\";\n\nexport type FieldOneToOneProps = {};\n\nexport function FieldOneToOne({}: FieldOneToOneProps) {\n  return <div>FieldOneToOne</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

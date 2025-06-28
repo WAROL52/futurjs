@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-dialog",
+  "type": "registry:component",
+  "title": "ViewDialog",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/views/view-dialog.tsx",
+      "content": "\"use client\";\n\nexport type ViewDialogProps = {};\n\nexport function ViewDialog({}: ViewDialogProps) {\n  return <div>ViewDialog</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

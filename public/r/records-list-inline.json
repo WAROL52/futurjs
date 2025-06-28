@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "records-list-inline",
+  "type": "registry:component",
+  "title": "RecordsListInline",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/records-lists/records-list-inline.tsx",
+      "content": "\"use client\";\n\n// item1 | item2 | item3 | item4 | item5 | item6\nexport type RecordsListInlineProps = {};\n\nexport function RecordsListInline({}: RecordsListInlineProps) {\n  return <div>RecordsListInline</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

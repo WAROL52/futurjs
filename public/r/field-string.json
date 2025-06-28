@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-string",
+  "type": "registry:component",
+  "title": "FieldString",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/field-scalars/field-string.tsx",
+      "content": "\"use client\";\n\n// string\n// text\n// password\n// password-create\n// email\n// url\n// json\n// otp\n// description\nexport type FieldStringProps = {};\n\nexport function FieldString({}: FieldStringProps) {\n  return <div>FieldString</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

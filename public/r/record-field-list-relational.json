@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-list-relational",
+  "type": "registry:component",
+  "title": "RecordFieldListRelational",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-lists/record-field-list-relational.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldListRelationalProps = {};\n\nexport function RecordFieldListRelational({}: RecordFieldListRelationalProps) {\n  return <div>RecordFieldListRelational</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

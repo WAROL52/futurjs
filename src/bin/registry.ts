@@ -24,7 +24,7 @@ function normalizeRegistry(build: RegistryBuild): Registry {
                 registryDependencies: doc.registryDependencies,
                 files: [
                   {
-                    path: doc.filePath,
+                    path: "src/" + doc.filePath.split("/").slice(1).join("/"),
                     type: doc.registryType,
                   },
                 ],
@@ -40,7 +40,7 @@ function normalizeRegistry(build: RegistryBuild): Registry {
 
 function main() {
   const reg = normalizeRegistry(REGISTRY_BUILD);
-  writeFileSync("../registry.json", JSON.stringify(reg, null, 2));
+  writeFileSync("../../registry.json", JSON.stringify(reg, null, 2));
   console.log("Registry build completed successfully!");
   console.log("You can now use the registry.json file in your project.");
 }

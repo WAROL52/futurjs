@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-auto",
+  "type": "registry:component",
+  "title": "FormAuto",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/forms/form-auto.tsx",
+      "content": "\"use client\";\n\nexport type FormAutoProps = {};\n\nexport function FormAuto({}: FormAutoProps) {\n  return <div>FormAuto</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-update-many",
+  "type": "registry:component",
+  "title": "FormUpdateMany",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/forms/form-update-many.tsx",
+      "content": "\"use client\";\n\nexport type FormUpdateManyProps = {};\n\nexport function FormUpdateMany({}: FormUpdateManyProps) {\n  return <div>FormUpdateMany</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

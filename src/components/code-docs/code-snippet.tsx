@@ -51,7 +51,7 @@ export function CodeSnippet({ snippet }: CodeSnippetProps) {
       </SnippetHeader>
       {commands.map((command) => (
         <SnippetTabsContent key={command.label} value={command.label}>
-          {command.code}
+          npx shadcn@latest add {command.code}
         </SnippetTabsContent>
       ))}
     </Snippet>

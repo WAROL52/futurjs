@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-root",
+  "type": "registry:component",
+  "title": "RecordFieldRoot",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-scalars/record-field-root.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldRootProps = {};\n\nexport function RecordFieldRoot({}: RecordFieldRootProps) {\n  return <div>RecordFieldRoot</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

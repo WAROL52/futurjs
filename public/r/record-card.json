@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-card",
+  "type": "registry:component",
+  "title": "RecordCard",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/records/record-card.tsx",
+      "content": "\"use client\";\n\nexport type RecordCardProps = {};\n\nexport function RecordCard({}: RecordCardProps) {\n  return <div>RecordCard</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

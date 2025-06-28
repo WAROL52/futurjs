@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-date-time",
+  "type": "registry:component",
+  "title": "ViewDateTime",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/views/view-date-time.tsx",
+      "content": "\"use client\";\n\nexport type ViewDateTimeProps = {};\n\nexport function ViewDateTime({}: ViewDateTimeProps) {\n  return <div>ViewDateTime</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

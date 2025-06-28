@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-bytes",
+  "type": "registry:component",
+  "title": "RecordFieldBytes",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-scalars/record-field-bytes.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldBytesProps = {};\n\nexport function RecordFieldBytes({}: RecordFieldBytesProps) {\n  return <div>RecordFieldBytes</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

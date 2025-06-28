@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "records-table",
+  "type": "registry:component",
+  "title": "RecordsTable",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/records-lists/records-table.tsx",
+      "content": "\"use client\";\n\nexport type RecordsTableProps = {};\n\nexport function RecordsTable({}: RecordsTableProps) {\n  return <div>RecordsTable</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

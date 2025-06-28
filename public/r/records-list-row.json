@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "records-list-row",
+  "type": "registry:component",
+  "title": "RecordsListRow",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/records-lists/records-list-row.tsx",
+      "content": "\"use client\";\n\n// item1\n// item2\n// item3\n// item4\n// item5\n// item6\nexport type RecordsListRowProps = {};\n\nexport function RecordsListRow({}: RecordsListRowProps) {\n  return <div>RecordsListRow</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

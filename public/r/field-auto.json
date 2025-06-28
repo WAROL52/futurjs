@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-auto",
+  "type": "registry:component",
+  "title": "FieldAuto",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/field-scalars/field-auto.tsx",
+      "content": "\"use client\";\n\nexport type FieldAutoProps = {};\n\nexport function FieldAuto({}: FieldAutoProps) {\n  return <div>FieldAuto</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

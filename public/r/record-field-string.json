@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-string",
+  "type": "registry:component",
+  "title": "RecordFieldString",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-scalars/record-field-string.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldStringProps = {};\n\nexport function RecordFieldString({}: RecordFieldStringProps) {\n  return <div>RecordFieldString</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

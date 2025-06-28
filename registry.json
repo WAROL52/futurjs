@@ -1,0 +1,958 @@
+{
+  "name": "futurejs",
+  "homepage": "https://futurjs.vercel.app",
+  "items": [
+    {
+      "name": "example-form",
+      "title": "ExampleForm",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/example-form/example-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hello-world",
+      "title": "HelloWorld",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/new-york/hello-world/hello-world.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "records-chart",
+      "title": "RecordsChart",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records-lists/records-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "records-auto",
+      "title": "RecordsAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records-lists/records-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "records-table",
+      "title": "RecordsTable",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records-lists/records-table.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "records-list-card",
+      "title": "RecordsListCard",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records-lists/records-list-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "records-list-inline",
+      "title": "RecordsListInline",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records-lists/records-list-inline.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "records-list-row",
+      "title": "RecordsListRow",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records-lists/records-list-row.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-string",
+      "title": "RecordFieldString",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-string.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-number",
+      "title": "RecordFieldNumber",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-number.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-boolean",
+      "title": "RecordFieldBoolean",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-boolean.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-range",
+      "title": "RecordFieldRange",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-range.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-root",
+      "title": "RecordFieldRoot",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-root.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-auto",
+      "title": "RecordFieldAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-date-time",
+      "title": "RecordFieldDateTime",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-date-time.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-enum",
+      "title": "RecordFieldEnum",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-enum.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-bytes",
+      "title": "RecordFieldBytes",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-scalars/record-field-bytes.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-auto",
+      "title": "RecordAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records/record-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-row",
+      "title": "RecordRow",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records/record-row.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-inline",
+      "title": "RecordInline",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records/record-inline.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-card",
+      "title": "RecordCard",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/records/record-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-hover-card",
+      "title": "ViewHoverCard",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-hover-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-avatar",
+      "title": "ViewAvatar",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-avatar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-date-time",
+      "title": "ViewDateTime",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-date-time.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-sheet",
+      "title": "ViewSheet",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-sheet.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-tag",
+      "title": "ViewTag",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-tag.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-card",
+      "title": "ViewCard",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-popover",
+      "title": "ViewPopover",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-popover.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-dialog",
+      "title": "ViewDialog",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "view-block",
+      "title": "ViewBlock",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/views/view-block.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-many-to-one",
+      "title": "RecordFieldManyToOne",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-relationals/record-field-many-to-one.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-relational-auto",
+      "title": "RecordFieldRelationalAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-relationals/record-field-relational-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-one-to-many",
+      "title": "RecordFieldOneToMany",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-relationals/record-field-one-to-many.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-many-to-many",
+      "title": "RecordFieldManyToMany",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-relationals/record-field-many-to-many.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-one-to-one",
+      "title": "RecordFieldOneToOne",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-relationals/record-field-one-to-one.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-auto",
+      "title": "FormAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/forms/form-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-update-many",
+      "title": "FormUpdateMany",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/forms/form-update-many.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-create-many",
+      "title": "FormCreateMany",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/forms/form-create-many.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-delete",
+      "title": "FormDelete",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/forms/form-delete.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-create",
+      "title": "FormCreate",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/forms/form-create.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-root",
+      "title": "FormRoot",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/forms/form-root.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form-update",
+      "title": "FormUpdate",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/forms/form-update.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-root",
+      "title": "FieldRoot",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-root.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-enum",
+      "title": "FieldEnum",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-enum.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-string",
+      "title": "FieldString",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-string.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-date-time",
+      "title": "FieldDateTime",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-date-time.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-number",
+      "title": "FieldNumber",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-number.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-range",
+      "title": "FieldRange",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-range.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-auto",
+      "title": "FieldAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-boolean",
+      "title": "FieldBoolean",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-boolean.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-bytes",
+      "title": "FieldBytes",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-scalars/field-bytes.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "use-prisma-config",
+      "title": "UsePrismaConfig",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/hooks/use-prisma-config.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "use-prisma-query",
+      "title": "UsePrismaQuery",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/hooks/use-prisma-query.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "use-prisma-mutation",
+      "title": "UsePrismaMutation",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/hooks/use-prisma-mutation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-scalar",
+      "title": "RecordFieldScalar",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-lists/record-field-scalar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-list-auto",
+      "title": "RecordFieldListAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-lists/record-field-list-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "record-field-list-relational",
+      "title": "RecordFieldListRelational",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/record-field-lists/record-field-list-relational.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-relational-auto",
+      "title": "FieldRelationalAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-relationals/field-relational-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-one-to-many",
+      "title": "FieldOneToMany",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-relationals/field-one-to-many.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-many-to-many",
+      "title": "FieldManyToMany",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-relationals/field-many-to-many.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-one-to-one",
+      "title": "FieldOneToOne",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-relationals/field-one-to-one.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-many-to-one",
+      "title": "FieldManyToOne",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-relationals/field-many-to-one.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "page-record-list",
+      "title": "PageRecordList",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/pages/page-record-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "page-record",
+      "title": "PageRecord",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/pages/page-record.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "page-database",
+      "title": "PageDatabase",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/pages/page-database.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-list-relational",
+      "title": "FieldListRelational",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-lists/field-list-relational.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-list-scalar",
+      "title": "FieldListScalar",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-lists/field-list-scalar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-list-auto",
+      "title": "FieldListAuto",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/field-lists/field-list-auto.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

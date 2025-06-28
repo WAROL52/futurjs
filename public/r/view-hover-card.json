@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-hover-card",
+  "type": "registry:component",
+  "title": "ViewHoverCard",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/views/view-hover-card.tsx",
+      "content": "\"use client\";\n\nexport type ViewHoverCardProps = {};\n\nexport function ViewHoverCard({}: ViewHoverCardProps) {\n  return <div>ViewHoverCard</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

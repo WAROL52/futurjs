@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-create-many",
+  "type": "registry:component",
+  "title": "FormCreateMany",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/forms/form-create-many.tsx",
+      "content": "\"use client\";\n\nexport type FormCreateManyProps = {};\n\nexport function FormCreateMany({}: FormCreateManyProps) {\n  return <div>FormCreateMany</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

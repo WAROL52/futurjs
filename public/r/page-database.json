@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-database",
+  "type": "registry:component",
+  "title": "PageDatabase",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/pages/page-database.tsx",
+      "content": "\"use client\";\n\nexport type PageDatabaseProps = {};\n\nexport function PageDatabase({}: PageDatabaseProps) {\n  return <div>PageDatabase</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

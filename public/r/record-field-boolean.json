@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-boolean",
+  "type": "registry:component",
+  "title": "RecordFieldBoolean",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-scalars/record-field-boolean.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldBooleanProps = {};\n\nexport function RecordFieldBoolean({}: RecordFieldBooleanProps) {\n  return <div>RecordFieldBoolean</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

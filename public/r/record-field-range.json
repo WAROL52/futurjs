@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "record-field-range",
+  "type": "registry:component",
+  "title": "RecordFieldRange",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/registry/prisma/record-field-scalars/record-field-range.tsx",
+      "content": "\"use client\";\n\nexport type RecordFieldRangeProps = {};\n\nexport function RecordFieldRange({}: RecordFieldRangeProps) {\n  return <div>RecordFieldRange</div>;\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
