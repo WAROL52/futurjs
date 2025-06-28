@@ -61,9 +61,9 @@ export function CodeDocs({
           )}
         </TabsList>
 
-        <TabsContent value="preview" className="space-y-4">
-          <Card>
-            <CardContent className="space-y-4">
+        <TabsContent value="preview" className="space-y-4 ">
+          <Card className="bg-background">
+            <CardContent className="space-y-4 ">
               <Previewer path={codes.at(0)?.path} />
             </CardContent>
           </Card>

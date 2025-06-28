@@ -41,7 +41,7 @@ export function CodeSnippet({ snippet }: CodeSnippetProps) {
   const activeCommand = commands.find((command) => command.label === value);
   return (
     <Snippet value={value} onValueChange={setValue}>
-      <SnippetHeader>
+      <SnippetHeader className="bg-muted-foreground/10">
         <SnippetTabsList>
           {commands.map((command) => (
             <SnippetTabsTrigger key={command.label} value={command.label}>
