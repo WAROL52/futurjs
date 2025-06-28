@@ -22,7 +22,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/example-form",
             "componentName": "ExampleForm",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -52,7 +56,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
                 "filename": "hello.tsx",
                 "path": "../_exemples/hello-world/hello.tsx"
               }
-            ]
+            ],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       }
@@ -79,7 +87,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/records-chart",
             "componentName": "RecordsChart",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordsAuto",
@@ -92,7 +104,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/records-auto",
             "componentName": "RecordsAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordsTable",
@@ -105,7 +121,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/records-table",
             "componentName": "RecordsTable",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordsListCard",
@@ -118,7 +138,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/records-list-card",
             "componentName": "RecordsListCard",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordsListInline",
@@ -131,7 +155,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/records-list-inline",
             "componentName": "RecordsListInline",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordsListRow",
@@ -144,7 +172,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/records-list-row",
             "componentName": "RecordsListRow",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -164,7 +196,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-string",
             "componentName": "RecordFieldString",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldNumber",
@@ -177,7 +213,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-number",
             "componentName": "RecordFieldNumber",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldBoolean",
@@ -190,7 +230,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-boolean",
             "componentName": "RecordFieldBoolean",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldRange",
@@ -203,7 +247,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-range",
             "componentName": "RecordFieldRange",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldRoot",
@@ -216,7 +264,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-root",
             "componentName": "RecordFieldRoot",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldAuto",
@@ -229,7 +281,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-auto",
             "componentName": "RecordFieldAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldDateTime",
@@ -242,7 +298,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-date-time",
             "componentName": "RecordFieldDateTime",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldEnum",
@@ -255,7 +315,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-enum",
             "componentName": "RecordFieldEnum",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldBytes",
@@ -268,7 +332,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-bytes",
             "componentName": "RecordFieldBytes",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -288,7 +356,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-auto",
             "componentName": "RecordAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordRow",
@@ -301,7 +373,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-row",
             "componentName": "RecordRow",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordInline",
@@ -314,7 +390,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-inline",
             "componentName": "RecordInline",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordCard",
@@ -327,7 +407,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-card",
             "componentName": "RecordCard",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -347,7 +431,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-hover-card",
             "componentName": "ViewHoverCard",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewAvatar",
@@ -360,7 +448,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-avatar",
             "componentName": "ViewAvatar",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewDateTime",
@@ -373,7 +465,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-date-time",
             "componentName": "ViewDateTime",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewSheet",
@@ -386,7 +482,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-sheet",
             "componentName": "ViewSheet",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewTag",
@@ -399,7 +499,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-tag",
             "componentName": "ViewTag",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewCard",
@@ -412,7 +516,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-card",
             "componentName": "ViewCard",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewPopover",
@@ -425,7 +533,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-popover",
             "componentName": "ViewPopover",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewDialog",
@@ -438,7 +550,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-dialog",
             "componentName": "ViewDialog",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "ViewBlock",
@@ -451,7 +567,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/view-block",
             "componentName": "ViewBlock",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -471,7 +591,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-many-to-one",
             "componentName": "RecordFieldManyToOne",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldRelationalAuto",
@@ -484,7 +608,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-relational-auto",
             "componentName": "RecordFieldRelationalAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldOneToMany",
@@ -497,7 +625,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-one-to-many",
             "componentName": "RecordFieldOneToMany",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldManyToMany",
@@ -510,7 +642,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-many-to-many",
             "componentName": "RecordFieldManyToMany",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldOneToOne",
@@ -523,7 +659,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-one-to-one",
             "componentName": "RecordFieldOneToOne",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -543,7 +683,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/form-auto",
             "componentName": "FormAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FormUpdateMany",
@@ -556,7 +700,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/form-update-many",
             "componentName": "FormUpdateMany",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FormCreateMany",
@@ -569,7 +717,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/form-create-many",
             "componentName": "FormCreateMany",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FormDelete",
@@ -582,7 +734,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/form-delete",
             "componentName": "FormDelete",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FormCreate",
@@ -595,7 +751,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/form-create",
             "componentName": "FormCreate",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FormRoot",
@@ -608,7 +768,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/form-root",
             "componentName": "FormRoot",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FormUpdate",
@@ -621,7 +785,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/form-update",
             "componentName": "FormUpdate",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -647,7 +815,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-root",
             "componentName": "FieldRoot",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldEnum",
@@ -660,7 +832,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-enum",
             "componentName": "FieldEnum",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldString",
@@ -673,7 +849,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-string",
             "componentName": "FieldString",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldDateTime",
@@ -686,7 +866,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-date-time",
             "componentName": "FieldDateTime",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldNumber",
@@ -699,7 +883,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-number",
             "componentName": "FieldNumber",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldRange",
@@ -712,7 +900,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-range",
             "componentName": "FieldRange",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldAuto",
@@ -725,7 +917,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-auto",
             "componentName": "FieldAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldBoolean",
@@ -738,7 +934,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-boolean",
             "componentName": "FieldBoolean",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldBytes",
@@ -751,7 +951,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-bytes",
             "componentName": "FieldBytes",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -771,7 +975,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/use-prisma-config",
             "componentName": "UsePrismaConfig",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "UsePrismaQuery",
@@ -784,7 +992,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/use-prisma-query",
             "componentName": "UsePrismaQuery",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "UsePrismaMutation",
@@ -797,7 +1009,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/use-prisma-mutation",
             "componentName": "UsePrismaMutation",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -817,7 +1033,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-scalar",
             "componentName": "RecordFieldScalar",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldListAuto",
@@ -830,7 +1050,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-list-auto",
             "componentName": "RecordFieldListAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "RecordFieldListRelational",
@@ -843,7 +1067,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/record-field-list-relational",
             "componentName": "RecordFieldListRelational",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -863,7 +1091,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-relational-auto",
             "componentName": "FieldRelationalAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldOneToMany",
@@ -876,7 +1108,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-one-to-many",
             "componentName": "FieldOneToMany",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldManyToMany",
@@ -889,7 +1125,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-many-to-many",
             "componentName": "FieldManyToMany",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldOneToOne",
@@ -902,7 +1142,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-one-to-one",
             "componentName": "FieldOneToOne",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldManyToOne",
@@ -915,7 +1159,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-many-to-one",
             "componentName": "FieldManyToOne",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -935,7 +1183,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/page-record-list",
             "componentName": "PageRecordList",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "PageRecord",
@@ -948,7 +1200,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/page-record",
             "componentName": "PageRecord",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "PageDatabase",
@@ -961,7 +1217,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/page-database",
             "componentName": "PageDatabase",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       },
@@ -981,7 +1241,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-list-relational",
             "componentName": "FieldListRelational",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldListScalar",
@@ -994,7 +1258,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-list-scalar",
             "componentName": "FieldListScalar",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           },
           {
             "title": "FieldListAuto",
@@ -1007,7 +1275,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registry": "https://futurjs.vercel.app/registry/field-list-auto",
             "componentName": "FieldListAuto",
             "codes": [],
-            "exemples": []
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component"
           }
         ]
       }

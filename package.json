@@ -8,6 +8,7 @@
     "prebuild": "npx prisma generate",
     "start": "next start",
     "lint": "next lint",
+    "shadcn:build": "cd ./src/bin && npx bun registry.ts",
     "reg:build": "cd ./src/bin && npx bun build.ts"
   },
   "dependencies": {

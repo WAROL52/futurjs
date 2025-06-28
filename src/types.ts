@@ -20,6 +20,19 @@ export type CodeDocType = {
   componentName: string;
   codes: Array<CodeView>;
   exemples: Array<CodeView>;
+  target: string | null;
+  dependencies: string[];
+  registryDependencies: string[];
+  registryType:
+    | "registry:block"
+    | "registry:component"
+    | "registry:lib"
+    | "registry:hook"
+    | "registry:ui"
+    | "registry:page"
+    | "registry:file"
+    | "registry:style"
+    | "registry:theme";
 };
 
 export type RegistryPackage = {
@@ -37,4 +50,7 @@ export type RegistryFig = {
 };
 
 export type RegistryBuild = Record<string, RegistryFig>;
-export type PreviewComponents = Record<string, (() => Promise<{default: React.ComponentType}>)|undefined>;
+export type PreviewComponents = Record<
+  string,
+  (() => Promise<{ default: React.ComponentType }>) | undefined
+>;

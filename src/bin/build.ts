@@ -126,6 +126,10 @@ async function getCodeDocs(name: string, path: string) {
           componentName,
           codes: await getCodeSource({ filename: "preview.tsx", namebase }),
           exemples: await getExemples(namebase),
+          target: null,
+          dependencies: [],
+          registryDependencies: [],
+          registryType: "registry:component",
         };
       })
     )
