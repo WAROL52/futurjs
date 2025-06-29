@@ -1,3 +1,4 @@
+"use client";
 import { BookOpenIcon, InfoIcon, LifeBuoyIcon } from "lucide-react";
 
 import Logo from "@/components/navbar-components/logo";

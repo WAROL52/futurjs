@@ -814,7 +814,17 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "name": "field-root",
             "registry": "https://futurjs.vercel.app/r/field-root.json",
             "componentName": "FieldRoot",
-            "codes": [],
+            "codes": [
+              {
+                "title": "Preview",
+                "description": "",
+                "props": {},
+                "language": "tsx",
+                "code": "\"use client\";\n\nexport type PreviewProps = {};\n\nexport default function Preview({}: PreviewProps) {\n  return <div>Preview</div>;\n}\n",
+                "filename": "preview.tsx",
+                "path": "../_exemples/field-root/preview.tsx"
+              }
+            ],
             "exemples": [],
             "target": null,
             "dependencies": [],
@@ -950,64 +960,6 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "name": "field-bytes",
             "registry": "https://futurjs.vercel.app/r/field-bytes.json",
             "componentName": "FieldBytes",
-            "codes": [],
-            "exemples": [],
-            "target": null,
-            "dependencies": [],
-            "registryDependencies": [],
-            "registryType": "registry:component"
-          }
-        ]
-      },
-      "hooks": {
-        "name": "hooks",
-        "description": "",
-        "url": "/prisma/hooks",
-        "codeDocs": [
-          {
-            "title": "UsePrismaConfig",
-            "description": "",
-            "props": {},
-            "url": "/prisma/hooks/use-prisma-config",
-            "fileName": "use-prisma-config.tsx",
-            "filePath": "../registry/prisma/hooks/use-prisma-config.tsx",
-            "name": "use-prisma-config",
-            "registry": "https://futurjs.vercel.app/r/use-prisma-config.json",
-            "componentName": "UsePrismaConfig",
-            "codes": [],
-            "exemples": [],
-            "target": null,
-            "dependencies": [],
-            "registryDependencies": [],
-            "registryType": "registry:component"
-          },
-          {
-            "title": "UsePrismaQuery",
-            "description": "",
-            "props": {},
-            "url": "/prisma/hooks/use-prisma-query",
-            "fileName": "use-prisma-query.tsx",
-            "filePath": "../registry/prisma/hooks/use-prisma-query.tsx",
-            "name": "use-prisma-query",
-            "registry": "https://futurjs.vercel.app/r/use-prisma-query.json",
-            "componentName": "UsePrismaQuery",
-            "codes": [],
-            "exemples": [],
-            "target": null,
-            "dependencies": [],
-            "registryDependencies": [],
-            "registryType": "registry:component"
-          },
-          {
-            "title": "UsePrismaMutation",
-            "description": "",
-            "props": {},
-            "url": "/prisma/hooks/use-prisma-mutation",
-            "fileName": "use-prisma-mutation.tsx",
-            "filePath": "../registry/prisma/hooks/use-prisma-mutation.tsx",
-            "name": "use-prisma-mutation",
-            "registry": "https://futurjs.vercel.app/r/use-prisma-mutation.json",
-            "componentName": "UsePrismaMutation",
             "codes": [],
             "exemples": [],
             "target": null,
