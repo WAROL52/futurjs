@@ -11,32 +11,13 @@ import { BoxIcon } from "lucide-react";
 import { useState } from "react";
 
 export type CodeSnippetProps = {
-  snippet: string;
+  commands: {
+    label: string;
+    code: string;
+  }[];
 };
 
-export function CodeSnippet({ snippet }: CodeSnippetProps) {
-  const commands = [
-    {
-      label: "npm",
-      // icon: BoxIcon,
-      code: "npx shadcn@latest add " + snippet,
-    },
-    {
-      label: "yarn",
-      // icon: BoxIcon,
-      code: "yarn shadcn@latest add " + snippet,
-    },
-    {
-      label: "pnpm",
-      // icon: BoxIcon,
-      code: "pnpm dlx shadcn@latest add " + snippet,
-    },
-    {
-      label: "bun",
-      // icon: BoxIcon,
-      code: "bunx --bun shadcn@latest add " + snippet,
-    },
-  ];
+export function CodeSnippet({ commands }: CodeSnippetProps) {
   const [value, setValue] = useState(commands[0].label);
   const activeCommand = commands.find((command) => command.label === value);
   return (

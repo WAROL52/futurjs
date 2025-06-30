@@ -13,6 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { CodeViewer, CodeViewerProps } from "./code-viewer";
 import { CodeSnippet } from "./code-snippet";
 import {
+  BASE_URL,
   CategoryType,
   getUrlRegistryDependencies,
   getUrlRegistryNeeds,
@@ -197,20 +198,120 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
               <TabsTrigger value="CLI">CLI</TabsTrigger>
               <TabsTrigger value="Manual">Manual</TabsTrigger>
             </TabsList>
-            <TabsContent value="CLI">
-              <CodeSnippet snippet={registry} />
-            </TabsContent>
-            <TabsContent value="Manual">
-              <CodeViewer
-                codes={[
-                  {
-                    code: codeDocs.content,
-                    filename: codeDocs.fileName,
-                    language: "tsx",
-                  },
-                ]}
-              />
-            </TabsContent>
+            <div className="px-2">
+              <TabsContent value="CLI">
+                <CodeSnippet
+                  commands={[
+                    {
+                      label: "npm",
+                      // icon: BoxIcon,
+                      code: "npx shadcn@latest add " + registry,
+                    },
+                    {
+                      label: "yarn",
+                      // icon: BoxIcon,
+                      code: "yarn shadcn@latest add " + registry,
+                    },
+                    {
+                      label: "pnpm",
+                      // icon: BoxIcon,
+                      code: "pnpm dlx shadcn@latest add " + registry,
+                    },
+                    {
+                      label: "bun",
+                      // icon: BoxIcon,
+                      code: "bunx --bun shadcn@latest add " + registry,
+                    },
+                  ]}
+                />
+              </TabsContent>
+              <TabsContent value="Manual">
+                {codeDocs.dependencies.length > 0 && (
+                  <div className="mb-8">
+                    <p>Install the following dependencies:</p>
+                    <CodeSnippet
+                      commands={[
+                        {
+                          label: "npm",
+                          // icon: BoxIcon,
+                          code:
+                            "npm install " + codeDocs.dependencies.join(" "),
+                        },
+                        {
+                          label: "yarn",
+                          // icon: BoxIcon,
+                          code: "yarn add " + codeDocs.dependencies.join(" "),
+                        },
+                        {
+                          label: "pnpm",
+                          // icon: BoxIcon,
+                          code: "pnpm add " + codeDocs.dependencies.join(" "),
+                        },
+                        {
+                          label: "bun",
+                          // icon: BoxIcon,
+                          code: "bun add " + codeDocs.dependencies.join(" "),
+                        },
+                      ]}
+                    />
+                  </div>
+                )}
+                {codeDocs.registryDependencies.length > 0 && (
+                  <div className="mb-8">
+                    <p>Install the following registry dependencies:</p>
+                    <CodeSnippet
+                      commands={[
+                        {
+                          label: "npm",
+                          // icon: BoxIcon,
+                          code:
+                            "npx shadcn@latest add " +
+                            codeDocs.registryDependencies
+                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
+                              .join(" "),
+                        },
+                        {
+                          label: "yarn",
+                          // icon: BoxIcon,
+                          code:
+                            "yarn shadcn@latest add " +
+                            codeDocs.registryDependencies
+                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
+                              .join(" "),
+                        },
+                        {
+                          label: "pnpm",
+                          // icon: BoxIcon,
+                          code:
+                            "pnpm dlx shadcn@latest add " +
+                            codeDocs.registryDependencies
+                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
+                              .join(" "),
+                        },
+                        {
+                          label: "bun",
+                          // icon: BoxIcon,
+                          code:
+                            "bunx --bun shadcn@latest add " +
+                            codeDocs.registryDependencies
+                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
+                              .join(" "),
+                        },
+                      ]}
+                    />
+                  </div>
+                )}
+                <CodeViewer
+                  codes={[
+                    {
+                      code: codeDocs.content,
+                      filename: codeDocs.target || codeDocs.fileName,
+                      language: "tsx",
+                    },
+                  ]}
+                />
+              </TabsContent>
+            </div>
           </Tabs>
         </div>
       )}
