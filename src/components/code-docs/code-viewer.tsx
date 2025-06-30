@@ -21,18 +21,24 @@ export type CodeViewerProps = {
   codes: {
     language: string;
     filename: string;
-    code: string;
+    content: string;
   }[];
 };
 
 export function CodeViewer({ codes }: CodeViewerProps) {
-
   if (!codes || codes.length === 0) {
     return null;
   }
 
   return (
-    <CodeBlock data={codes} defaultValue={codes[0].language}>
+    <CodeBlock
+      data={codes.map((c) => ({
+        language: c.language,
+        filename: c.filename,
+        code: c.content,
+      }))}
+      value={codes[0].language}
+    >
       <CodeBlockHeader>
         <CodeBlockFiles>
           {(item) => (

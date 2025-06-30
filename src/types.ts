@@ -3,7 +3,7 @@ export type CodeView = {
   description: string;
   props: Record<string, any>;
   language: string;
-  code: string;
+  content: string;
   filename: string;
   path: string;
 };

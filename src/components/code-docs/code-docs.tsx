@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/accordion";
 import Link from "next/link";
 import { RegistryDependent } from "./registry-dependent";
+import { FileViewer } from "./file-viewer";
 export type CodeDocsProps = PropsWithChildren<CodeDocType>;
 
 export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
@@ -85,19 +86,36 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
         </TabsContent>
 
         <TabsContent value="code">
-          <CodeViewer
+          <FileViewer
             codes={
               codes.length
                 ? codes
                 : [
                     {
-                      code: "// Empty code",
+                      content: "// Empty code",
+                      filename: "preview.tsx",
+                      language: "tsx",
+                      description: "",
+                      path: "src/preview.tsx",
+                      props: {},
+                      title: "Preview",
+                    },
+                  ]
+            }
+          />
+          {/* <CodeViewer
+            codes={
+              codes.length
+                ? codes
+                : [
+                    {
+                      content: "// Empty code",
                       filename: "preview.tsx",
                       language: "tsx",
                     },
                   ]
             }
-          />
+          /> */}
         </TabsContent>
 
         <TabsContent value="props">
@@ -304,7 +322,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
                 <CodeViewer
                   codes={[
                     {
-                      code: codeDocs.content,
+                      content: codeDocs.content,
                       filename: codeDocs.target || codeDocs.fileName,
                       language: "tsx",
                     },

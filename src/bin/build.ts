@@ -54,7 +54,7 @@ async function getCodeSource(params: { filename: string; namebase: string }) {
       description: Component.description || "",
       props: Component.props || {},
       language: filename.split(".").pop() || "txt",
-      code: getFileContent(path),
+      content: getFileContent(path),
       filename,
       path,
     },

@@ -12,6 +12,8 @@
     "reg:build": "cd ./src/bin && npx bun build.ts"
   },
   "dependencies": {
+    "@headless-tree/core": "^1.2.1",
+    "@headless-tree/react": "^1.2.1",
     "@hookform/resolvers": "^5.1.1",
     "@icons-pack/react-simple-icons": "^13.1.0",
     "@prisma/client": "^6.10.1",
@@ -42,6 +44,7 @@
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@radix-ui/react-use-controllable-state": "^1.2.2",
+    "@remixicon/react": "^4.6.0",
     "@shikijs/transformers": "^3.7.0",
     "@tanstack/react-query": "^5.81.5",
     "axios": "^1.10.0",
