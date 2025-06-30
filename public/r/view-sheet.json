@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/views/view-sheet.tsx",
       "content": "\"use client\";\n\nexport type ViewSheetProps = {};\n\nexport function ViewSheet({}: ViewSheetProps) {\n  return <div>ViewSheet</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/views/view-sheet.tsx"
     }
   ]
 }

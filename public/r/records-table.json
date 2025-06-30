@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/records-lists/records-table.tsx",
       "content": "\"use client\";\n\nexport type RecordsTableProps = {};\n\nexport function RecordsTable({}: RecordsTableProps) {\n  return <div>RecordsTable</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/records-lists/records-table.tsx"
     }
   ]
 }

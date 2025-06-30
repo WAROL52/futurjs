@@ -1,5 +1,5 @@
 import { CodeDocsProps } from "@/components/code-docs/code-docs";
-import { BASE_URL } from "@/lib/utils";
+import { BASE_URL, normalizePath } from "@/lib/utils";
 import { consola, createConsola } from "consola";
 import { readFile, readFileSync, readdirSync, writeFileSync } from "fs";
 import { get } from "http";
@@ -131,7 +131,7 @@ async function getCodeDocs(name: string, path: string) {
           componentName,
           codes: await getCodeSource({ filename: "preview.tsx", namebase }),
           exemples: await getExemples(namebase),
-          target: null,
+          target: component.target || normalizePath(filePath),
           dependencies: component.dependencies || [],
           registryDependencies: component.registryDependencies || [],
           registryType: "registry:component",

@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/record-field-scalars/record-field-root.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldRootProps = {};\n\nexport function RecordFieldRoot({}: RecordFieldRootProps) {\n  return <div>RecordFieldRoot</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/record-field-scalars/record-field-root.tsx"
     }
   ]
 }

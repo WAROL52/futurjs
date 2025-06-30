@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/field-scalars/field-number.tsx",
       "content": "\"use client\";\n\n// big int\n// int\n// float\n// decimal\nexport type FieldNumberProps = {};\n\nexport function FieldNumber({}: FieldNumberProps) {\n  return <div>FieldNumber</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/field-scalars/field-number.tsx"
     }
   ]
 }

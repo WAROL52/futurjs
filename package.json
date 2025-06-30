@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "shadcn:build": "cd ./src/bin && npx bun registry.ts&& cd - && npx shadcn build",
+    "preshadcn:build": "cd ./src/bin && npx bun build.ts",
     "reg:build": "cd ./src/bin && npx bun build.ts"
   },
   "dependencies": {

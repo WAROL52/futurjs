@@ -10,7 +10,8 @@
     {
       "path": "src/registry/new-york/hello-world/hello-world.tsx",
       "content": "export function HelloWorld() {\n  return <h1 className=\"text-2xl font-bold\">Hello World</h1>;\n}\nexport const codeDocs = {\n  title: \"Hello World\",\n  description: \"A simple Hello World component.\",\n  codes: [\n    {\n      code: `<HelloWorld />`,\n      description: \"The HelloWorld component.\",\n    },\n  ],\n};\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/new-york/hello-world/hello-world.tsx"
     }
   ]
 }

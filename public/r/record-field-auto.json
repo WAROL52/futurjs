@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/record-field-scalars/record-field-auto.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldAutoProps = {};\n\nexport function RecordFieldAuto({}: RecordFieldAutoProps) {\n  return <div>RecordFieldAuto</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/record-field-scalars/record-field-auto.tsx"
     }
   ]
 }

@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/records/record-card.tsx",
       "content": "\"use client\";\n\nexport type RecordCardProps = {};\n\nexport function RecordCard({}: RecordCardProps) {\n  return <div>RecordCard</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/records/record-card.tsx"
     }
   ]
 }

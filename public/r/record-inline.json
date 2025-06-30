@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/records/record-inline.tsx",
       "content": "\"use client\";\n\nexport type RecordInlineProps = {};\n\nexport function RecordInline({}: RecordInlineProps) {\n  return <div>RecordInline</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/records/record-inline.tsx"
     }
   ]
 }

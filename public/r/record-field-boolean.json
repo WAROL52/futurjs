@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/record-field-scalars/record-field-boolean.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldBooleanProps = {};\n\nexport function RecordFieldBoolean({}: RecordFieldBooleanProps) {\n  return <div>RecordFieldBoolean</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/record-field-scalars/record-field-boolean.tsx"
     }
   ]
 }

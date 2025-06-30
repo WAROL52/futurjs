@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/forms/form-auto.tsx",
       "content": "\"use client\";\n\nexport type FormAutoProps = {};\n\nexport function FormAuto({}: FormAutoProps) {\n  return <div>FormAuto</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/forms/form-auto.tsx"
     }
   ]
 }

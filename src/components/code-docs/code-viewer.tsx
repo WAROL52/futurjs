@@ -16,13 +16,11 @@ import {
   CodeBlockSelectValue,
 } from "@/components/ui/kibo-ui/code-block";
 import type { BundledLanguage } from "@/components/ui/kibo-ui/code-block";
+import { normalizePath } from "@/lib/utils";
+import { CodeView } from "@/types";
 
 export type CodeViewerProps = {
-  codes: {
-    language: string;
-    filename: string;
-    content: string;
-  }[];
+  codes: CodeView[];
 };
 
 export function CodeViewer({ codes }: CodeViewerProps) {
@@ -34,7 +32,7 @@ export function CodeViewer({ codes }: CodeViewerProps) {
     <CodeBlock
       data={codes.map((c) => ({
         language: c.language,
-        filename: c.filename,
+        filename: normalizePath(c.path),
         code: c.content,
       }))}
       value={codes[0].language}

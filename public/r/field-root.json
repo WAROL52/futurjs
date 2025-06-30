@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/field-scalars/field-root.tsx",
       "content": "\"use client\";\n\nexport type FieldRootProps = {};\n\nexport function FieldRoot({}: FieldRootProps) {\n  return <div>FieldRoot</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/field-scalars/field-root.tsx"
     }
   ]
 }

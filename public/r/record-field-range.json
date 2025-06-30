@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/record-field-scalars/record-field-range.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldRangeProps = {};\n\nexport function RecordFieldRange({}: RecordFieldRangeProps) {\n  return <div>RecordFieldRange</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/record-field-scalars/record-field-range.tsx"
     }
   ]
 }

@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/pages/page-record-list.tsx",
       "content": "\"use client\";\n\nexport type PageRecordListProps = {};\n\nexport function PageRecordList({}: PageRecordListProps) {\n  return <div>PageRecordList</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/pages/page-record-list.tsx"
     }
   ]
 }

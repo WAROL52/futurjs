@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/record-field-lists/record-field-scalar.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldScalarProps = {};\n\nexport function RecordFieldScalar({}: RecordFieldScalarProps) {\n  return <div>RecordFieldScalar</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/record-field-lists/record-field-scalar.tsx"
     }
   ]
 }

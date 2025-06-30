@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/views/view-block.tsx",
       "content": "\"use client\";\n\nexport type ViewBlockProps = {};\n\nexport function ViewBlock({}: ViewBlockProps) {\n  return <div>ViewBlock</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/views/view-block.tsx"
     }
   ]
 }

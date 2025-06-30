@@ -20,7 +20,7 @@ export type CodeDocType = {
   componentName: string;
   codes: Array<CodeView>;
   exemples: Array<CodeView>;
-  target: string | null;
+  target: string;
   dependencies: string[];
   registryDependencies: string[];
   registryType:

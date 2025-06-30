@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/field-scalars/field-auto.tsx",
       "content": "\"use client\";\n\nexport type FieldAutoProps = {};\n\nexport function FieldAuto({}: FieldAutoProps) {\n  return <div>FieldAuto</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/field-scalars/field-auto.tsx"
     }
   ]
 }

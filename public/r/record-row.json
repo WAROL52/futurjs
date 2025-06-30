@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/records/record-row.tsx",
       "content": "\"use client\";\n\nexport type RecordRowProps = {};\n\nexport function RecordRow({}: RecordRowProps) {\n  return <div>RecordRow</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/records/record-row.tsx"
     }
   ]
 }

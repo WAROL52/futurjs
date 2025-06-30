@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/field-lists/field-list-relational.tsx",
       "content": "\"use client\";\n\nexport type FieldListRelationalProps = {};\n\nexport function FieldListRelational({}: FieldListRelationalProps) {\n  return <div>FieldListRelational</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/field-lists/field-list-relational.tsx"
     }
   ]
 }

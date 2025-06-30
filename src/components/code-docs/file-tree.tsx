@@ -21,6 +21,7 @@ import {
 
 import { Tree, TreeItem, TreeItemLabel } from "@/components/tree";
 import { CodeView } from "@/types";
+import { normalizePath } from "@/lib/utils";
 
 interface Item {
   name: string;
@@ -63,7 +64,9 @@ function toTree(codes: CodeView[]): Record<string, Item> {
   };
   const paths = codes
     .map((code, indexCode) => {
-      const parts = code.path.split("/").filter((c) => c);
+      const parts = normalizePath(code.path)
+        .split("/")
+        .filter((c) => c);
 
       parts.map((part, index) => {
         if (index === 0) {
@@ -94,7 +97,6 @@ function toTree(codes: CodeView[]): Record<string, Item> {
       return parts;
     })
     .flat();
-  console.log({ items });
 
   return items;
 }
@@ -109,13 +111,16 @@ export type FileTreeProps = {
 export function FileTree({ codes, active, setActive }: FileTreeProps) {
   const [items, setItems] = useState(toTree(codes));
 
+  const selectedItems =
+    Object.keys(items).find((k) => k === String(codes[active]?.path)) ||
+    rootName;
   const tree = useTree<Item>({
-    // initialState: {
-    //   expandedItems: [],
-    //   selectedItems: ,
-    // },
+    initialState: {
+      expandedItems: Object.keys(items),
+      selectedItems: [selectedItems],
+    },
     state: {
-      selectedItems: [codes[active]?.path],
+      selectedItems: [selectedItems],
     },
     indent,
     rootItemId: rootName,

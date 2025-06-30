@@ -10,7 +10,8 @@
     {
       "path": "src/registry/prisma/forms/form-delete.tsx",
       "content": "\"use client\";\n\nexport type FormDeleteProps = {};\n\nexport function FormDelete({}: FormDeleteProps) {\n  return <div>FormDelete</div>;\n}\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "@/components/prisma/forms/form-delete.tsx"
     }
   ]
 }

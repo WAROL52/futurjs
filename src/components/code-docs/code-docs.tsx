@@ -323,8 +323,12 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
                   codes={[
                     {
                       content: codeDocs.content,
-                      filename: codeDocs.target || codeDocs.fileName,
+                      filename: codeDocs.fileName,
                       language: "tsx",
+                      description: "",
+                      path: codeDocs.target || codeDocs.filePath,
+                      props: {},
+                      title: "",
                     },
                   ]}
                 />
