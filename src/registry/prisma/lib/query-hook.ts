@@ -10,7 +10,7 @@ import {
   UseMutationOptions,
 } from "@tanstack/react-query";
 
-export type FnDbQuery<
+export type FnHookQuery<
   T,
   R,
   TQueryKey extends QueryKey = QueryKey,
@@ -20,66 +20,60 @@ export type FnDbQuery<
   context: QueryFunctionContext<TQueryKey, TPageParam>
 ) => R | Promise<R>;
 
-export type DbClient<T = any> = {
-  [K in keyof T as K extends `$${infer R}` ? never : K]: Omit<T[K], "fields">;
-};
-
-export type UseDbQueryOptions<T, R, TQueryKey extends QueryKey = QueryKey> = {
-  queryFn: FnDbQuery<DbClient<T>, R, TQueryKey>;
+export type UseHookQueryOptions<T, R, TQueryKey extends QueryKey = QueryKey> = {
+  queryFn: FnHookQuery<T, R, TQueryKey>;
 } & Omit<UseQueryOptions<R, DefaultError, R, TQueryKey>, "queryFn">;
 
-export type FnDbMutation<T, TData = unknown, TVariables = unknown> = (
+export type FnHookMutation<T, TData = unknown, TVariables = unknown> = (
   variables: TVariables,
   dbClient: T
 ) => Promise<TData>;
 
-export type UseDbMutationOptions<
+export type UseHookMutationOptions<
   T,
   R,
   TVariables = unknown,
   TContext = unknown
 > = {
-  mutationFn: FnDbMutation<DbClient<T>, R, TVariables>;
+  mutationFn: FnHookMutation<T, R, TVariables>;
   invalidateOnSuccess?: QueryKey[];
 } & Omit<
   UseMutationOptions<R, DefaultError, TVariables, TContext>,
   "mutationFn"
 >;
-export type DbConfig = {
-  baseUrl: string;
-};
-export type HandlerAction = {
+export type FnActionHandler = ((args: any) => any) | ((args?: any) => any);
+export type ActionHandler = {
   [modelName: string]: {
-    [methodName: string]: ((args: any) => any) | ((args?: any) => any);
+    [methodName: string]: FnActionHandler;
   };
 };
 
-export function createQueryHook<T extends HandlerAction>(handler: T) {
+export function createQueryHook<T extends ActionHandler>(handler: T) {
   return {
-    useDbQuery: createUseDbQuery<T>(handler),
-    useDbMutation: createUseDbMutation<T>(handler),
+    useActionQuery: createUseActionQuery<T>(handler),
+    useActionMutation: createUseActionMutation<T>(handler),
   };
 }
 
-function createUseDbQuery<T extends object>(dbProxy: DbClient<T>) {
+function createUseActionQuery<T extends object>(handler: T) {
   return function useDbQuery<R, TQueryKey extends QueryKey = QueryKey>(
-    options: UseDbQueryOptions<T, R, TQueryKey>
+    options: UseHookQueryOptions<T, R, TQueryKey>
   ) {
     return useQuery({
       ...options,
-      queryFn: (context) => options.queryFn(dbProxy, context),
+      queryFn: (context) => options.queryFn(handler, context),
     });
   };
 }
 
-function createUseDbMutation<T extends object>(dbProxy: DbClient<T>) {
+function createUseActionMutation<T extends object>(handler: T) {
   return function useDbMutation<R, TVariables = unknown, TContext = unknown>(
-    options: UseDbMutationOptions<T, R, TVariables, TContext>
+    options: UseHookMutationOptions<T, R, TVariables, TContext>
   ) {
     const queryClient = useQueryClient();
     return useMutation({
       ...options,
-      mutationFn: (variables) => options.mutationFn(variables, dbProxy),
+      mutationFn: (variables) => options.mutationFn(variables, handler),
       onSuccess(data, variables, context) {
         if (options.invalidateOnSuccess) {
           options.invalidateOnSuccess.forEach((key) => {

@@ -1,10 +1,10 @@
 import { PrismaClient } from "@/generated/prisma";
-import { DbClient } from "@/registry/prisma/lib/db-api-client";
+import { DbHookPrisma } from "@/registry/prisma/lib/db-api-client";
 import { createDbApiServer } from "@/registry/prisma/lib/db-api-server";
 import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
-const dbApiServer = createDbApiServer<DbClient<PrismaClient>>(prisma);
+const dbApiServer = createDbApiServer<DbHookPrisma<PrismaClient>>(prisma);
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ modelName: string; methodName: string }> }

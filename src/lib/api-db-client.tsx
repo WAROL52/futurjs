@@ -1,6 +1,11 @@
 import { PrismaClient } from "@/generated/prisma";
-import { createDbApiClient } from "@/registry/prisma/lib/db-api-client";
+import {
+  createDbApiClient,
+  DbHookPrisma,
+} from "@/registry/prisma/lib/db-api-client";
 
-export const { useDbQuery, useDbMutation } = createDbApiClient<PrismaClient>({
+export const { useDbQuery, useDbMutation } = createDbApiClient<
+  DbHookPrisma<PrismaClient>
+>({
   baseUrl: "/api/db",
 });
