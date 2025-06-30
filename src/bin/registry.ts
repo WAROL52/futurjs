@@ -21,7 +21,9 @@ function normalizeRegistry(build: RegistryBuild): Registry {
                 description: doc.description,
                 type: doc.registryType,
                 dependencies: doc.dependencies,
-                registryDependencies: doc.registryDependencies,
+                registryDependencies: doc.registryDependencies.map((dep) => {
+                  return `${BASE_URL}/r/${dep}.json`;
+                }),
                 files: [
                   {
                     path: "src/" + doc.filePath.split("/").slice(1).join("/"),

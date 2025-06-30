@@ -591,6 +591,54 @@
       ]
     },
     {
+      "name": "create-query-hook",
+      "title": "CreateQueryHook",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [
+        "@tanstack/react-query"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/lib/create-query-hook.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "create-db-api-server",
+      "title": "CreateDbApiServer",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/registry/prisma/lib/create-db-api-server.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "create-db-api-client",
+      "title": "CreateDbApiClient",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [
+        "axios"
+      ],
+      "registryDependencies": [
+        "https://futurjs.vercel.app/r/create-query-hook.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/prisma/lib/create-db-api-client.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "field-root",
       "title": "FieldRoot",
       "description": "",
