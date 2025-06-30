@@ -28,7 +28,7 @@ function normalizeRegistry(build: RegistryBuild): Registry {
                   {
                     path: "src/" + doc.filePath.split("/").slice(1).join("/"),
                     type: doc.registryType,
-                    target: doc.target,
+                    target: doc.target.replace("@/", ""),
                   },
                 ],
               } as RegistryItem;
