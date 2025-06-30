@@ -717,48 +717,6 @@
       ]
     },
     {
-      "name": "use-prisma-config",
-      "title": "UsePrismaConfig",
-      "description": "",
-      "type": "registry:component",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/registry/prisma/hooks/use-prisma-config.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "use-prisma-query",
-      "title": "UsePrismaQuery",
-      "description": "",
-      "type": "registry:component",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/registry/prisma/hooks/use-prisma-query.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "use-prisma-mutation",
-      "title": "UsePrismaMutation",
-      "description": "",
-      "type": "registry:component",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/registry/prisma/hooks/use-prisma-mutation.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
       "name": "record-field-scalar",
       "title": "RecordFieldScalar",
       "description": "",

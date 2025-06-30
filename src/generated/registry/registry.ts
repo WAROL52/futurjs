@@ -820,7 +820,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
                 "description": "",
                 "props": {},
                 "language": "tsx",
-                "code": "\"use client\";\n\nexport type PreviewProps = {};\n\nexport default function Preview({}: PreviewProps) {\n  return <div>Preview</div>;\n}\n",
+                "code": "\"use client\";\n\nimport { useDbMutation, useDbQuery } from \"@/lib/api-db-client\";\n\nexport type PreviewProps = {};\n\nexport default function Preview({}: PreviewProps) {\n  const {\n    data = [],\n    isLoading,\n    error,\n  } = useDbQuery({\n    queryKey: [\"user\", \"findMany\"],\n    queryFn: (dbClient) => dbClient.user.findMany(),\n  });\n  const mutation = useDbMutation({\n    mutationKey: [\"user\", \"create\"],\n    mutationFn: (email: string, dbClient) =>\n      dbClient.user.create({ data: { email } }),\n    invalidateOnSuccess: [[\"user\", \"findMany\"]],\n  });\n  if (isLoading) return <div>Loading...</div>;\n  if (error) return <div>Error:-- {String(error)}</div>;\n  if (mutation.error) {\n    return (\n      <div>\n        Error creating user:\n        <pre>{String(mutation.error)}</pre>\n      </div>\n    );\n  }\n\n  return (\n    <div>\n      <h1>Users</h1>\n      <ul>\n        {data.map((user: any) => (\n          <li key={user.id}>\n            {user.name} - {user.email}\n          </li>\n        ))}\n      </ul>\n      <pre>{JSON.stringify(data, null, 2)}</pre>\n      <button\n        type=\"button\"\n        onClick={() => mutation.mutate(\"newuser@example.com\")}\n      >\n        Create User\n      </button>\n    </div>\n  );\n}\n",
                 "filename": "preview.tsx",
                 "path": "../_exemples/field-root/preview.tsx"
               }
