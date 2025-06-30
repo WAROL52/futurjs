@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/forms/form-create-many.tsx",
       "content": "\"use client\";\n\nexport type FormCreateManyProps = {};\n\nexport function FormCreateMany({}: FormCreateManyProps) {\n  return <div>FormCreateMany</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/forms/form-create-many.tsx"
+      "target": "components/prisma/forms/form-create-many.tsx"
     }
   ]
 }

@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/field-scalars/field-range.tsx",
       "content": "\"use client\";\n\n// range date time\n// range date\n// range time\n// range timestamp\n// range int\n// range float\n// range decimal\n// range big int\nexport type FieldRangeProps = {};\n\nexport function FieldRange({}: FieldRangeProps) {\n  return <div>FieldRange</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/field-scalars/field-range.tsx"
+      "target": "components/prisma/field-scalars/field-range.tsx"
     }
   ]
 }

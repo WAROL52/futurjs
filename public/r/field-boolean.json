@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/field-scalars/field-boolean.tsx",
       "content": "\"use client\";\n\nexport type FieldBooleanProps = {};\n\nexport function FieldBoolean({}: FieldBooleanProps) {\n  return <div>FieldBoolean</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/field-scalars/field-boolean.tsx"
+      "target": "components/prisma/field-scalars/field-boolean.tsx"
     }
   ]
 }

@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/forms/form-create.tsx",
       "content": "\"use client\";\n\nexport type FormCreateProps = {};\n\nexport function FormCreate({}: FormCreateProps) {\n  return <div>FormCreate</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/forms/form-create.tsx"
+      "target": "components/prisma/forms/form-create.tsx"
     }
   ]
 }

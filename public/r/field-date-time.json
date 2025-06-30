@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/field-scalars/field-date-time.tsx",
       "content": "\"use client\";\n\n// date time\n// date\n// time\n// timestamp\nexport type FieldDateTimeProps = {};\n\nexport function FieldDateTime({}: FieldDateTimeProps) {\n  return <div>FieldDateTime</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/field-scalars/field-date-time.tsx"
+      "target": "components/prisma/field-scalars/field-date-time.tsx"
     }
   ]
 }

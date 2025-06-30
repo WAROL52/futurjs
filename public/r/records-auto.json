@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/records-lists/records-auto.tsx",
       "content": "\"use client\";\n\nexport type RecordsAutoProps = {};\n\nexport function RecordsAuto({}: RecordsAutoProps) {\n  return <div>RecordsAuto</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/records-lists/records-auto.tsx"
+      "target": "components/prisma/records-lists/records-auto.tsx"
     }
   ]
 }

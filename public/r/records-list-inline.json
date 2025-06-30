@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/records-lists/records-list-inline.tsx",
       "content": "\"use client\";\n\n// item1 | item2 | item3 | item4 | item5 | item6\nexport type RecordsListInlineProps = {};\n\nexport function RecordsListInline({}: RecordsListInlineProps) {\n  return <div>RecordsListInline</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/records-lists/records-list-inline.tsx"
+      "target": "components/prisma/records-lists/records-list-inline.tsx"
     }
   ]
 }

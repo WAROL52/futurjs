@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/record-field-lists/record-field-list-auto.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldListAutoProps = {};\n\nexport function RecordFieldListAuto({}: RecordFieldListAutoProps) {\n  return <div>RecordFieldListAuto</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/record-field-lists/record-field-list-auto.tsx"
+      "target": "components/prisma/record-field-lists/record-field-list-auto.tsx"
     }
   ]
 }

@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/field-scalars/field-bytes.tsx",
       "content": "\"use client\";\n\nexport type FieldBytesProps = {};\n\nexport function FieldBytes({}: FieldBytesProps) {\n  return <div>FieldBytes</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/field-scalars/field-bytes.tsx"
+      "target": "components/prisma/field-scalars/field-bytes.tsx"
     }
   ]
 }

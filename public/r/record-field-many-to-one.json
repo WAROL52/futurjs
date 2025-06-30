@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/record-field-relationals/record-field-many-to-one.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldManyToOneProps = {};\n\nexport function RecordFieldManyToOne({}: RecordFieldManyToOneProps) {\n  return <div>RecordFieldManyToOne</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/record-field-relationals/record-field-many-to-one.tsx"
+      "target": "components/prisma/record-field-relationals/record-field-many-to-one.tsx"
     }
   ]
 }

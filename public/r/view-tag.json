@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/views/view-tag.tsx",
       "content": "\"use client\";\n\nexport type ViewTagProps = {};\n\nexport function ViewTag({}: ViewTagProps) {\n  return <div>ViewTag</div>;\n}\n",
       "type": "registry:component",
-      "target": "@/components/prisma/views/view-tag.tsx"
+      "target": "components/prisma/views/view-tag.tsx"
     }
   ]
 }
