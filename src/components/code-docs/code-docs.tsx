@@ -12,23 +12,35 @@ import { Badge } from "../ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { CodeViewer, CodeViewerProps } from "./code-viewer";
 import { CodeSnippet } from "./code-snippet";
-import { CategoryType } from "@/lib/utils";
+import {
+  CategoryType,
+  getUrlRegistryDependencies,
+  getUrlRegistryNeeds,
+} from "@/lib/utils";
 import { CodeDocType, CodeView } from "@/types";
 import { PropsWithChildren } from "react";
 import { Previewer } from "../previewer";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import Link from "next/link";
+import { RegistryDependent } from "./registry-dependent";
 export type CodeDocsProps = PropsWithChildren<CodeDocType>;
 
-export function CodeDocs({
-  children,
-  title,
-  description,
-  codes,
-  props,
-  componentName,
-  registry,
-  exemples,
-}: CodeDocsProps) {
+export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
+  const {
+    title,
+    description,
+    codes,
+    props,
+    componentName,
+    registry,
+    exemples,
+    fileName,
+  } = codeDocs;
   const properties = Object.entries(props || {}).map(([name, prop]) => ({
     name,
     type: prop.type || "unknown",
@@ -36,6 +48,7 @@ export function CodeDocs({
     description: prop.description || "-",
     required: prop.required || false,
   }));
+  const dependents = getUrlRegistryNeeds(codeDocs.name);
   return (
     <section id="button" className="space-y-6 mb-8">
       <div>
@@ -44,7 +57,8 @@ export function CodeDocs({
       </div>
 
       <Tabs defaultValue="preview" className="w-full">
-        <TabsList>
+        <h3 className="text-2xl font-semibold">Preview</h3>
+        <TabsList className="mb-1">
           <TabsTrigger value="preview">
             <Eye className="h-4 w-4 mr-2" />
             Preview
@@ -70,11 +84,19 @@ export function CodeDocs({
         </TabsContent>
 
         <TabsContent value="code">
-          <Card>
-            <CardContent className="space-y-4">
-              <CodeViewer codes={codes} />
-            </CardContent>
-          </Card>
+          <CodeViewer
+            codes={
+              codes.length
+                ? codes
+                : [
+                    {
+                      code: "// Empty code",
+                      filename: "preview.tsx",
+                      language: "tsx",
+                    },
+                  ]
+            }
+          />
         </TabsContent>
 
         <TabsContent value="props">
@@ -111,14 +133,85 @@ export function CodeDocs({
           </Card>
         </TabsContent>
       </Tabs>
+      {/* Dependencies */}
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>
+            <h4 className="text-xl font-semibold">
+              Dependencies?
+              <Badge className="min-w-5 px-1 ml-1" variant={"secondary"}>
+                {codeDocs.dependencies?.length || 0}
+              </Badge>
+            </h4>
+          </AccordionTrigger>
+          <AccordionContent>
+            {codeDocs.dependencies.map((dep) => (
+              <Badge key={dep} className="mr-2" variant="outline" asChild>
+                <Link
+                  href={`https://www.npmjs.com/package/${dep}`}
+                  target="_blank"
+                >
+                  {dep}
+                </Link>
+              </Badge>
+            ))}
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>
+            <h4 className="text-xl font-semibold">
+              Registry dependencies?
+              <Badge className="min-w-5 px-1 ml-1" variant={"secondary"}>
+                {codeDocs.registryDependencies?.length || 0}
+              </Badge>
+            </h4>
+          </AccordionTrigger>
+          <AccordionContent>
+            {codeDocs.registryDependencies.map((dep) => {
+              return <RegistryDependent name={dep} key={dep} />;
+            })}
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>
+            <h4 className="text-xl font-semibold">
+              needed?
+              <Badge className="min-w-5 px-1 ml-1" variant={"secondary"}>
+                {dependents?.length || 0}
+              </Badge>
+            </h4>
+          </AccordionTrigger>
+          <AccordionContent>
+            {dependents.map((dep) => {
+              return <RegistryDependent name={dep.name} key={dep.name} />;
+            })}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
       {/* installation */}
       {registry && (
         <div className="space-y-4">
           <h3 className="text-2xl font-semibold">Installation</h3>
-          <p className="text-muted-foreground">
-            For this component to work, you need to install the UI library.
-          </p>
-          <CodeSnippet snippet={registry} />
+          <Tabs defaultValue="CLI" className="w-full ">
+            <TabsList className="mb-1">
+              <TabsTrigger value="CLI">CLI</TabsTrigger>
+              <TabsTrigger value="Manual">Manual</TabsTrigger>
+            </TabsList>
+            <TabsContent value="CLI">
+              <CodeSnippet snippet={registry} />
+            </TabsContent>
+            <TabsContent value="Manual">
+              <CodeViewer
+                codes={[
+                  {
+                    code: codeDocs.content,
+                    filename: codeDocs.fileName,
+                    language: "tsx",
+                  },
+                ]}
+              />
+            </TabsContent>
+          </Tabs>
         </div>
       )}
 

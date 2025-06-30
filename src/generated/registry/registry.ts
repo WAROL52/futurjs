@@ -26,7 +26,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  Card,\n  CardTitle,\n  CardHeader,\n  CardDescription,\n  CardContent,\n  CardFooter,\n} from \"@/components/ui/card\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { z } from \"zod\"\n\nconst exampleFormSchema = z.object({\n  name: z.string().min(1),\n  email: z.string().email(),\n  message: z.string().min(1),\n})\n\nexport function ExampleForm() {\n  const [pending, setPending] = React.useState(false)\n  const [state, setState] = React.useState({\n    defaultValues: {\n      name: \"\",\n      email: \"\",\n      message: \"\",\n    },\n    success: false,\n    errors: {\n      name: \"\",\n      email: \"\",\n      message: \"\",\n    },\n  })\n\n  const handleSubmit = React.useCallback(\n    (e: React.FormEvent<HTMLFormElement>) => {\n      e.preventDefault()\n      setPending(true)\n\n      const formData = new FormData(e.target as HTMLFormElement)\n      const data = Object.fromEntries(formData.entries())\n      const result = exampleFormSchema.safeParse(data)\n\n      if (!result.success) {\n        setState({\n          ...state,\n          errors: Object.fromEntries(\n            Object.entries(result.error.flatten().fieldErrors).map(\n              ([key, value]) => [key, value?.[0] ?? \"\"]\n            )\n          ) as Record<keyof typeof state.errors, string>,\n        })\n        setPending(false)\n        return\n      }\n\n      setPending(false)\n    },\n    [state]\n  )\n\n  return (\n    <Card className=\"w-full max-w-sm\">\n      <CardHeader>\n        <CardTitle>How can we help?</CardTitle>\n        <CardDescription>\n          Need help with your project? We&apos;re here to assist you.\n        </CardDescription>\n      </CardHeader>\n      <form onSubmit={handleSubmit}>\n        <CardContent className=\"flex flex-col gap-6\">\n          <div\n            className=\"group/field grid gap-2\"\n            data-invalid={!!state.errors?.name}\n          >\n            <Label\n              htmlFor=\"name\"\n              className=\"group-data-[invalid=true]/field:text-destructive\"\n            >\n              Name <span aria-hidden=\"true\">*</span>\n            </Label>\n            <Input\n              id=\"name\"\n              name=\"name\"\n              placeholder=\"Lee Robinson\"\n              className=\"group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive\"\n              disabled={pending}\n              aria-invalid={!!state.errors?.name}\n              aria-errormessage=\"error-name\"\n              defaultValue={state.defaultValues.name}\n            />\n            {state.errors?.name && (\n              <p id=\"error-name\" className=\"text-destructive text-sm\">\n                {state.errors.name}\n              </p>\n            )}\n          </div>\n          <div\n            className=\"group/field grid gap-2\"\n            data-invalid={!!state.errors?.email}\n          >\n            <Label\n              htmlFor=\"email\"\n              className=\"group-data-[invalid=true]/field:text-destructive\"\n            >\n              Email <span aria-hidden=\"true\">*</span>\n            </Label>\n            <Input\n              id=\"email\"\n              name=\"email\"\n              placeholder=\"leerob@acme.com\"\n              className=\"group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive\"\n              disabled={pending}\n              aria-invalid={!!state.errors?.email}\n              aria-errormessage=\"error-email\"\n              defaultValue={state.defaultValues.email}\n            />\n            {state.errors?.email && (\n              <p id=\"error-email\" className=\"text-destructive text-sm\">\n                {state.errors.email}\n              </p>\n            )}\n          </div>\n          <div\n            className=\"group/field grid gap-2\"\n            data-invalid={!!state.errors?.message}\n          >\n            <Label\n              htmlFor=\"message\"\n              className=\"group-data-[invalid=true]/field:text-destructive\"\n            >\n              Message <span aria-hidden=\"true\">*</span>\n            </Label>\n            <Textarea\n              id=\"message\"\n              name=\"message\"\n              placeholder=\"Type your message here...\"\n              className=\"group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive\"\n              disabled={pending}\n              aria-invalid={!!state.errors?.message}\n              aria-errormessage=\"error-message\"\n              defaultValue={state.defaultValues.message}\n            />\n            {state.errors?.message && (\n              <p id=\"error-message\" className=\"text-destructive text-sm\">\n                {state.errors.message}\n              </p>\n            )}\n          </div>\n        </CardContent>\n        <CardFooter>\n          <Button type=\"submit\" size=\"sm\" disabled={pending}>\n            {pending ? \"Sending...\" : \"Send Message\"}\n          </Button>\n        </CardFooter>\n      </form>\n    </Card>\n  )\n}\n"
           }
         ]
       },
@@ -60,7 +61,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "export function HelloWorld() {\n  return <h1 className=\"text-2xl font-bold\">Hello World</h1>;\n}\nexport const codeDocs = {\n  title: \"Hello World\",\n  description: \"A simple Hello World component.\",\n  codes: [\n    {\n      code: `<HelloWorld />`,\n      description: \"The HelloWorld component.\",\n    },\n  ],\n};\n"
           }
         ]
       }
@@ -91,7 +93,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordsChartProps = {};\n\nexport function RecordsChart({}: RecordsChartProps) {\n  return <div>RecordsChart</div>;\n}\n"
           },
           {
             "title": "RecordsAuto",
@@ -108,7 +111,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordsAutoProps = {};\n\nexport function RecordsAuto({}: RecordsAutoProps) {\n  return <div>RecordsAuto</div>;\n}\n"
           },
           {
             "title": "RecordsTable",
@@ -125,7 +129,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordsTableProps = {};\n\nexport function RecordsTable({}: RecordsTableProps) {\n  return <div>RecordsTable</div>;\n}\n"
           },
           {
             "title": "RecordsListCard",
@@ -142,7 +147,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\n// item1 | item2 | item3\n// item4 | item5 | item6\n\nexport type RecordsListCardProps = {};\n\nexport function RecordsListCard({}: RecordsListCardProps) {\n  return <div>RecordsListCard</div>;\n}\n"
           },
           {
             "title": "RecordsListInline",
@@ -159,7 +165,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\n// item1 | item2 | item3 | item4 | item5 | item6\nexport type RecordsListInlineProps = {};\n\nexport function RecordsListInline({}: RecordsListInlineProps) {\n  return <div>RecordsListInline</div>;\n}\n"
           },
           {
             "title": "RecordsListRow",
@@ -176,7 +183,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\n// item1\n// item2\n// item3\n// item4\n// item5\n// item6\nexport type RecordsListRowProps = {};\n\nexport function RecordsListRow({}: RecordsListRowProps) {\n  return <div>RecordsListRow</div>;\n}\n"
           }
         ]
       },
@@ -200,7 +208,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldStringProps = {};\n\nexport function RecordFieldString({}: RecordFieldStringProps) {\n  return <div>RecordFieldString</div>;\n}\n"
           },
           {
             "title": "RecordFieldNumber",
@@ -217,7 +226,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldNumberProps = {};\n\nexport function RecordFieldNumber({}: RecordFieldNumberProps) {\n  return <div>RecordFieldNumber</div>;\n}\n"
           },
           {
             "title": "RecordFieldBoolean",
@@ -234,7 +244,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldBooleanProps = {};\n\nexport function RecordFieldBoolean({}: RecordFieldBooleanProps) {\n  return <div>RecordFieldBoolean</div>;\n}\n"
           },
           {
             "title": "RecordFieldRange",
@@ -251,7 +262,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldRangeProps = {};\n\nexport function RecordFieldRange({}: RecordFieldRangeProps) {\n  return <div>RecordFieldRange</div>;\n}\n"
           },
           {
             "title": "RecordFieldRoot",
@@ -268,7 +280,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldRootProps = {};\n\nexport function RecordFieldRoot({}: RecordFieldRootProps) {\n  return <div>RecordFieldRoot</div>;\n}\n"
           },
           {
             "title": "RecordFieldAuto",
@@ -285,7 +298,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldAutoProps = {};\n\nexport function RecordFieldAuto({}: RecordFieldAutoProps) {\n  return <div>RecordFieldAuto</div>;\n}\n"
           },
           {
             "title": "RecordFieldDateTime",
@@ -302,7 +316,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldDateTimeProps = {};\n\nexport function RecordFieldDateTime({}: RecordFieldDateTimeProps) {\n  return <div>RecordFieldDateTime</div>;\n}\n"
           },
           {
             "title": "RecordFieldEnum",
@@ -319,7 +334,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldEnumProps = {};\n\nexport function RecordFieldEnum({}: RecordFieldEnumProps) {\n  return <div>RecordFieldEnum</div>;\n}\n"
           },
           {
             "title": "RecordFieldBytes",
@@ -336,7 +352,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldBytesProps = {};\n\nexport function RecordFieldBytes({}: RecordFieldBytesProps) {\n  return <div>RecordFieldBytes</div>;\n}\n"
           }
         ]
       },
@@ -360,7 +377,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordAutoProps = {};\n\nexport function RecordAuto({}: RecordAutoProps) {\n  return <div>RecordAuto</div>;\n}\n"
           },
           {
             "title": "RecordRow",
@@ -377,7 +395,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordRowProps = {};\n\nexport function RecordRow({}: RecordRowProps) {\n  return <div>RecordRow</div>;\n}\n"
           },
           {
             "title": "RecordInline",
@@ -394,7 +413,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordInlineProps = {};\n\nexport function RecordInline({}: RecordInlineProps) {\n  return <div>RecordInline</div>;\n}\n"
           },
           {
             "title": "RecordCard",
@@ -411,7 +431,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordCardProps = {};\n\nexport function RecordCard({}: RecordCardProps) {\n  return <div>RecordCard</div>;\n}\n"
           }
         ]
       },
@@ -435,7 +456,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewHoverCardProps = {};\n\nexport function ViewHoverCard({}: ViewHoverCardProps) {\n  return <div>ViewHoverCard</div>;\n}\n"
           },
           {
             "title": "ViewAvatar",
@@ -452,7 +474,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewAvatarProps = {};\n\nexport function ViewAvatar({}: ViewAvatarProps) {\n  return <div>ViewAvatar</div>;\n}\n"
           },
           {
             "title": "ViewDateTime",
@@ -469,7 +492,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewDateTimeProps = {};\n\nexport function ViewDateTime({}: ViewDateTimeProps) {\n  return <div>ViewDateTime</div>;\n}\n"
           },
           {
             "title": "ViewSheet",
@@ -486,7 +510,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewSheetProps = {};\n\nexport function ViewSheet({}: ViewSheetProps) {\n  return <div>ViewSheet</div>;\n}\n"
           },
           {
             "title": "ViewTag",
@@ -503,7 +528,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewTagProps = {};\n\nexport function ViewTag({}: ViewTagProps) {\n  return <div>ViewTag</div>;\n}\n"
           },
           {
             "title": "ViewCard",
@@ -520,7 +546,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewCardProps = {};\n\nexport function ViewCard({}: ViewCardProps) {\n  return <div>ViewCard</div>;\n}\n"
           },
           {
             "title": "ViewPopover",
@@ -537,7 +564,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewPopoverProps = {};\n\nexport function ViewPopover({}: ViewPopoverProps) {\n  return <div>ViewPopover</div>;\n}\n"
           },
           {
             "title": "ViewDialog",
@@ -554,7 +582,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewDialogProps = {};\n\nexport function ViewDialog({}: ViewDialogProps) {\n  return <div>ViewDialog</div>;\n}\n"
           },
           {
             "title": "ViewBlock",
@@ -571,7 +600,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type ViewBlockProps = {};\n\nexport function ViewBlock({}: ViewBlockProps) {\n  return <div>ViewBlock</div>;\n}\n"
           }
         ]
       },
@@ -595,7 +625,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldManyToOneProps = {};\n\nexport function RecordFieldManyToOne({}: RecordFieldManyToOneProps) {\n  return <div>RecordFieldManyToOne</div>;\n}\n"
           },
           {
             "title": "RecordFieldRelationalAuto",
@@ -612,7 +643,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldRelationalAutoProps = {};\n\nexport function RecordFieldRelationalAuto({}: RecordFieldRelationalAutoProps) {\n  return <div>RecordFieldRelationalAuto</div>;\n}\n"
           },
           {
             "title": "RecordFieldOneToMany",
@@ -629,7 +661,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldOneToManyProps = {};\n\nexport function RecordFieldOneToMany({}: RecordFieldOneToManyProps) {\n  return <div>RecordFieldOneToMany</div>;\n}\n"
           },
           {
             "title": "RecordFieldManyToMany",
@@ -646,7 +679,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldManyToManyProps = {};\n\nexport function RecordFieldManyToMany({}: RecordFieldManyToManyProps) {\n  return <div>RecordFieldManyToMany</div>;\n}\n"
           },
           {
             "title": "RecordFieldOneToOne",
@@ -663,7 +697,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldOneToOneProps = {};\n\nexport function RecordFieldOneToOne({}: RecordFieldOneToOneProps) {\n  return <div>RecordFieldOneToOne</div>;\n}\n"
           }
         ]
       },
@@ -687,7 +722,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FormAutoProps = {};\n\nexport function FormAuto({}: FormAutoProps) {\n  return <div>FormAuto</div>;\n}\n"
           },
           {
             "title": "FormUpdateMany",
@@ -704,7 +740,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FormUpdateManyProps = {};\n\nexport function FormUpdateMany({}: FormUpdateManyProps) {\n  return <div>FormUpdateMany</div>;\n}\n"
           },
           {
             "title": "FormCreateMany",
@@ -721,7 +758,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FormCreateManyProps = {};\n\nexport function FormCreateMany({}: FormCreateManyProps) {\n  return <div>FormCreateMany</div>;\n}\n"
           },
           {
             "title": "FormDelete",
@@ -738,7 +776,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FormDeleteProps = {};\n\nexport function FormDelete({}: FormDeleteProps) {\n  return <div>FormDelete</div>;\n}\n"
           },
           {
             "title": "FormCreate",
@@ -755,7 +794,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FormCreateProps = {};\n\nexport function FormCreate({}: FormCreateProps) {\n  return <div>FormCreate</div>;\n}\n"
           },
           {
             "title": "FormRoot",
@@ -772,7 +812,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FormRootProps = {};\n\nexport function FormRoot({}: FormRootProps) {\n  return <div>FormRoot</div>;\n}\n"
           },
           {
             "title": "FormUpdate",
@@ -789,7 +830,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FormUpdateProps = {};\n\nexport function FormUpdate({}: FormUpdateProps) {\n  return <div>FormUpdate</div>;\n}\n"
           }
         ]
       },
@@ -797,7 +839,68 @@ export const REGISTRY_BUILD: RegistryBuild = {
         "name": "lib",
         "description": "",
         "url": "/prisma/lib",
-        "codeDocs": []
+        "codeDocs": [
+          {
+            "title": "CreateQueryHook",
+            "description": "",
+            "props": {},
+            "url": "/prisma/lib/create-query-hook",
+            "fileName": "create-query-hook.ts",
+            "filePath": "../registry/prisma/lib/create-query-hook.ts",
+            "name": "create-query-hook",
+            "registry": "https://futurjs.vercel.app/r/create-query-hook.json",
+            "componentName": "CreateQueryHook",
+            "codes": [],
+            "exemples": [],
+            "target": null,
+            "dependencies": [
+              "@tanstack/react-query"
+            ],
+            "registryDependencies": [],
+            "registryType": "registry:component",
+            "content": "\"use client\";\nimport {\n  useQuery,\n  useMutation,\n  useQueryClient,\n  UseQueryOptions,\n  QueryKey,\n  QueryFunctionContext,\n  DefaultError,\n  UseMutationOptions,\n} from \"@tanstack/react-query\";\n\nexport type FnHookQuery<\n  T,\n  R,\n  TQueryKey extends QueryKey = QueryKey,\n  TPageParam = never\n> = (\n  dbClient: T,\n  context: QueryFunctionContext<TQueryKey, TPageParam>\n) => R | Promise<R>;\n\nexport type UseHookQueryOptions<T, R, TQueryKey extends QueryKey = QueryKey> = {\n  queryFn: FnHookQuery<T, R, TQueryKey>;\n} & Omit<UseQueryOptions<R, DefaultError, R, TQueryKey>, \"queryFn\">;\n\nexport type FnHookMutation<T, TData = unknown, TVariables = unknown> = (\n  variables: TVariables,\n  dbClient: T\n) => Promise<TData>;\n\nexport type UseHookMutationOptions<\n  T,\n  R,\n  TVariables = unknown,\n  TContext = unknown\n> = {\n  mutationFn: FnHookMutation<T, R, TVariables>;\n  invalidateOnSuccess?: QueryKey[];\n} & Omit<\n  UseMutationOptions<R, DefaultError, TVariables, TContext>,\n  \"mutationFn\"\n>;\nexport type FnActionHandler = ((args: any) => any) | ((args?: any) => any);\nexport type ActionHandler = {\n  [modelName: string]: {\n    [methodName: string]: FnActionHandler;\n  };\n};\n\nexport function createQueryHook<T extends ActionHandler>(handler: T) {\n  return {\n    useActionQuery: createUseActionQuery<T>(handler),\n    useActionMutation: createUseActionMutation<T>(handler),\n  };\n}\ncreateQueryHook.dependencies = [\"@tanstack/react-query\"];\n\nfunction createUseActionQuery<T extends object>(handler: T) {\n  return function useDbQuery<R, TQueryKey extends QueryKey = QueryKey>(\n    options: UseHookQueryOptions<T, R, TQueryKey>\n  ) {\n    return useQuery({\n      ...options,\n      queryFn: (context) => options.queryFn(handler, context),\n    });\n  };\n}\n\nfunction createUseActionMutation<T extends object>(handler: T) {\n  return function useDbMutation<R, TVariables = unknown, TContext = unknown>(\n    options: UseHookMutationOptions<T, R, TVariables, TContext>\n  ) {\n    const queryClient = useQueryClient();\n    return useMutation({\n      ...options,\n      mutationFn: (variables) => options.mutationFn(variables, handler),\n      onSuccess(data, variables, context) {\n        if (options.invalidateOnSuccess) {\n          options.invalidateOnSuccess.forEach((key) => {\n            const queryKey = Array.isArray(key) ? key : [key];\n            queryClient.invalidateQueries({ queryKey });\n          });\n        }\n        if (options.onSuccess) {\n          options.onSuccess(data, variables, context);\n        }\n      },\n    });\n  };\n}\n"
+          },
+          {
+            "title": "CreateDbApiServer",
+            "description": "",
+            "props": {},
+            "url": "/prisma/lib/create-db-api-server",
+            "fileName": "create-db-api-server.ts",
+            "filePath": "../registry/prisma/lib/create-db-api-server.ts",
+            "name": "create-db-api-server",
+            "registry": "https://futurjs.vercel.app/r/create-db-api-server.json",
+            "componentName": "CreateDbApiServer",
+            "codes": [],
+            "exemples": [],
+            "target": null,
+            "dependencies": [],
+            "registryDependencies": [],
+            "registryType": "registry:component",
+            "content": "export type DbApiServerProps = {\n  modelName: string;\n  methodName: string;\n  args: Record<string, any>;\n};\nexport type DbServer = {\n  [modelName: string]: {\n    [methodName: string]: ((args: any) => any) | ((args?: any) => any);\n  };\n};\n\nexport function createDbApiServer<T extends DbServer>(dbServer: T) {\n  return {\n    handleRequest: async (props: DbApiServerProps) => {\n      const { modelName, methodName, args } = props;\n\n      if (!modelName || !methodName) {\n        throw new Error(\"Model name and method name must be provided.\");\n      }\n      if (typeof modelName !== \"string\" || typeof methodName !== \"string\") {\n        throw new Error(\"Model name and method name must be strings.\");\n      }\n      if (args && (typeof args !== \"object\" || Array.isArray(args))) {\n        throw new Error(\"Args must be an object.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(modelName) === false) {\n        throw new Error(\"Model name contains invalid characters.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(methodName) === false) {\n        throw new Error(\"Method name contains invalid characters.\");\n      }\n      if (!(modelName in dbServer)) {\n        throw new Error(`Model ${modelName} does not exist on the server.`);\n      }\n\n      const model = dbServer[modelName];\n\n      if (!(methodName in model)) {\n        throw new Error(\n          `Method ${methodName} does not exist on model ${modelName}.`\n        );\n      }\n\n      const method = model[methodName];\n\n      if (typeof method !== \"function\") {\n        throw new Error(\n          `${methodName} is not a function on model ${modelName}.`\n        );\n      }\n      try {\n        return {\n          data: await method(args),\n        };\n      } catch (error) {\n        return {\n          error: String(error),\n        };\n      }\n    },\n  };\n}\n"
+          },
+          {
+            "title": "CreateDbApiClient",
+            "description": "",
+            "props": {},
+            "url": "/prisma/lib/create-db-api-client",
+            "fileName": "create-db-api-client.ts",
+            "filePath": "../registry/prisma/lib/create-db-api-client.ts",
+            "name": "create-db-api-client",
+            "registry": "https://futurjs.vercel.app/r/create-db-api-client.json",
+            "componentName": "CreateDbApiClient",
+            "codes": [],
+            "exemples": [],
+            "target": null,
+            "dependencies": [
+              "axios"
+            ],
+            "registryDependencies": [
+              "create-query-hook"
+            ],
+            "registryType": "registry:component",
+            "content": "\"use client\";\nimport axios, { AxiosError } from \"axios\";\nimport { ActionHandler, createQueryHook } from \"./create-query-hook\";\n\nexport type DbHookPrisma<T = any> = {\n  [K in keyof T as K extends `$${infer R}` ? never : K]: Omit<T[K], \"fields\">;\n};\n\nexport type DbConfig = {\n  baseUrl: string;\n};\n\nexport function createDbApiClient<T extends ActionHandler>(config: DbConfig) {\n  const dbClient = createProxy<T>(config);\n  const queryHook = createQueryHook(dbClient);\n  return {\n    useDbQuery: queryHook.useActionQuery,\n    useDbMutation: queryHook.useActionMutation,\n  };\n}\ncreateDbApiClient.registryDependencies = [\"create-query-hook\"];\ncreateDbApiClient.dependencies = [\"axios\"];\n\nfunction createProxy<T extends object>(config: DbConfig) {\n  return new Proxy(\n    {},\n    {\n      get: (_, modelName) => {\n        return new Proxy(\n          {},\n          {\n            get: (_, methodName) => {\n              return (args: Record<string, any>) => {\n                return fetchDbData(\n                  modelName as string,\n                  methodName as string,\n                  args,\n                  config\n                );\n              };\n            },\n          }\n        );\n      },\n    }\n  ) as T;\n}\n\nasync function fetchDbData<T>(\n  modelName: string,\n  methodName: string,\n  args: Record<string, any>,\n  config: DbConfig\n) {\n  if (!modelName || !methodName) {\n    throw new Error(\"Model name and method name must be provided.\");\n  }\n  try {\n    const res = await axios.post(\n      `${config.baseUrl}/${modelName}/${methodName}`,\n      {\n        args,\n      }\n    );\n    return res.data || null;\n  } catch (error) {\n    const axiosError = error as AxiosError;\n    throw new Error(\n      String(axiosError.response?.data || axiosError.message || String(error))\n    );\n  }\n}\n"
+          }
+        ]
       },
       "field-scalars": {
         "name": "field-scalars",
@@ -829,7 +932,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldRootProps = {};\n\nexport function FieldRoot({}: FieldRootProps) {\n  return <div>FieldRoot</div>;\n}\n"
           },
           {
             "title": "FieldEnum",
@@ -846,7 +950,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldEnumProps = {};\n\nexport function FieldEnum({}: FieldEnumProps) {\n  return <div>FieldEnum</div>;\n}\n"
           },
           {
             "title": "FieldString",
@@ -863,7 +968,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\n// string\n// text\n// password\n// password-create\n// email\n// url\n// json\n// otp\n// description\nexport type FieldStringProps = {};\n\nexport function FieldString({}: FieldStringProps) {\n  return <div>FieldString</div>;\n}\n"
           },
           {
             "title": "FieldDateTime",
@@ -880,7 +986,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\n// date time\n// date\n// time\n// timestamp\nexport type FieldDateTimeProps = {};\n\nexport function FieldDateTime({}: FieldDateTimeProps) {\n  return <div>FieldDateTime</div>;\n}\n"
           },
           {
             "title": "FieldNumber",
@@ -897,7 +1004,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\n// big int\n// int\n// float\n// decimal\nexport type FieldNumberProps = {};\n\nexport function FieldNumber({}: FieldNumberProps) {\n  return <div>FieldNumber</div>;\n}\n"
           },
           {
             "title": "FieldRange",
@@ -914,7 +1022,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\n// range date time\n// range date\n// range time\n// range timestamp\n// range int\n// range float\n// range decimal\n// range big int\nexport type FieldRangeProps = {};\n\nexport function FieldRange({}: FieldRangeProps) {\n  return <div>FieldRange</div>;\n}\n"
           },
           {
             "title": "FieldAuto",
@@ -931,7 +1040,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldAutoProps = {};\n\nexport function FieldAuto({}: FieldAutoProps) {\n  return <div>FieldAuto</div>;\n}\n"
           },
           {
             "title": "FieldBoolean",
@@ -948,7 +1058,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldBooleanProps = {};\n\nexport function FieldBoolean({}: FieldBooleanProps) {\n  return <div>FieldBoolean</div>;\n}\n"
           },
           {
             "title": "FieldBytes",
@@ -965,7 +1076,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldBytesProps = {};\n\nexport function FieldBytes({}: FieldBytesProps) {\n  return <div>FieldBytes</div>;\n}\n"
           }
         ]
       },
@@ -989,7 +1101,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldScalarProps = {};\n\nexport function RecordFieldScalar({}: RecordFieldScalarProps) {\n  return <div>RecordFieldScalar</div>;\n}\n"
           },
           {
             "title": "RecordFieldListAuto",
@@ -1006,7 +1119,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldListAutoProps = {};\n\nexport function RecordFieldListAuto({}: RecordFieldListAutoProps) {\n  return <div>RecordFieldListAuto</div>;\n}\n"
           },
           {
             "title": "RecordFieldListRelational",
@@ -1023,7 +1137,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type RecordFieldListRelationalProps = {};\n\nexport function RecordFieldListRelational({}: RecordFieldListRelationalProps) {\n  return <div>RecordFieldListRelational</div>;\n}\n"
           }
         ]
       },
@@ -1047,7 +1162,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldRelationalAutoProps = {};\n\nexport function FieldRelationalAuto({}: FieldRelationalAutoProps) {\n  return <div>FieldRelationalAuto</div>;\n}\n"
           },
           {
             "title": "FieldOneToMany",
@@ -1064,7 +1180,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldOneToManyProps = {};\n\nexport function FieldOneToMany({}: FieldOneToManyProps) {\n  return <div>FieldOneToMany</div>;\n}\n"
           },
           {
             "title": "FieldManyToMany",
@@ -1081,7 +1198,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldManyToManyProps = {};\n\nexport function FieldManyToMany({}: FieldManyToManyProps) {\n  return <div>FieldManyToMany</div>;\n}\n"
           },
           {
             "title": "FieldOneToOne",
@@ -1098,7 +1216,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldOneToOneProps = {};\n\nexport function FieldOneToOne({}: FieldOneToOneProps) {\n  return <div>FieldOneToOne</div>;\n}\n"
           },
           {
             "title": "FieldManyToOne",
@@ -1115,7 +1234,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldManyToOneProps = {};\n\nexport function FieldManyToOne({}: FieldManyToOneProps) {\n  return <div>FieldManyToOne</div>;\n}\n"
           }
         ]
       },
@@ -1139,7 +1259,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type PageRecordListProps = {};\n\nexport function PageRecordList({}: PageRecordListProps) {\n  return <div>PageRecordList</div>;\n}\n"
           },
           {
             "title": "PageRecord",
@@ -1156,7 +1277,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type PageRecordProps = {};\n\nexport function PageRecord({}: PageRecordProps) {\n  return <div>PageRecord</div>;\n}\n"
           },
           {
             "title": "PageDatabase",
@@ -1173,7 +1295,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type PageDatabaseProps = {};\n\nexport function PageDatabase({}: PageDatabaseProps) {\n  return <div>PageDatabase</div>;\n}\n"
           }
         ]
       },
@@ -1197,7 +1320,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldListRelationalProps = {};\n\nexport function FieldListRelational({}: FieldListRelationalProps) {\n  return <div>FieldListRelational</div>;\n}\n"
           },
           {
             "title": "FieldListScalar",
@@ -1214,7 +1338,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldListScalarProps = {};\n\nexport function FieldListScalar({}: FieldListScalarProps) {\n  return <div>FieldListScalar</div>;\n}\n"
           },
           {
             "title": "FieldListAuto",
@@ -1231,7 +1356,8 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": null,
             "dependencies": [],
             "registryDependencies": [],
-            "registryType": "registry:component"
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nexport type FieldListAutoProps = {};\n\nexport function FieldListAuto({}: FieldListAutoProps) {\n  return <div>FieldListAuto</div>;\n}\n"
           }
         ]
       }

@@ -33,6 +33,7 @@ export type CodeDocType = {
     | "registry:file"
     | "registry:style"
     | "registry:theme";
+  content: string;
 };
 
 export type RegistryPackage = {

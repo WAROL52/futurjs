@@ -104,6 +104,7 @@ async function getCodeDocs(name: string, path: string) {
     await Promise.all(
       fileNames.map(async (fileName) => {
         const filePath = `${path}/${fileName}`;
+
         const rest = await import(filePath);
 
         const namebase = fileName.split(".")[0];
@@ -111,8 +112,12 @@ async function getCodeDocs(name: string, path: string) {
           .split("-")
           .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
           .join("");
-        const component = rest[componentName];
-        if (typeof component != "function") return null;
+        const libName = componentName[0].toLowerCase() + componentName.slice(1);
+        const component = rest[componentName] || rest[libName];
+
+        if (typeof component != "function") {
+          return null;
+        }
 
         return {
           title: component.title || componentName,
@@ -127,9 +132,10 @@ async function getCodeDocs(name: string, path: string) {
           codes: await getCodeSource({ filename: "preview.tsx", namebase }),
           exemples: await getExemples(namebase),
           target: null,
-          dependencies: [],
-          registryDependencies: [],
+          dependencies: component.dependencies || [],
+          registryDependencies: component.registryDependencies || [],
           registryType: "registry:component",
+          content: readFileSync(filePath, { encoding: "utf-8" }),
         };
       })
     )

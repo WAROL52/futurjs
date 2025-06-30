@@ -1,6 +1,6 @@
 "use client";
 import axios, { AxiosError } from "axios";
-import { ActionHandler, createQueryHook } from "./query-hook";
+import { ActionHandler, createQueryHook } from "./create-query-hook";
 
 export type DbHookPrisma<T = any> = {
   [K in keyof T as K extends `$${infer R}` ? never : K]: Omit<T[K], "fields">;
@@ -18,6 +18,8 @@ export function createDbApiClient<T extends ActionHandler>(config: DbConfig) {
     useDbMutation: queryHook.useActionMutation,
   };
 }
+createDbApiClient.registryDependencies = ["create-query-hook"];
+createDbApiClient.dependencies = ["axios"];
 
 function createProxy<T extends object>(config: DbConfig) {
   return new Proxy(

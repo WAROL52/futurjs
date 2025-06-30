@@ -59,3 +59,33 @@ export function getCodeDoc(params: {
 
   return pkg.codeDocs.find((doc) => doc.name === params.docName) || null;
 }
+export function getAllCodeDocs(): CodeDocsProps[] {
+  return Object.values(REGISTRY_BUILD)
+    .map((reg) =>
+      Object.values(reg.packages)
+        .map((pkg) => pkg.codeDocs)
+        .flat()
+    )
+    .flat();
+}
+
+export function getUrlRegistryDependencies(name: string) {
+  const codeDocs = getAllCodeDocs();
+  const doc = codeDocs.find((doc) => doc.name === name);
+  if (!doc) return null;
+  return doc.url;
+}
+
+export function getUrlRegistryNeeds(name: string) {
+  return getAllCodeDocs()
+    .filter((doc) => doc.registryDependencies.includes(name))
+    .map((doc) => {
+      return {
+        name: doc.name,
+        url: doc.url,
+        title: doc.title,
+        description: doc.description,
+        registryDependencies: doc.registryDependencies,
+      };
+    });
+}

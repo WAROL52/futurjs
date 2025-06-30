@@ -54,6 +54,7 @@ export function createQueryHook<T extends ActionHandler>(handler: T) {
     useActionMutation: createUseActionMutation<T>(handler),
   };
 }
+createQueryHook.dependencies = ["@tanstack/react-query"];
 
 function createUseActionQuery<T extends object>(handler: T) {
   return function useDbQuery<R, TQueryKey extends QueryKey = QueryKey>(
