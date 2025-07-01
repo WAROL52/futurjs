@@ -127,7 +127,7 @@ async function getCodeDocs(name: string, path: string) {
           fileName,
           filePath,
           name: namebase,
-          registry: `${BASE_URL}/r/${namebase}.json`,
+          registryUrl: `${BASE_URL}/r/${namebase}.json`,
           componentName,
           codes: await getCodeSource({ filename: "preview.tsx", namebase }),
           exemples: await getExemples(namebase),

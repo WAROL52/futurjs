@@ -10,16 +10,18 @@ import {
 import { CodeViewer } from "./code-viewer";
 import { useResponsive } from "@/hooks/use-responsive";
 import { useState } from "react";
+import { CodeSnippetRegistryInstall } from "./code-snippet-registry-install";
 
 export type FileViewerProps = {
   codes: CodeView[];
+  registryUrl?: string;
 };
 
-export function FileViewer({ codes }: FileViewerProps) {
+export function FileViewer({ codes, registryUrl }: FileViewerProps) {
   const { isMobile, width } = useResponsive();
   const [active, setActive] = useState(0);
   return (
-    <div className="border p-1 rounded-lg py-4 bg-background">
+    <div className="border p-1 rounded-lg  bg-background">
       <span className="hidden">
         {width}-{active}
       </span>
@@ -37,6 +39,9 @@ export function FileViewer({ codes }: FileViewerProps) {
           <CodeViewer codes={codes[active] ? [codes[active]] : []} />
         </ResizablePanel>
       </ResizablePanelGroup>
+      <div className="mt-1">
+        <CodeSnippetRegistryInstall registryUrl={registryUrl || ""} />
+      </div>
     </div>
   );
 }

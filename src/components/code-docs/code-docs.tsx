@@ -30,6 +30,7 @@ import {
 import Link from "next/link";
 import { RegistryDependent } from "./registry-dependent";
 import { FileViewer } from "./file-viewer";
+import { CodeSnippetRegistryInstall } from "./code-snippet-registry-install";
 export type CodeDocsProps = PropsWithChildren<CodeDocType>;
 
 export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
@@ -39,7 +40,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
     codes,
     props,
     componentName,
-    registry,
+    registryUrl: registry,
     exemples,
     fileName,
   } = codeDocs;
@@ -86,23 +87,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
         </TabsContent>
 
         <TabsContent value="code">
-          <FileViewer
-            codes={
-              codes.length
-                ? codes
-                : [
-                    {
-                      content: "// Empty code",
-                      filename: "preview.tsx",
-                      language: "tsx",
-                      description: "",
-                      path: "src/preview.tsx",
-                      props: {},
-                      title: "Preview",
-                    },
-                  ]
-            }
-          />
+          <FileViewer codes={codes} />
           {/* <CodeViewer
             codes={
               codes.length
@@ -218,30 +203,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
             </TabsList>
             <div className="px-2">
               <TabsContent value="CLI">
-                <CodeSnippet
-                  commands={[
-                    {
-                      label: "npm",
-                      // icon: BoxIcon,
-                      code: "npx shadcn@latest add " + registry,
-                    },
-                    {
-                      label: "yarn",
-                      // icon: BoxIcon,
-                      code: "yarn shadcn@latest add " + registry,
-                    },
-                    {
-                      label: "pnpm",
-                      // icon: BoxIcon,
-                      code: "pnpm dlx shadcn@latest add " + registry,
-                    },
-                    {
-                      label: "bun",
-                      // icon: BoxIcon,
-                      code: "bunx --bun shadcn@latest add " + registry,
-                    },
-                  ]}
-                />
+                <CodeSnippetRegistryInstall registryUrl={registry} />
               </TabsContent>
               <TabsContent value="Manual">
                 {codeDocs.dependencies.length > 0 && (

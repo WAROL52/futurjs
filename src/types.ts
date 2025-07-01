@@ -16,7 +16,7 @@ export type CodeDocType = {
   fileName: string;
   filePath: string;
   name: string;
-  registry: string;
+  registryUrl: string;
   componentName: string;
   codes: Array<CodeView>;
   exemples: Array<CodeView>;
