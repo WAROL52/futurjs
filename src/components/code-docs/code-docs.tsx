@@ -37,11 +37,10 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
   const {
     title,
     description,
-    codes,
+    demo,
     props,
     componentName,
     registryUrl: registry,
-    exemples,
     fileName,
   } = codeDocs;
   const properties = Object.entries(props || {}).map(([name, prop]) => ({
@@ -52,6 +51,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
     required: prop.required || false,
   }));
   const dependents = getUrlRegistryNeeds(codeDocs.name);
+  const exemples = Object.entries(codeDocs.exemples);
   return (
     <section id="button" className="space-y-6 mb-8">
       <div>
@@ -81,13 +81,13 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
         <TabsContent value="preview" className="space-y-4 ">
           <Card className="bg-background">
             <CardContent className="space-y-4 ">
-              <Previewer path={codes.at(0)?.path} />
+              <Previewer path={demo.at(0)?.path} />
             </CardContent>
           </Card>
         </TabsContent>
 
         <TabsContent value="code">
-          <FileViewer codes={codes} />
+          <FileViewer codes={demo} />
           {/* <CodeViewer
             codes={
               codes.length
@@ -307,10 +307,13 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
           <p className="text-muted-foreground">
             This is an example of how to use this component.
           </p>
-          {exemples.map((example, index) => (
+          {exemples.map(([exempleTitle, exempleCodes], index) => (
             <Card key={index} className="mb-8 bg-background">
+              <CardHeader>
+                <CardTitle>{exempleTitle}</CardTitle>
+              </CardHeader>
               <CardContent>
-                <CodeExample code={example} />
+                <CodeExample codes={exempleCodes} />
               </CardContent>
             </Card>
           ))}
@@ -320,7 +323,9 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
   );
 }
 
-function CodeExample({ code }: { code: CodeView }) {
+function CodeExample({ codes }: { codes: CodeView[] }) {
+  const code = codes.find((c) => c.filename == "main.tsx");
+  if (!code) return "main.tsx not found!";
   return (
     <div>
       <div>
@@ -349,11 +354,7 @@ function CodeExample({ code }: { code: CodeView }) {
         </TabsContent>
 
         <TabsContent value="code">
-          <Card>
-            <CardContent className="space-y-4">
-              <CodeViewer codes={[code]} />
-            </CardContent>
-          </Card>
+          <FileViewer codes={codes} />
         </TabsContent>
       </Tabs>
     </div>

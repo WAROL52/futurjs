@@ -20,6 +20,7 @@ export type FileViewerProps = {
 export function FileViewer({ codes, registryUrl }: FileViewerProps) {
   const { isMobile, width } = useResponsive();
   const [active, setActive] = useState(0);
+  if (codes.length <= 1) return <CodeViewer codes={codes} />;
   return (
     <div className="border p-1 rounded-lg  bg-background">
       <span className="hidden">

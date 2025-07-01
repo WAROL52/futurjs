@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as React from "react";
 import { GalleryVerticalEnd } from "lucide-react";
@@ -162,22 +162,34 @@ const data = {
 };
 
 export function AppSidebarDoc({
-  registry,...props
-
+  registry,
+  ...props
 }: React.ComponentProps<typeof Sidebar> & { registry: RegistryFig }) {
-  const path = usePathname()
+  const path = usePathname();
+  const packages = Object.values(registry.packages)
+    .filter((pkg: RegistryPackage) => {
+      pkg.codeDocs = pkg.codeDocs.filter((doc) => {
+        // Filter out code docs that are not relevant
+        return doc.demo.length > 0;
+      });
+      return pkg.codeDocs.length > 0;
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
   return (
-    <Sidebar variant="inset" {...props} >
+    <Sidebar variant="inset" {...props}>
       <div className="md:my-8"></div>
       <SidebarHeader>
-        <RegistrySwitcher/>
+        <RegistrySwitcher />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu className="gap-2">
-            {(Object.values(registry.packages)).map((item) => (
+            {packages.map((item) => (
               <SidebarMenuItem key={item.name}>
-                <SidebarMenuButton asChild isActive={path===`/docs${item.url}`}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={path === `/docs${item.url}`}
+                >
                   <Link href={`/docs${item.url}`} className="font-medium ">
                     {item.name}
                   </Link>
@@ -188,7 +200,7 @@ export function AppSidebarDoc({
                       <SidebarMenuSubItem key={item.title}>
                         <SidebarMenuSubButton
                           asChild
-                          isActive={path===`/docs${item.url}`}
+                          isActive={path === `/docs${item.url}`}
                           className="text-foreground/60"
                         >
                           <Link

@@ -93,5 +93,5 @@ export function getUrlRegistryNeeds(name: string) {
 export function normalizePath(path: string) {
   return path
     .replace("../registry", "@/components")
-    .replace("../_exemples", "@/components/exemples");
+    .replace("../_exemples", "exemples");
 }

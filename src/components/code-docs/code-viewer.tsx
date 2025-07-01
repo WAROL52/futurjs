@@ -18,6 +18,7 @@ import {
 import type { BundledLanguage } from "@/components/ui/kibo-ui/code-block";
 import { normalizePath } from "@/lib/utils";
 import { CodeView } from "@/types";
+import { Card } from "../ui/card";
 
 export type CodeViewerProps = {
   codes: CodeView[];
@@ -25,7 +26,21 @@ export type CodeViewerProps = {
 
 export function CodeViewer({ codes }: CodeViewerProps) {
   if (!codes || codes.length === 0) {
-    return null;
+    return (
+      <CodeViewer
+        codes={[
+          {
+            content: "// 404 not found!",
+            description: "",
+            filename: "not_found.tsx",
+            language: "tsx",
+            path: "not_found.tsx",
+            props: {},
+            title: "404",
+          },
+        ]}
+      />
+    );
   }
 
   return (

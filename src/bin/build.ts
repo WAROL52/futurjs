@@ -6,6 +6,7 @@ import { get } from "http";
 
 export const REGISTRY_DIR_PATH = "../registry";
 export const EXAMPLE_DIR_PATH = "../_exemples";
+export const EXEMPLE_DEMO_FOLDER = "demo";
 const PREVIEW_COMPONENTS: Record<string, string> = {};
 
 function getListDirName(path: string) {
@@ -36,21 +37,26 @@ function fileExists(path: string) {
   }
 }
 
-async function getCodeSource(params: { filename: string; namebase: string }) {
-  const { filename, namebase } = params;
-  const path = `${EXAMPLE_DIR_PATH}/${namebase}/${filename}`;
+async function getCodeSource(params: {
+  filename: string;
+  namebase: string;
+  dirname?: string;
+}) {
+  const { filename, namebase, dirname } = params;
+  const path = dirname
+    ? `${EXAMPLE_DIR_PATH}/${namebase}/${dirname}/${filename}`
+    : `${EXAMPLE_DIR_PATH}/${namebase}/${filename}`;
   if (!fileExists(path)) return [];
-  const { default: Component } = await import(path);
-  if (typeof Component !== "function") {
-    return [];
-  }
-  PREVIEW_COMPONENTS[path] = `() => import("../${path
-    .split(".")
-    .slice(0, -1)
-    .join(".")}")`;
+
+  const { default: Component = {} } = await import(path);
+  if (typeof Component == "function")
+    PREVIEW_COMPONENTS[path] = `() => import("../${path
+      .split(".")
+      .slice(0, -1)
+      .join(".")}")`;
   return [
     {
-      title: Component.title || Component.name || namebase,
+      title: Component.title || Component.name || filename,
       description: Component.description || "",
       props: Component.props || {},
       language: filename.split(".").pop() || "txt",
@@ -63,16 +69,32 @@ async function getCodeSource(params: { filename: string; namebase: string }) {
 
 async function getExemples(basename: string) {
   const path = `${EXAMPLE_DIR_PATH}/${basename}`;
-  const fileNames = getListFileName(path, [".tsx", ".ts"]).filter(
-    (fileName) => fileName !== "preview.tsx"
+  const dirs = getListDirName(path);
+
+  const exemples = await Promise.all(
+    dirs.map(async (dir) => {
+      const dirExemple = `${path}/${dir}`;
+
+      const fileNames = getListFileName(dirExemple, [".tsx", ".ts"]).filter(
+        (fileName) => fileName !== "preview.tsx"
+      );
+
+      const codes = (
+        await Promise.all(
+          fileNames.map((fileName) =>
+            getCodeSource({
+              filename: fileName,
+              namebase: basename,
+              dirname: dir,
+            })
+          )
+        )
+      ).flat();
+      return [dir, codes] as const;
+    })
   );
-  return (
-    await Promise.all(
-      fileNames.map((fileName) =>
-        getCodeSource({ filename: fileName, namebase: basename })
-      )
-    )
-  ).flat();
+  const result = Object.fromEntries(exemples);
+  return result;
 }
 
 function getListFileName(path: string, ext: string[]): string[] {
@@ -118,7 +140,13 @@ async function getCodeDocs(name: string, path: string) {
         if (typeof component != "function") {
           return null;
         }
-
+        // EXEMPLE_DEMO_FOLDER
+        const allExmples = await getExemples(namebase);
+        const demo =
+          Object.entries(allExmples).find(
+            ([name, codes]) => name === EXEMPLE_DEMO_FOLDER
+          )?.[1] || [];
+        delete allExmples[EXEMPLE_DEMO_FOLDER];
         return {
           title: component.title || componentName,
           description: component.description || "",
@@ -129,8 +157,8 @@ async function getCodeDocs(name: string, path: string) {
           name: namebase,
           registryUrl: `${BASE_URL}/r/${namebase}.json`,
           componentName,
-          codes: await getCodeSource({ filename: "preview.tsx", namebase }),
-          exemples: await getExemples(namebase),
+          demo,
+          exemples: allExmples,
           target: component.target || normalizePath(filePath),
           dependencies: component.dependencies || [],
           registryDependencies: component.registryDependencies || [],

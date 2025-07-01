@@ -18,8 +18,8 @@ export type CodeDocType = {
   name: string;
   registryUrl: string;
   componentName: string;
-  codes: Array<CodeView>;
-  exemples: Array<CodeView>;
+  demo: Array<CodeView>;
+  exemples: Record<string, Array<CodeView>>;
   target: string;
   dependencies: string[];
   registryDependencies: string[];
