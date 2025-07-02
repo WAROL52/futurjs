@@ -1,6 +1,6 @@
 import { PrismaClient } from "@/generated/prisma";
-import { DbHookPrisma } from "@/registry/prisma/lib/create-db-api-client";
-import { createDbApiServer } from "@/registry/prisma/lib/create-db-api-server";
+import { DbHookPrisma } from "@/shared/prisma/lib/create-db-api-client";
+import { createDbApiServer } from "@/shared/prisma/lib/create-db-api-server";
 import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();

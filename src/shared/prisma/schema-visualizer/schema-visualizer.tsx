@@ -14,8 +14,8 @@ import {
 import "@xyflow/react/dist/base.css";
 import { RiAddLine, RiSubtractLine, RiFullscreenLine } from "@remixicon/react";
 import { Button } from "@/components/ui/button";
-import TableNode from "@/registry/prisma/schema-visualizer/table-node";
-import SchemaEdge from "@/registry/prisma/schema-visualizer/schema-edge";
+import TableNode from "@/shared/prisma/schema-visualizer/table-node";
+import SchemaEdge from "@/shared/prisma/schema-visualizer/schema-edge";
 import { initialNodes, initialEdges } from "@/lib/schema-data";
 
 // Register custom node types and edge types

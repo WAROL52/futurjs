@@ -4,7 +4,7 @@ import { consola, createConsola } from "consola";
 import { readFile, readFileSync, readdirSync, writeFileSync } from "fs";
 import { get } from "http";
 
-export const REGISTRY_DIR_PATH = "../registry";
+export const REGISTRY_DIR_PATH = "../shared";
 export const EXAMPLE_DIR_PATH = "../_exemples";
 export const EXEMPLE_DEMO_FOLDER = "demo";
 const PREVIEW_COMPONENTS: Record<string, string> = {};

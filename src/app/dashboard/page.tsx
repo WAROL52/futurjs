@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/header";
-import SchemaVisualizer from "@/registry/prisma/schema-visualizer/schema-visualizer";
+import SchemaVisualizer from "@/shared/prisma/schema-visualizer/schema-visualizer";
 export const metadata: Metadata = {
   title: "Experiment 07 - Crafted.is",
 };

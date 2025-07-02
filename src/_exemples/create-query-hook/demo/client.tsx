@@ -1,6 +1,6 @@
 "use client";
 import * as user from "./action";
-import { createQueryHook } from "@/registry/prisma/lib/create-query-hook";
+import { createQueryHook } from "@/shared/prisma/lib/create-query-hook";
 
 export const { useActionMutation, useActionQuery } = createQueryHook({
   user,
