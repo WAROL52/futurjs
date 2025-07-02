@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/record-field-lists/record-field-list-relational.tsx",
+      "path": "src/shared/prisma/record-field-lists/record-field-list-relational.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldListRelationalProps = {};\n\nexport function RecordFieldListRelational({}: RecordFieldListRelationalProps) {\n  return <div>RecordFieldListRelational</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/record-field-lists/record-field-list-relational.tsx"

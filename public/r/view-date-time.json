@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/views/view-date-time.tsx",
+      "path": "src/shared/prisma/views/view-date-time.tsx",
       "content": "\"use client\";\n\nexport type ViewDateTimeProps = {};\n\nexport function ViewDateTime({}: ViewDateTimeProps) {\n  return <div>ViewDateTime</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/views/view-date-time.tsx"

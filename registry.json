@@ -11,7 +11,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/new-york/example-form/example-form.tsx",
+          "path": "src/shared/new-york/example-form/example-form.tsx",
           "type": "registry:component",
           "target": "shared/new-york/example-form/example-form.tsx"
         }
@@ -26,7 +26,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/new-york/hello-world/hello-world.tsx",
+          "path": "src/shared/new-york/hello-world/hello-world.tsx",
           "type": "registry:component",
           "target": "shared/new-york/hello-world/hello-world.tsx"
         }
@@ -41,7 +41,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records-lists/records-chart.tsx",
+          "path": "src/shared/prisma/records-lists/records-chart.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records-lists/records-chart.tsx"
         }
@@ -56,7 +56,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records-lists/records-auto.tsx",
+          "path": "src/shared/prisma/records-lists/records-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records-lists/records-auto.tsx"
         }
@@ -71,7 +71,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records-lists/records-table.tsx",
+          "path": "src/shared/prisma/records-lists/records-table.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records-lists/records-table.tsx"
         }
@@ -86,7 +86,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records-lists/records-list-card.tsx",
+          "path": "src/shared/prisma/records-lists/records-list-card.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records-lists/records-list-card.tsx"
         }
@@ -101,7 +101,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records-lists/records-list-inline.tsx",
+          "path": "src/shared/prisma/records-lists/records-list-inline.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records-lists/records-list-inline.tsx"
         }
@@ -116,7 +116,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records-lists/records-list-row.tsx",
+          "path": "src/shared/prisma/records-lists/records-list-row.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records-lists/records-list-row.tsx"
         }
@@ -131,7 +131,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-string.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-string.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-string.tsx"
         }
@@ -146,7 +146,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-number.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-number.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-number.tsx"
         }
@@ -161,7 +161,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-boolean.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-boolean.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-boolean.tsx"
         }
@@ -176,7 +176,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-range.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-range.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-range.tsx"
         }
@@ -191,7 +191,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-root.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-root.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-root.tsx"
         }
@@ -206,7 +206,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-auto.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-auto.tsx"
         }
@@ -221,7 +221,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-date-time.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-date-time.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-date-time.tsx"
         }
@@ -236,7 +236,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-enum.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-enum.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-enum.tsx"
         }
@@ -251,7 +251,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-scalars/record-field-bytes.tsx",
+          "path": "src/shared/prisma/record-field-scalars/record-field-bytes.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-scalars/record-field-bytes.tsx"
         }
@@ -266,7 +266,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records/record-auto.tsx",
+          "path": "src/shared/prisma/records/record-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records/record-auto.tsx"
         }
@@ -281,7 +281,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records/record-row.tsx",
+          "path": "src/shared/prisma/records/record-row.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records/record-row.tsx"
         }
@@ -296,7 +296,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records/record-inline.tsx",
+          "path": "src/shared/prisma/records/record-inline.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records/record-inline.tsx"
         }
@@ -311,7 +311,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/records/record-card.tsx",
+          "path": "src/shared/prisma/records/record-card.tsx",
           "type": "registry:component",
           "target": "shared/prisma/records/record-card.tsx"
         }
@@ -326,7 +326,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-hover-card.tsx",
+          "path": "src/shared/prisma/views/view-hover-card.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-hover-card.tsx"
         }
@@ -341,7 +341,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-avatar.tsx",
+          "path": "src/shared/prisma/views/view-avatar.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-avatar.tsx"
         }
@@ -356,7 +356,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-date-time.tsx",
+          "path": "src/shared/prisma/views/view-date-time.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-date-time.tsx"
         }
@@ -371,7 +371,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-sheet.tsx",
+          "path": "src/shared/prisma/views/view-sheet.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-sheet.tsx"
         }
@@ -386,7 +386,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-tag.tsx",
+          "path": "src/shared/prisma/views/view-tag.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-tag.tsx"
         }
@@ -401,7 +401,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-card.tsx",
+          "path": "src/shared/prisma/views/view-card.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-card.tsx"
         }
@@ -416,7 +416,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-popover.tsx",
+          "path": "src/shared/prisma/views/view-popover.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-popover.tsx"
         }
@@ -431,7 +431,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-dialog.tsx",
+          "path": "src/shared/prisma/views/view-dialog.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-dialog.tsx"
         }
@@ -446,7 +446,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/views/view-block.tsx",
+          "path": "src/shared/prisma/views/view-block.tsx",
           "type": "registry:component",
           "target": "shared/prisma/views/view-block.tsx"
         }
@@ -461,7 +461,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-relationals/record-field-many-to-one.tsx",
+          "path": "src/shared/prisma/record-field-relationals/record-field-many-to-one.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-relationals/record-field-many-to-one.tsx"
         }
@@ -476,7 +476,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-relationals/record-field-relational-auto.tsx",
+          "path": "src/shared/prisma/record-field-relationals/record-field-relational-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-relationals/record-field-relational-auto.tsx"
         }
@@ -491,7 +491,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-relationals/record-field-one-to-many.tsx",
+          "path": "src/shared/prisma/record-field-relationals/record-field-one-to-many.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-relationals/record-field-one-to-many.tsx"
         }
@@ -506,7 +506,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-relationals/record-field-many-to-many.tsx",
+          "path": "src/shared/prisma/record-field-relationals/record-field-many-to-many.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-relationals/record-field-many-to-many.tsx"
         }
@@ -521,7 +521,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-relationals/record-field-one-to-one.tsx",
+          "path": "src/shared/prisma/record-field-relationals/record-field-one-to-one.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-relationals/record-field-one-to-one.tsx"
         }
@@ -536,7 +536,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/forms/form-auto.tsx",
+          "path": "src/shared/prisma/forms/form-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/forms/form-auto.tsx"
         }
@@ -551,7 +551,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/forms/form-update-many.tsx",
+          "path": "src/shared/prisma/forms/form-update-many.tsx",
           "type": "registry:component",
           "target": "shared/prisma/forms/form-update-many.tsx"
         }
@@ -566,7 +566,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/forms/form-create-many.tsx",
+          "path": "src/shared/prisma/forms/form-create-many.tsx",
           "type": "registry:component",
           "target": "shared/prisma/forms/form-create-many.tsx"
         }
@@ -581,7 +581,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/forms/form-delete.tsx",
+          "path": "src/shared/prisma/forms/form-delete.tsx",
           "type": "registry:component",
           "target": "shared/prisma/forms/form-delete.tsx"
         }
@@ -596,7 +596,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/forms/form-create.tsx",
+          "path": "src/shared/prisma/forms/form-create.tsx",
           "type": "registry:component",
           "target": "shared/prisma/forms/form-create.tsx"
         }
@@ -611,7 +611,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/forms/form-root.tsx",
+          "path": "src/shared/prisma/forms/form-root.tsx",
           "type": "registry:component",
           "target": "shared/prisma/forms/form-root.tsx"
         }
@@ -626,7 +626,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/forms/form-update.tsx",
+          "path": "src/shared/prisma/forms/form-update.tsx",
           "type": "registry:component",
           "target": "shared/prisma/forms/form-update.tsx"
         }
@@ -643,7 +643,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/lib/create-query-hook.ts",
+          "path": "src/shared/prisma/lib/create-query-hook.ts",
           "type": "registry:component",
           "target": "shared/prisma/lib/create-query-hook.ts"
         }
@@ -658,7 +658,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/lib/create-db-api-server.ts",
+          "path": "src/shared/prisma/lib/create-db-api-server.ts",
           "type": "registry:component",
           "target": "shared/prisma/lib/create-db-api-server.ts"
         }
@@ -677,7 +677,7 @@
       ],
       "files": [
         {
-          "path": "src/registry/prisma/lib/create-db-api-client.ts",
+          "path": "src/shared/prisma/lib/create-db-api-client.ts",
           "type": "registry:component",
           "target": "shared/prisma/lib/create-db-api-client.ts"
         }
@@ -692,7 +692,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-root.tsx",
+          "path": "src/shared/prisma/field-scalars/field-root.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-root.tsx"
         }
@@ -707,7 +707,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-enum.tsx",
+          "path": "src/shared/prisma/field-scalars/field-enum.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-enum.tsx"
         }
@@ -722,7 +722,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-string.tsx",
+          "path": "src/shared/prisma/field-scalars/field-string.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-string.tsx"
         }
@@ -737,7 +737,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-date-time.tsx",
+          "path": "src/shared/prisma/field-scalars/field-date-time.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-date-time.tsx"
         }
@@ -752,7 +752,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-number.tsx",
+          "path": "src/shared/prisma/field-scalars/field-number.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-number.tsx"
         }
@@ -767,7 +767,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-range.tsx",
+          "path": "src/shared/prisma/field-scalars/field-range.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-range.tsx"
         }
@@ -782,7 +782,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-auto.tsx",
+          "path": "src/shared/prisma/field-scalars/field-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-auto.tsx"
         }
@@ -797,7 +797,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-boolean.tsx",
+          "path": "src/shared/prisma/field-scalars/field-boolean.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-boolean.tsx"
         }
@@ -812,7 +812,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-scalars/field-bytes.tsx",
+          "path": "src/shared/prisma/field-scalars/field-bytes.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-bytes.tsx"
         }
@@ -827,7 +827,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-lists/record-field-scalar.tsx",
+          "path": "src/shared/prisma/record-field-lists/record-field-scalar.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-lists/record-field-scalar.tsx"
         }
@@ -842,7 +842,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-lists/record-field-list-auto.tsx",
+          "path": "src/shared/prisma/record-field-lists/record-field-list-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-lists/record-field-list-auto.tsx"
         }
@@ -857,7 +857,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/record-field-lists/record-field-list-relational.tsx",
+          "path": "src/shared/prisma/record-field-lists/record-field-list-relational.tsx",
           "type": "registry:component",
           "target": "shared/prisma/record-field-lists/record-field-list-relational.tsx"
         }
@@ -872,7 +872,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-relationals/field-relational-auto.tsx",
+          "path": "src/shared/prisma/field-relationals/field-relational-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-relationals/field-relational-auto.tsx"
         }
@@ -887,7 +887,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-relationals/field-one-to-many.tsx",
+          "path": "src/shared/prisma/field-relationals/field-one-to-many.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-relationals/field-one-to-many.tsx"
         }
@@ -902,7 +902,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-relationals/field-many-to-many.tsx",
+          "path": "src/shared/prisma/field-relationals/field-many-to-many.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-relationals/field-many-to-many.tsx"
         }
@@ -917,7 +917,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-relationals/field-one-to-one.tsx",
+          "path": "src/shared/prisma/field-relationals/field-one-to-one.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-relationals/field-one-to-one.tsx"
         }
@@ -932,7 +932,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-relationals/field-many-to-one.tsx",
+          "path": "src/shared/prisma/field-relationals/field-many-to-one.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-relationals/field-many-to-one.tsx"
         }
@@ -947,7 +947,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/pages/page-record-list.tsx",
+          "path": "src/shared/prisma/pages/page-record-list.tsx",
           "type": "registry:component",
           "target": "shared/prisma/pages/page-record-list.tsx"
         }
@@ -962,7 +962,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/pages/page-record.tsx",
+          "path": "src/shared/prisma/pages/page-record.tsx",
           "type": "registry:component",
           "target": "shared/prisma/pages/page-record.tsx"
         }
@@ -977,7 +977,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/pages/page-database.tsx",
+          "path": "src/shared/prisma/pages/page-database.tsx",
           "type": "registry:component",
           "target": "shared/prisma/pages/page-database.tsx"
         }
@@ -992,7 +992,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-lists/field-list-relational.tsx",
+          "path": "src/shared/prisma/field-lists/field-list-relational.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-lists/field-list-relational.tsx"
         }
@@ -1007,7 +1007,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-lists/field-list-scalar.tsx",
+          "path": "src/shared/prisma/field-lists/field-list-scalar.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-lists/field-list-scalar.tsx"
         }
@@ -1022,7 +1022,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/registry/prisma/field-lists/field-list-auto.tsx",
+          "path": "src/shared/prisma/field-lists/field-list-auto.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-lists/field-list-auto.tsx"
         }

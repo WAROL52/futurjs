@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/forms/form-auto.tsx",
+      "path": "src/shared/prisma/forms/form-auto.tsx",
       "content": "\"use client\";\n\nexport type FormAutoProps = {};\n\nexport function FormAuto({}: FormAutoProps) {\n  return <div>FormAuto</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/forms/form-auto.tsx"

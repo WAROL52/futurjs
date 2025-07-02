@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/views/view-dialog.tsx",
+      "path": "src/shared/prisma/views/view-dialog.tsx",
       "content": "\"use client\";\n\nexport type ViewDialogProps = {};\n\nexport function ViewDialog({}: ViewDialogProps) {\n  return <div>ViewDialog</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/views/view-dialog.tsx"

@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/field-relationals/field-one-to-many.tsx",
+      "path": "src/shared/prisma/field-relationals/field-one-to-many.tsx",
       "content": "\"use client\";\n\nexport type FieldOneToManyProps = {};\n\nexport function FieldOneToMany({}: FieldOneToManyProps) {\n  return <div>FieldOneToMany</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/field-relationals/field-one-to-many.tsx"

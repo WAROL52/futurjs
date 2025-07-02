@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/field-scalars/field-number.tsx",
+      "path": "src/shared/prisma/field-scalars/field-number.tsx",
       "content": "\"use client\";\n\n// big int\n// int\n// float\n// decimal\nexport type FieldNumberProps = {};\n\nexport function FieldNumber({}: FieldNumberProps) {\n  return <div>FieldNumber</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/field-scalars/field-number.tsx"

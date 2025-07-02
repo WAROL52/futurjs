@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/views/view-avatar.tsx",
+      "path": "src/shared/prisma/views/view-avatar.tsx",
       "content": "\"use client\";\n\nexport type ViewAvatarProps = {};\n\nexport function ViewAvatar({}: ViewAvatarProps) {\n  return <div>ViewAvatar</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/views/view-avatar.tsx"

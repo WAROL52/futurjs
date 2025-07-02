@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/records/record-inline.tsx",
+      "path": "src/shared/prisma/records/record-inline.tsx",
       "content": "\"use client\";\n\nexport type RecordInlineProps = {};\n\nexport function RecordInline({}: RecordInlineProps) {\n  return <div>RecordInline</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/records/record-inline.tsx"

@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/record-field-scalars/record-field-enum.tsx",
+      "path": "src/shared/prisma/record-field-scalars/record-field-enum.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldEnumProps = {};\n\nexport function RecordFieldEnum({}: RecordFieldEnumProps) {\n  return <div>RecordFieldEnum</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/record-field-scalars/record-field-enum.tsx"

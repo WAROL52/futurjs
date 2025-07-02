@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/forms/form-create-many.tsx",
+      "path": "src/shared/prisma/forms/form-create-many.tsx",
       "content": "\"use client\";\n\nexport type FormCreateManyProps = {};\n\nexport function FormCreateMany({}: FormCreateManyProps) {\n  return <div>FormCreateMany</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/forms/form-create-many.tsx"

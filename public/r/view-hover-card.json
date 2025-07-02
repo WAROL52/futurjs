@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/views/view-hover-card.tsx",
+      "path": "src/shared/prisma/views/view-hover-card.tsx",
       "content": "\"use client\";\n\nexport type ViewHoverCardProps = {};\n\nexport function ViewHoverCard({}: ViewHoverCardProps) {\n  return <div>ViewHoverCard</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/views/view-hover-card.tsx"

@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/record-field-scalars/record-field-root.tsx",
+      "path": "src/shared/prisma/record-field-scalars/record-field-root.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldRootProps = {};\n\nexport function RecordFieldRoot({}: RecordFieldRootProps) {\n  return <div>RecordFieldRoot</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/record-field-scalars/record-field-root.tsx"

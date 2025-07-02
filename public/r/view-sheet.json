@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/views/view-sheet.tsx",
+      "path": "src/shared/prisma/views/view-sheet.tsx",
       "content": "\"use client\";\n\nexport type ViewSheetProps = {};\n\nexport function ViewSheet({}: ViewSheetProps) {\n  return <div>ViewSheet</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/views/view-sheet.tsx"

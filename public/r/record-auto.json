@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/records/record-auto.tsx",
+      "path": "src/shared/prisma/records/record-auto.tsx",
       "content": "\"use client\";\n\nexport type RecordAutoProps = {};\n\nexport function RecordAuto({}: RecordAutoProps) {\n  return <div>RecordAuto</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/records/record-auto.tsx"

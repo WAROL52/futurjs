@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/pages/page-record.tsx",
+      "path": "src/shared/prisma/pages/page-record.tsx",
       "content": "\"use client\";\n\nexport type PageRecordProps = {};\n\nexport function PageRecord({}: PageRecordProps) {\n  return <div>PageRecord</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/pages/page-record.tsx"

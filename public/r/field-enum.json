@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/field-scalars/field-enum.tsx",
+      "path": "src/shared/prisma/field-scalars/field-enum.tsx",
       "content": "\"use client\";\n\nexport type FieldEnumProps = {};\n\nexport function FieldEnum({}: FieldEnumProps) {\n  return <div>FieldEnum</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/field-scalars/field-enum.tsx"

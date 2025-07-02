@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/record-field-relationals/record-field-relational-auto.tsx",
+      "path": "src/shared/prisma/record-field-relationals/record-field-relational-auto.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldRelationalAutoProps = {};\n\nexport function RecordFieldRelationalAuto({}: RecordFieldRelationalAutoProps) {\n  return <div>RecordFieldRelationalAuto</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/record-field-relationals/record-field-relational-auto.tsx"

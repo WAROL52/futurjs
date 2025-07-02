@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/field-scalars/field-string.tsx",
+      "path": "src/shared/prisma/field-scalars/field-string.tsx",
       "content": "\"use client\";\n\n// string\n// text\n// password\n// password-create\n// email\n// url\n// json\n// otp\n// description\nexport type FieldStringProps = {};\n\nexport function FieldString({}: FieldStringProps) {\n  return <div>FieldString</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/field-scalars/field-string.tsx"

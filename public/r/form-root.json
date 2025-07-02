@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/forms/form-root.tsx",
+      "path": "src/shared/prisma/forms/form-root.tsx",
       "content": "\"use client\";\n\nexport type FormRootProps = {};\n\nexport function FormRoot({}: FormRootProps) {\n  return <div>FormRoot</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/forms/form-root.tsx"

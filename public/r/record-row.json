@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/records/record-row.tsx",
+      "path": "src/shared/prisma/records/record-row.tsx",
       "content": "\"use client\";\n\nexport type RecordRowProps = {};\n\nexport function RecordRow({}: RecordRowProps) {\n  return <div>RecordRow</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/records/record-row.tsx"

@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/field-scalars/field-bytes.tsx",
+      "path": "src/shared/prisma/field-scalars/field-bytes.tsx",
       "content": "\"use client\";\n\nexport type FieldBytesProps = {};\n\nexport function FieldBytes({}: FieldBytesProps) {\n  return <div>FieldBytes</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/field-scalars/field-bytes.tsx"

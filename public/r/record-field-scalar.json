@@ -8,7 +8,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/registry/prisma/record-field-lists/record-field-scalar.tsx",
+      "path": "src/shared/prisma/record-field-lists/record-field-scalar.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldScalarProps = {};\n\nexport function RecordFieldScalar({}: RecordFieldScalarProps) {\n  return <div>RecordFieldScalar</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/prisma/record-field-lists/record-field-scalar.tsx"
