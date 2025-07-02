@@ -2,63 +2,6 @@
 import { RegistryBuild } from "@/types";
 
 export const REGISTRY_BUILD: RegistryBuild = {
-  "new-york": {
-    "name": "new-york",
-    "description": "",
-    "packages": {
-      "example-form": {
-        "name": "example-form",
-        "description": "",
-        "url": "/new-york/example-form",
-        "codeDocs": [
-          {
-            "title": "ExampleForm",
-            "description": "",
-            "props": {},
-            "url": "/new-york/example-form/example-form",
-            "fileName": "example-form.tsx",
-            "filePath": "../shared/new-york/example-form/example-form.tsx",
-            "name": "example-form",
-            "registryUrl": "https://futurjs.vercel.app/r/example-form.json",
-            "componentName": "ExampleForm",
-            "demo": [],
-            "exemples": {},
-            "target": "@/shared/new-york/example-form/example-form.tsx",
-            "dependencies": [],
-            "registryDependencies": [],
-            "registryType": "registry:component",
-            "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  Card,\n  CardTitle,\n  CardHeader,\n  CardDescription,\n  CardContent,\n  CardFooter,\n} from \"@/components/ui/card\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\nimport { Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { z } from \"zod\"\n\nconst exampleFormSchema = z.object({\n  name: z.string().min(1),\n  email: z.string().email(),\n  message: z.string().min(1),\n})\n\nexport function ExampleForm() {\n  const [pending, setPending] = React.useState(false)\n  const [state, setState] = React.useState({\n    defaultValues: {\n      name: \"\",\n      email: \"\",\n      message: \"\",\n    },\n    success: false,\n    errors: {\n      name: \"\",\n      email: \"\",\n      message: \"\",\n    },\n  })\n\n  const handleSubmit = React.useCallback(\n    (e: React.FormEvent<HTMLFormElement>) => {\n      e.preventDefault()\n      setPending(true)\n\n      const formData = new FormData(e.target as HTMLFormElement)\n      const data = Object.fromEntries(formData.entries())\n      const result = exampleFormSchema.safeParse(data)\n\n      if (!result.success) {\n        setState({\n          ...state,\n          errors: Object.fromEntries(\n            Object.entries(result.error.flatten().fieldErrors).map(\n              ([key, value]) => [key, value?.[0] ?? \"\"]\n            )\n          ) as Record<keyof typeof state.errors, string>,\n        })\n        setPending(false)\n        return\n      }\n\n      setPending(false)\n    },\n    [state]\n  )\n\n  return (\n    <Card className=\"w-full max-w-sm\">\n      <CardHeader>\n        <CardTitle>How can we help?</CardTitle>\n        <CardDescription>\n          Need help with your project? We&apos;re here to assist you.\n        </CardDescription>\n      </CardHeader>\n      <form onSubmit={handleSubmit}>\n        <CardContent className=\"flex flex-col gap-6\">\n          <div\n            className=\"group/field grid gap-2\"\n            data-invalid={!!state.errors?.name}\n          >\n            <Label\n              htmlFor=\"name\"\n              className=\"group-data-[invalid=true]/field:text-destructive\"\n            >\n              Name <span aria-hidden=\"true\">*</span>\n            </Label>\n            <Input\n              id=\"name\"\n              name=\"name\"\n              placeholder=\"Lee Robinson\"\n              className=\"group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive\"\n              disabled={pending}\n              aria-invalid={!!state.errors?.name}\n              aria-errormessage=\"error-name\"\n              defaultValue={state.defaultValues.name}\n            />\n            {state.errors?.name && (\n              <p id=\"error-name\" className=\"text-destructive text-sm\">\n                {state.errors.name}\n              </p>\n            )}\n          </div>\n          <div\n            className=\"group/field grid gap-2\"\n            data-invalid={!!state.errors?.email}\n          >\n            <Label\n              htmlFor=\"email\"\n              className=\"group-data-[invalid=true]/field:text-destructive\"\n            >\n              Email <span aria-hidden=\"true\">*</span>\n            </Label>\n            <Input\n              id=\"email\"\n              name=\"email\"\n              placeholder=\"leerob@acme.com\"\n              className=\"group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive\"\n              disabled={pending}\n              aria-invalid={!!state.errors?.email}\n              aria-errormessage=\"error-email\"\n              defaultValue={state.defaultValues.email}\n            />\n            {state.errors?.email && (\n              <p id=\"error-email\" className=\"text-destructive text-sm\">\n                {state.errors.email}\n              </p>\n            )}\n          </div>\n          <div\n            className=\"group/field grid gap-2\"\n            data-invalid={!!state.errors?.message}\n          >\n            <Label\n              htmlFor=\"message\"\n              className=\"group-data-[invalid=true]/field:text-destructive\"\n            >\n              Message <span aria-hidden=\"true\">*</span>\n            </Label>\n            <Textarea\n              id=\"message\"\n              name=\"message\"\n              placeholder=\"Type your message here...\"\n              className=\"group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive\"\n              disabled={pending}\n              aria-invalid={!!state.errors?.message}\n              aria-errormessage=\"error-message\"\n              defaultValue={state.defaultValues.message}\n            />\n            {state.errors?.message && (\n              <p id=\"error-message\" className=\"text-destructive text-sm\">\n                {state.errors.message}\n              </p>\n            )}\n          </div>\n        </CardContent>\n        <CardFooter>\n          <Button type=\"submit\" size=\"sm\" disabled={pending}>\n            {pending ? \"Sending...\" : \"Send Message\"}\n          </Button>\n        </CardFooter>\n      </form>\n    </Card>\n  )\n}\n"
-          }
-        ]
-      },
-      "hello-world": {
-        "name": "hello-world",
-        "description": "",
-        "url": "/new-york/hello-world",
-        "codeDocs": [
-          {
-            "title": "HelloWorld",
-            "description": "",
-            "props": {},
-            "url": "/new-york/hello-world/hello-world",
-            "fileName": "hello-world.tsx",
-            "filePath": "../shared/new-york/hello-world/hello-world.tsx",
-            "name": "hello-world",
-            "registryUrl": "https://futurjs.vercel.app/r/hello-world.json",
-            "componentName": "HelloWorld",
-            "demo": [],
-            "exemples": {},
-            "target": "@/shared/new-york/hello-world/hello-world.tsx",
-            "dependencies": [],
-            "registryDependencies": [],
-            "registryType": "registry:component",
-            "content": "export function HelloWorld() {\n  return <h1 className=\"text-2xl font-bold\">Hello World</h1>;\n}\nexport const codeDocs = {\n  title: \"Hello World\",\n  description: \"A simple Hello World component.\",\n  codes: [\n    {\n      code: `<HelloWorld />`,\n      description: \"The HelloWorld component.\",\n    },\n  ],\n};\n"
-          }
-        ]
-      }
-    },
-    "url": "/new-york"
-  },
   "prisma": {
     "name": "prisma",
     "description": "",

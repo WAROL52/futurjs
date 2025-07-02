@@ -3,36 +3,6 @@
   "homepage": "https://futurjs.vercel.app",
   "items": [
     {
-      "name": "example-form",
-      "title": "ExampleForm",
-      "description": "",
-      "type": "registry:component",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/shared/new-york/example-form/example-form.tsx",
-          "type": "registry:component",
-          "target": "shared/new-york/example-form/example-form.tsx"
-        }
-      ]
-    },
-    {
-      "name": "hello-world",
-      "title": "HelloWorld",
-      "description": "",
-      "type": "registry:component",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/shared/new-york/hello-world/hello-world.tsx",
-          "type": "registry:component",
-          "target": "shared/new-york/hello-world/hello-world.tsx"
-        }
-      ]
-    },
-    {
       "name": "records-chart",
       "title": "RecordsChart",
       "description": "",
