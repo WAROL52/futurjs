@@ -92,6 +92,6 @@ export function getUrlRegistryNeeds(name: string) {
 
 export function normalizePath(path: string) {
   return path
-    .replace("../registry", "@/components")
+    .replace("../registry", "@/shared")
     .replace("../_exemples", "exemples");
 }

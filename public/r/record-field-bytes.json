@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/record-field-scalars/record-field-bytes.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldBytesProps = {};\n\nexport function RecordFieldBytes({}: RecordFieldBytesProps) {\n  return <div>RecordFieldBytes</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/record-field-scalars/record-field-bytes.tsx"
+      "target": "shared/prisma/record-field-scalars/record-field-bytes.tsx"
     }
   ]
 }

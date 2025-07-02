@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/forms/form-update-many.tsx",
       "content": "\"use client\";\n\nexport type FormUpdateManyProps = {};\n\nexport function FormUpdateMany({}: FormUpdateManyProps) {\n  return <div>FormUpdateMany</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/forms/form-update-many.tsx"
+      "target": "shared/prisma/forms/form-update-many.tsx"
     }
   ]
 }

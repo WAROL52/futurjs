@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/records-lists/records-chart.tsx",
       "content": "\"use client\";\n\nexport type RecordsChartProps = {};\n\nexport function RecordsChart({}: RecordsChartProps) {\n  return <div>RecordsChart</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/records-lists/records-chart.tsx"
+      "target": "shared/prisma/records-lists/records-chart.tsx"
     }
   ]
 }

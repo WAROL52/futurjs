@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/views/view-dialog.tsx",
       "content": "\"use client\";\n\nexport type ViewDialogProps = {};\n\nexport function ViewDialog({}: ViewDialogProps) {\n  return <div>ViewDialog</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/views/view-dialog.tsx"
+      "target": "shared/prisma/views/view-dialog.tsx"
     }
   ]
 }

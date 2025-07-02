@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/records-lists/records-list-card.tsx",
       "content": "\"use client\";\n\n// item1 | item2 | item3\n// item4 | item5 | item6\n\nexport type RecordsListCardProps = {};\n\nexport function RecordsListCard({}: RecordsListCardProps) {\n  return <div>RecordsListCard</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/records-lists/records-list-card.tsx"
+      "target": "shared/prisma/records-lists/records-list-card.tsx"
     }
   ]
 }

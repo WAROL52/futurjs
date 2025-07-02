@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/record-field-scalars/record-field-string.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldStringProps = {};\n\nexport function RecordFieldString({}: RecordFieldStringProps) {\n  return <div>RecordFieldString</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/record-field-scalars/record-field-string.tsx"
+      "target": "shared/prisma/record-field-scalars/record-field-string.tsx"
     }
   ]
 }

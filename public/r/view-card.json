@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/views/view-card.tsx",
       "content": "\"use client\";\n\nexport type ViewCardProps = {};\n\nexport function ViewCard({}: ViewCardProps) {\n  return <div>ViewCard</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/views/view-card.tsx"
+      "target": "shared/prisma/views/view-card.tsx"
     }
   ]
 }

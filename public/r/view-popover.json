@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/views/view-popover.tsx",
       "content": "\"use client\";\n\nexport type ViewPopoverProps = {};\n\nexport function ViewPopover({}: ViewPopoverProps) {\n  return <div>ViewPopover</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/views/view-popover.tsx"
+      "target": "shared/prisma/views/view-popover.tsx"
     }
   ]
 }

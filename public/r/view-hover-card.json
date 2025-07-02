@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/views/view-hover-card.tsx",
       "content": "\"use client\";\n\nexport type ViewHoverCardProps = {};\n\nexport function ViewHoverCard({}: ViewHoverCardProps) {\n  return <div>ViewHoverCard</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/views/view-hover-card.tsx"
+      "target": "shared/prisma/views/view-hover-card.tsx"
     }
   ]
 }

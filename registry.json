@@ -13,7 +13,7 @@
         {
           "path": "src/registry/new-york/example-form/example-form.tsx",
           "type": "registry:component",
-          "target": "components/new-york/example-form/example-form.tsx"
+          "target": "shared/new-york/example-form/example-form.tsx"
         }
       ]
     },
@@ -28,7 +28,7 @@
         {
           "path": "src/registry/new-york/hello-world/hello-world.tsx",
           "type": "registry:component",
-          "target": "components/new-york/hello-world/hello-world.tsx"
+          "target": "shared/new-york/hello-world/hello-world.tsx"
         }
       ]
     },
@@ -43,7 +43,7 @@
         {
           "path": "src/registry/prisma/records-lists/records-chart.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records-lists/records-chart.tsx"
+          "target": "shared/prisma/records-lists/records-chart.tsx"
         }
       ]
     },
@@ -58,7 +58,7 @@
         {
           "path": "src/registry/prisma/records-lists/records-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records-lists/records-auto.tsx"
+          "target": "shared/prisma/records-lists/records-auto.tsx"
         }
       ]
     },
@@ -73,7 +73,7 @@
         {
           "path": "src/registry/prisma/records-lists/records-table.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records-lists/records-table.tsx"
+          "target": "shared/prisma/records-lists/records-table.tsx"
         }
       ]
     },
@@ -88,7 +88,7 @@
         {
           "path": "src/registry/prisma/records-lists/records-list-card.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records-lists/records-list-card.tsx"
+          "target": "shared/prisma/records-lists/records-list-card.tsx"
         }
       ]
     },
@@ -103,7 +103,7 @@
         {
           "path": "src/registry/prisma/records-lists/records-list-inline.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records-lists/records-list-inline.tsx"
+          "target": "shared/prisma/records-lists/records-list-inline.tsx"
         }
       ]
     },
@@ -118,7 +118,7 @@
         {
           "path": "src/registry/prisma/records-lists/records-list-row.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records-lists/records-list-row.tsx"
+          "target": "shared/prisma/records-lists/records-list-row.tsx"
         }
       ]
     },
@@ -133,7 +133,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-string.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-string.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-string.tsx"
         }
       ]
     },
@@ -148,7 +148,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-number.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-number.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-number.tsx"
         }
       ]
     },
@@ -163,7 +163,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-boolean.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-boolean.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-boolean.tsx"
         }
       ]
     },
@@ -178,7 +178,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-range.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-range.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-range.tsx"
         }
       ]
     },
@@ -193,7 +193,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-root.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-root.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-root.tsx"
         }
       ]
     },
@@ -208,7 +208,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-auto.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-auto.tsx"
         }
       ]
     },
@@ -223,7 +223,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-date-time.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-date-time.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-date-time.tsx"
         }
       ]
     },
@@ -238,7 +238,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-enum.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-enum.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-enum.tsx"
         }
       ]
     },
@@ -253,7 +253,7 @@
         {
           "path": "src/registry/prisma/record-field-scalars/record-field-bytes.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-scalars/record-field-bytes.tsx"
+          "target": "shared/prisma/record-field-scalars/record-field-bytes.tsx"
         }
       ]
     },
@@ -268,7 +268,7 @@
         {
           "path": "src/registry/prisma/records/record-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records/record-auto.tsx"
+          "target": "shared/prisma/records/record-auto.tsx"
         }
       ]
     },
@@ -283,7 +283,7 @@
         {
           "path": "src/registry/prisma/records/record-row.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records/record-row.tsx"
+          "target": "shared/prisma/records/record-row.tsx"
         }
       ]
     },
@@ -298,7 +298,7 @@
         {
           "path": "src/registry/prisma/records/record-inline.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records/record-inline.tsx"
+          "target": "shared/prisma/records/record-inline.tsx"
         }
       ]
     },
@@ -313,7 +313,7 @@
         {
           "path": "src/registry/prisma/records/record-card.tsx",
           "type": "registry:component",
-          "target": "components/prisma/records/record-card.tsx"
+          "target": "shared/prisma/records/record-card.tsx"
         }
       ]
     },
@@ -328,7 +328,7 @@
         {
           "path": "src/registry/prisma/views/view-hover-card.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-hover-card.tsx"
+          "target": "shared/prisma/views/view-hover-card.tsx"
         }
       ]
     },
@@ -343,7 +343,7 @@
         {
           "path": "src/registry/prisma/views/view-avatar.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-avatar.tsx"
+          "target": "shared/prisma/views/view-avatar.tsx"
         }
       ]
     },
@@ -358,7 +358,7 @@
         {
           "path": "src/registry/prisma/views/view-date-time.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-date-time.tsx"
+          "target": "shared/prisma/views/view-date-time.tsx"
         }
       ]
     },
@@ -373,7 +373,7 @@
         {
           "path": "src/registry/prisma/views/view-sheet.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-sheet.tsx"
+          "target": "shared/prisma/views/view-sheet.tsx"
         }
       ]
     },
@@ -388,7 +388,7 @@
         {
           "path": "src/registry/prisma/views/view-tag.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-tag.tsx"
+          "target": "shared/prisma/views/view-tag.tsx"
         }
       ]
     },
@@ -403,7 +403,7 @@
         {
           "path": "src/registry/prisma/views/view-card.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-card.tsx"
+          "target": "shared/prisma/views/view-card.tsx"
         }
       ]
     },
@@ -418,7 +418,7 @@
         {
           "path": "src/registry/prisma/views/view-popover.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-popover.tsx"
+          "target": "shared/prisma/views/view-popover.tsx"
         }
       ]
     },
@@ -433,7 +433,7 @@
         {
           "path": "src/registry/prisma/views/view-dialog.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-dialog.tsx"
+          "target": "shared/prisma/views/view-dialog.tsx"
         }
       ]
     },
@@ -448,7 +448,7 @@
         {
           "path": "src/registry/prisma/views/view-block.tsx",
           "type": "registry:component",
-          "target": "components/prisma/views/view-block.tsx"
+          "target": "shared/prisma/views/view-block.tsx"
         }
       ]
     },
@@ -463,7 +463,7 @@
         {
           "path": "src/registry/prisma/record-field-relationals/record-field-many-to-one.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-relationals/record-field-many-to-one.tsx"
+          "target": "shared/prisma/record-field-relationals/record-field-many-to-one.tsx"
         }
       ]
     },
@@ -478,7 +478,7 @@
         {
           "path": "src/registry/prisma/record-field-relationals/record-field-relational-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-relationals/record-field-relational-auto.tsx"
+          "target": "shared/prisma/record-field-relationals/record-field-relational-auto.tsx"
         }
       ]
     },
@@ -493,7 +493,7 @@
         {
           "path": "src/registry/prisma/record-field-relationals/record-field-one-to-many.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-relationals/record-field-one-to-many.tsx"
+          "target": "shared/prisma/record-field-relationals/record-field-one-to-many.tsx"
         }
       ]
     },
@@ -508,7 +508,7 @@
         {
           "path": "src/registry/prisma/record-field-relationals/record-field-many-to-many.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-relationals/record-field-many-to-many.tsx"
+          "target": "shared/prisma/record-field-relationals/record-field-many-to-many.tsx"
         }
       ]
     },
@@ -523,7 +523,7 @@
         {
           "path": "src/registry/prisma/record-field-relationals/record-field-one-to-one.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-relationals/record-field-one-to-one.tsx"
+          "target": "shared/prisma/record-field-relationals/record-field-one-to-one.tsx"
         }
       ]
     },
@@ -538,7 +538,7 @@
         {
           "path": "src/registry/prisma/forms/form-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/forms/form-auto.tsx"
+          "target": "shared/prisma/forms/form-auto.tsx"
         }
       ]
     },
@@ -553,7 +553,7 @@
         {
           "path": "src/registry/prisma/forms/form-update-many.tsx",
           "type": "registry:component",
-          "target": "components/prisma/forms/form-update-many.tsx"
+          "target": "shared/prisma/forms/form-update-many.tsx"
         }
       ]
     },
@@ -568,7 +568,7 @@
         {
           "path": "src/registry/prisma/forms/form-create-many.tsx",
           "type": "registry:component",
-          "target": "components/prisma/forms/form-create-many.tsx"
+          "target": "shared/prisma/forms/form-create-many.tsx"
         }
       ]
     },
@@ -583,7 +583,7 @@
         {
           "path": "src/registry/prisma/forms/form-delete.tsx",
           "type": "registry:component",
-          "target": "components/prisma/forms/form-delete.tsx"
+          "target": "shared/prisma/forms/form-delete.tsx"
         }
       ]
     },
@@ -598,7 +598,7 @@
         {
           "path": "src/registry/prisma/forms/form-create.tsx",
           "type": "registry:component",
-          "target": "components/prisma/forms/form-create.tsx"
+          "target": "shared/prisma/forms/form-create.tsx"
         }
       ]
     },
@@ -613,7 +613,7 @@
         {
           "path": "src/registry/prisma/forms/form-root.tsx",
           "type": "registry:component",
-          "target": "components/prisma/forms/form-root.tsx"
+          "target": "shared/prisma/forms/form-root.tsx"
         }
       ]
     },
@@ -628,7 +628,7 @@
         {
           "path": "src/registry/prisma/forms/form-update.tsx",
           "type": "registry:component",
-          "target": "components/prisma/forms/form-update.tsx"
+          "target": "shared/prisma/forms/form-update.tsx"
         }
       ]
     },
@@ -645,7 +645,7 @@
         {
           "path": "src/registry/prisma/lib/create-query-hook.ts",
           "type": "registry:component",
-          "target": "components/prisma/lib/create-query-hook.ts"
+          "target": "shared/prisma/lib/create-query-hook.ts"
         }
       ]
     },
@@ -660,7 +660,7 @@
         {
           "path": "src/registry/prisma/lib/create-db-api-server.ts",
           "type": "registry:component",
-          "target": "components/prisma/lib/create-db-api-server.ts"
+          "target": "shared/prisma/lib/create-db-api-server.ts"
         }
       ]
     },
@@ -679,7 +679,7 @@
         {
           "path": "src/registry/prisma/lib/create-db-api-client.ts",
           "type": "registry:component",
-          "target": "components/prisma/lib/create-db-api-client.ts"
+          "target": "shared/prisma/lib/create-db-api-client.ts"
         }
       ]
     },
@@ -694,7 +694,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-root.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-root.tsx"
+          "target": "shared/prisma/field-scalars/field-root.tsx"
         }
       ]
     },
@@ -709,7 +709,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-enum.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-enum.tsx"
+          "target": "shared/prisma/field-scalars/field-enum.tsx"
         }
       ]
     },
@@ -724,7 +724,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-string.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-string.tsx"
+          "target": "shared/prisma/field-scalars/field-string.tsx"
         }
       ]
     },
@@ -739,7 +739,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-date-time.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-date-time.tsx"
+          "target": "shared/prisma/field-scalars/field-date-time.tsx"
         }
       ]
     },
@@ -754,7 +754,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-number.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-number.tsx"
+          "target": "shared/prisma/field-scalars/field-number.tsx"
         }
       ]
     },
@@ -769,7 +769,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-range.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-range.tsx"
+          "target": "shared/prisma/field-scalars/field-range.tsx"
         }
       ]
     },
@@ -784,7 +784,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-auto.tsx"
+          "target": "shared/prisma/field-scalars/field-auto.tsx"
         }
       ]
     },
@@ -799,7 +799,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-boolean.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-boolean.tsx"
+          "target": "shared/prisma/field-scalars/field-boolean.tsx"
         }
       ]
     },
@@ -814,7 +814,7 @@
         {
           "path": "src/registry/prisma/field-scalars/field-bytes.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-scalars/field-bytes.tsx"
+          "target": "shared/prisma/field-scalars/field-bytes.tsx"
         }
       ]
     },
@@ -829,7 +829,7 @@
         {
           "path": "src/registry/prisma/record-field-lists/record-field-scalar.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-lists/record-field-scalar.tsx"
+          "target": "shared/prisma/record-field-lists/record-field-scalar.tsx"
         }
       ]
     },
@@ -844,7 +844,7 @@
         {
           "path": "src/registry/prisma/record-field-lists/record-field-list-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-lists/record-field-list-auto.tsx"
+          "target": "shared/prisma/record-field-lists/record-field-list-auto.tsx"
         }
       ]
     },
@@ -859,7 +859,7 @@
         {
           "path": "src/registry/prisma/record-field-lists/record-field-list-relational.tsx",
           "type": "registry:component",
-          "target": "components/prisma/record-field-lists/record-field-list-relational.tsx"
+          "target": "shared/prisma/record-field-lists/record-field-list-relational.tsx"
         }
       ]
     },
@@ -874,7 +874,7 @@
         {
           "path": "src/registry/prisma/field-relationals/field-relational-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-relationals/field-relational-auto.tsx"
+          "target": "shared/prisma/field-relationals/field-relational-auto.tsx"
         }
       ]
     },
@@ -889,7 +889,7 @@
         {
           "path": "src/registry/prisma/field-relationals/field-one-to-many.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-relationals/field-one-to-many.tsx"
+          "target": "shared/prisma/field-relationals/field-one-to-many.tsx"
         }
       ]
     },
@@ -904,7 +904,7 @@
         {
           "path": "src/registry/prisma/field-relationals/field-many-to-many.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-relationals/field-many-to-many.tsx"
+          "target": "shared/prisma/field-relationals/field-many-to-many.tsx"
         }
       ]
     },
@@ -919,7 +919,7 @@
         {
           "path": "src/registry/prisma/field-relationals/field-one-to-one.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-relationals/field-one-to-one.tsx"
+          "target": "shared/prisma/field-relationals/field-one-to-one.tsx"
         }
       ]
     },
@@ -934,7 +934,7 @@
         {
           "path": "src/registry/prisma/field-relationals/field-many-to-one.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-relationals/field-many-to-one.tsx"
+          "target": "shared/prisma/field-relationals/field-many-to-one.tsx"
         }
       ]
     },
@@ -949,7 +949,7 @@
         {
           "path": "src/registry/prisma/pages/page-record-list.tsx",
           "type": "registry:component",
-          "target": "components/prisma/pages/page-record-list.tsx"
+          "target": "shared/prisma/pages/page-record-list.tsx"
         }
       ]
     },
@@ -964,7 +964,7 @@
         {
           "path": "src/registry/prisma/pages/page-record.tsx",
           "type": "registry:component",
-          "target": "components/prisma/pages/page-record.tsx"
+          "target": "shared/prisma/pages/page-record.tsx"
         }
       ]
     },
@@ -979,7 +979,7 @@
         {
           "path": "src/registry/prisma/pages/page-database.tsx",
           "type": "registry:component",
-          "target": "components/prisma/pages/page-database.tsx"
+          "target": "shared/prisma/pages/page-database.tsx"
         }
       ]
     },
@@ -994,7 +994,7 @@
         {
           "path": "src/registry/prisma/field-lists/field-list-relational.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-lists/field-list-relational.tsx"
+          "target": "shared/prisma/field-lists/field-list-relational.tsx"
         }
       ]
     },
@@ -1009,7 +1009,7 @@
         {
           "path": "src/registry/prisma/field-lists/field-list-scalar.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-lists/field-list-scalar.tsx"
+          "target": "shared/prisma/field-lists/field-list-scalar.tsx"
         }
       ]
     },
@@ -1024,7 +1024,7 @@
         {
           "path": "src/registry/prisma/field-lists/field-list-auto.tsx",
           "type": "registry:component",
-          "target": "components/prisma/field-lists/field-list-auto.tsx"
+          "target": "shared/prisma/field-lists/field-list-auto.tsx"
         }
       ]
     }

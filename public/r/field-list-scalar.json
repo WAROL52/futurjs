@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/field-lists/field-list-scalar.tsx",
       "content": "\"use client\";\n\nexport type FieldListScalarProps = {};\n\nexport function FieldListScalar({}: FieldListScalarProps) {\n  return <div>FieldListScalar</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/field-lists/field-list-scalar.tsx"
+      "target": "shared/prisma/field-lists/field-list-scalar.tsx"
     }
   ]
 }

@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/record-field-scalars/record-field-date-time.tsx",
       "content": "\"use client\";\n\nexport type RecordFieldDateTimeProps = {};\n\nexport function RecordFieldDateTime({}: RecordFieldDateTimeProps) {\n  return <div>RecordFieldDateTime</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/record-field-scalars/record-field-date-time.tsx"
+      "target": "shared/prisma/record-field-scalars/record-field-date-time.tsx"
     }
   ]
 }

@@ -11,7 +11,7 @@
       "path": "src/registry/prisma/field-relationals/field-many-to-one.tsx",
       "content": "\"use client\";\n\nexport type FieldManyToOneProps = {};\n\nexport function FieldManyToOne({}: FieldManyToOneProps) {\n  return <div>FieldManyToOne</div>;\n}\n",
       "type": "registry:component",
-      "target": "components/prisma/field-relationals/field-many-to-one.tsx"
+      "target": "shared/prisma/field-relationals/field-many-to-one.tsx"
     }
   ]
 }
