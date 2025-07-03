@@ -52,6 +52,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
   }));
   const dependents = getUrlRegistryNeeds(codeDocs.name);
   const exemples = Object.entries(codeDocs.exemples);
+  const demoPath = demo.find((d) => d.filename === "main.tsx")?.path;
   return (
     <section id="button" className="space-y-6 mb-8">
       <div>
@@ -81,7 +82,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
         <TabsContent value="preview" className="space-y-4 ">
           <Card className="bg-background">
             <CardContent className="space-y-4 ">
-              <Previewer path={demo.at(0)?.path} />
+              <Previewer path={demoPath} />
             </CardContent>
           </Card>
         </TabsContent>
@@ -312,7 +313,7 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
               <CardHeader>
                 <CardTitle>{exempleTitle}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-background">
                 <CodeExample codes={exempleCodes} />
               </CardContent>
             </Card>
@@ -345,8 +346,8 @@ function CodeExample({ codes }: { codes: CodeView[] }) {
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="preview" className="space-y-4">
-          <Card>
+        <TabsContent value="preview" className="space-y-4 ">
+          <Card className="bg-background">
             <CardContent className="space-y-4">
               <Previewer path={code.path} />
             </CardContent>
