@@ -14,28 +14,147 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
+enum UserRole {
+  ADMIN
+  USER
+  STAFF
+  GUEST
 }
 
-model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  user   User    @relation(fields: [userId], references: [id])
-  userId Int     @unique
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELED
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  posts   Post[]
-  profile Profile?
+  id           String         @id @default(cuid())
+  email        String         @unique
+  name         String
+  password     String
+  role         UserRole       @default(USER)
+  profile      Profile?
+  posts        Post[]
+  orders       Order[]
+  createdAt    DateTime       @default(now())
+  Comment      Comment[]
+  Notification Notification[]
+  Address      Address[]
+  AuditLog     AuditLog[]
+}
+
+model Profile {
+  id       String  @id @default(cuid())
+  bio      String?
+  user     User    @relation(fields: [userId], references: [id])
+  userId   String  @unique
+  avatar   Media?  @relation(fields: [avatarId], references: [id])
+  avatarId String?
+}
+
+model Post {
+  id        String    @id @default(cuid())
+  title     String
+  content   String
+  author    User      @relation(fields: [authorId], references: [id])
+  authorId  String
+  tags      Tag[]     @relation("PostTags")
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  text      String
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  createdAt DateTime @default(now())
+}
+
+model Tag {
+  id    String @id @default(cuid())
+  name  String @unique
+  posts Post[] @relation("PostTags")
+}
+
+model Category {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  products Product[]
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  name        String
+  price       Float
+  stock       Int
+  description String?
+  image       Media?      @relation(fields: [mediaId], references: [id])
+  category    Category    @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  orders      OrderItem[]
+  mediaId     String?
+}
+
+model Order {
+  id        String      @id @default(cuid())
+  user      User        @relation(fields: [userId], references: [id])
+  userId    String
+  items     OrderItem[]
+  status    OrderStatus @default(PENDING)
+  total     Float
+  createdAt DateTime    @default(now())
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  order     Order   @relation(fields: [orderId], references: [id])
+  orderId   String
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+  quantity  Int
+  unitPrice Float
+}
+
+model Media {
+  id         String    @id @default(cuid())
+  url        String
+  type       String
+  uploadedAt DateTime  @default(now())
+  Profile    Profile[]
+  Product    Product[]
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  title     String
+  message   String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Address {
+  id        String  @id @default(cuid())
+  user      User    @relation(fields: [userId], references: [id])
+  userId    String
+  street    String
+  city      String
+  country   String
+  zipCode   String
+  isPrimary Boolean @default(false)
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+  createdAt DateTime @default(now())
+  metadata  Json?
 }
