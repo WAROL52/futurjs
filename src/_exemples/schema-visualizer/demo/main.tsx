@@ -6,6 +6,7 @@ import { SchemaVisualizer } from "@/shared/prisma/block/schema-visualizer";
 import { getPrismaSchema } from "./schema-prisma";
 import { Prisma } from "@/generated/prisma";
 import { Edge, Node } from "@xyflow/react";
+import { useQuery } from "@tanstack/react-query";
 
 export type MainProps = {};
 
@@ -27,22 +28,19 @@ export default function Main({}: MainProps) {
   );
 }
 function useGetPrismaSchema() {
-  const [{ edges, nodes }, setnode] = useState<{
-    nodes: Node[];
-    edges: Edge[];
-  }>({
-    nodes: [],
-    edges: [],
+  const { data } = useQuery({
+    queryKey: ["prismaSchema"],
+    queryFn: async () => {
+      const datamodel = await getPrismaSchema();
+      return prismaSchemaToNode(datamodel);
+    },
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
   });
-  useEffect(() => {
-    getPrismaSchema().then((datamodel) => {
-      const { nodes, edges } = prismaSchemaToNode(datamodel);
-      setnode({ nodes, edges });
-    });
-  }, []);
+  if (!data) return { nodes: [], edges: [] };
   return {
-    nodes,
-    edges,
+    nodes: data.nodes,
+    edges: data.edges,
   };
 }
 
@@ -51,35 +49,44 @@ function prismaSchemaToNode(datamodel: Prisma.DMMF.Datamodel): {
   edges: Edge[];
 } {
   console.log(datamodel);
+  const relationNames: string[] = [];
+  let x = 0;
 
   return {
     nodes: datamodel.models.map((model) => {
+      x += 300; // Increment x position for each model
       return {
         id: model.name,
         type: "tableNode",
-        position: { x: 100, y: 100 }, // Position can be adjusted later
+        position: { x, y: 100 }, // Position can be adjusted later
         data: {
           label: model.name,
           fields: model.fields.map((field) => ({
             name: field.name,
             type: field.type,
             isPrimary: field.isId,
-            isForeign: field.kind === "object" && field.isRequired,
+            isForeign: field.isReadOnly,
+            meta: field,
           })),
         },
       };
     }),
     edges: datamodel.models.flatMap((model) => {
       return model.fields
-        .filter((field) => field.relationName)
+        .filter(
+          (field) =>
+            field.relationName &&
+            field?.relationFromFields?.length &&
+            field?.relationToFields?.length
+        )
         .map((field) => {
           return {
             id: `${field.relationName}`,
             source: model.name,
             target: field.type,
-            sourceHandle: field?.relationFromFields?.at(0),
-            targetHandle: field?.relationToFields?.at(0),
-            animated: true,
+            sourceHandle: field?.relationToFields?.at(0) ? "warol" : undefined,
+            targetHandle: field?.relationFromFields?.at(0),
+            // animated: true,
           };
         });
     }),
