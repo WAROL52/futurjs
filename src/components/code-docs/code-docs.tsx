@@ -31,6 +31,7 @@ import Link from "next/link";
 import { RegistryDependent } from "./registry-dependent";
 import { FileViewer } from "./file-viewer";
 import { CodeSnippetRegistryInstall } from "./code-snippet-registry-install";
+import { CodeSnippetInstall } from "./code-snippet-install";
 export type CodeDocsProps = PropsWithChildren<CodeDocType>;
 
 export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
@@ -162,6 +163,28 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
             ))}
           </AccordionContent>
         </AccordionItem>
+        <AccordionItem value="item-shadcn">
+          <AccordionTrigger>
+            <h4 className="text-xl font-semibold">
+              Shadcn dependencies?
+              <Badge className="min-w-5 px-1 ml-1" variant={"secondary"}>
+                {codeDocs.shadcnDependencies?.length || 0}
+              </Badge>
+            </h4>
+          </AccordionTrigger>
+          <AccordionContent>
+            {codeDocs.shadcnDependencies.map((dep) => (
+              <Badge key={dep} className="mr-2" variant="outline" asChild>
+                <Link
+                  href={`https://ui.shadcn.com/docs/components/${dep}`}
+                  target="_blank"
+                >
+                  {dep}
+                </Link>
+              </Badge>
+            ))}
+          </AccordionContent>
+        </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger>
             <h4 className="text-xl font-semibold">
@@ -204,81 +227,28 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
             </TabsList>
             <div className="px-2">
               <TabsContent value="CLI">
-                <CodeSnippetRegistryInstall registryUrl={registry} />
+                <CodeSnippetRegistryInstall dependencies={[registry]} />
               </TabsContent>
               <TabsContent value="Manual">
                 {codeDocs.dependencies.length > 0 && (
                   <div className="mb-8">
                     <p>Install the following dependencies:</p>
-                    <CodeSnippet
-                      commands={[
-                        {
-                          label: "npm",
-                          // icon: BoxIcon,
-                          code:
-                            "npm install " + codeDocs.dependencies.join(" "),
-                        },
-                        {
-                          label: "yarn",
-                          // icon: BoxIcon,
-                          code: "yarn add " + codeDocs.dependencies.join(" "),
-                        },
-                        {
-                          label: "pnpm",
-                          // icon: BoxIcon,
-                          code: "pnpm add " + codeDocs.dependencies.join(" "),
-                        },
-                        {
-                          label: "bun",
-                          // icon: BoxIcon,
-                          code: "bun add " + codeDocs.dependencies.join(" "),
-                        },
-                      ]}
+                    <CodeSnippetInstall dependencies={codeDocs.dependencies} />
+                  </div>
+                )}
+                {codeDocs.shadcnDependencies.length > 0 && (
+                  <div className="mb-8">
+                    <p>Install the following shadcn dependencies:</p>
+                    <CodeSnippetRegistryInstall
+                      dependencies={codeDocs.shadcnDependencies}
                     />
                   </div>
                 )}
                 {codeDocs.registryDependencies.length > 0 && (
                   <div className="mb-8">
                     <p>Install the following registry dependencies:</p>
-                    <CodeSnippet
-                      commands={[
-                        {
-                          label: "npm",
-                          // icon: BoxIcon,
-                          code:
-                            "npx shadcn@latest add " +
-                            codeDocs.registryDependencies
-                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
-                              .join(" "),
-                        },
-                        {
-                          label: "yarn",
-                          // icon: BoxIcon,
-                          code:
-                            "yarn shadcn@latest add " +
-                            codeDocs.registryDependencies
-                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
-                              .join(" "),
-                        },
-                        {
-                          label: "pnpm",
-                          // icon: BoxIcon,
-                          code:
-                            "pnpm dlx shadcn@latest add " +
-                            codeDocs.registryDependencies
-                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
-                              .join(" "),
-                        },
-                        {
-                          label: "bun",
-                          // icon: BoxIcon,
-                          code:
-                            "bunx --bun shadcn@latest add " +
-                            codeDocs.registryDependencies
-                              .map((dep) => `${BASE_URL}/r/${dep}.json`)
-                              .join(" "),
-                        },
-                      ]}
+                    <CodeSnippetRegistryInstall
+                      dependencies={codeDocs.registryDependencies}
                     />
                   </div>
                 )}

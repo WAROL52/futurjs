@@ -162,6 +162,7 @@ async function getCodeDocs(name: string, path: string) {
           target: component.target || normalizePath(filePath),
           dependencies: component.dependencies || [],
           registryDependencies: component.registryDependencies || [],
+          shadcnDependencies: component.shadcnDependencies || [],
           registryType: "registry:component",
           content: readFileSync(filePath, { encoding: "utf-8" }),
         };

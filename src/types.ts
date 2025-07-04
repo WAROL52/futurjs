@@ -23,6 +23,7 @@ export type CodeDocType = {
   target: string;
   dependencies: string[];
   registryDependencies: string[];
+  shadcnDependencies: string[];
   registryType:
     | "registry:block"
     | "registry:component"

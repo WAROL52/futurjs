@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import {
   ReactFlow,
   ReactFlowProvider,
@@ -20,9 +20,7 @@ import {
   getSmoothStepPath,
 } from "@xyflow/react";
 import "@xyflow/react/dist/base.css";
-import { RiAddLine, RiSubtractLine, RiFullscreenLine } from "@remixicon/react";
 import { Button } from "@/components/ui/button";
-import { RiMore2Fill } from "@remixicon/react";
 import { cn } from "@/lib/utils";
 import { Prisma } from "@/generated/prisma";
 import {
@@ -31,6 +29,25 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
+import { useState } from "react";
+
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Fullscreen, Minus, MoreVertical, Plus } from "lucide-react";
+
+SchemaVisualizer.dependencies = [
+  "@tanstack/react-query",
+  "@xyflow/react",
+  "lucide-react",
+];
+
+SchemaVisualizer.shadcnDependencies = ["dropdown-menu", "tooltip", "button"];
+
 const edgeTypes = {
   custom: SchemaEdge,
 };
@@ -121,15 +138,7 @@ function FieldName({
     </TooltipProvider>
   );
 }
-import { useState } from "react";
-import { ChevronDownIcon } from "lucide-react";
 
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 type Checked = boolean;
 function TableNode({ data, id }: NodeProps<TableNodeType>) {
   const [withTooltip, setWithTooltip] = useState<Checked>(false);
@@ -161,7 +170,7 @@ function TableNode({ data, id }: NodeProps<TableNodeType>) {
               className="shadow-none hover:bg-transparent -my-2 -me-2 text-muted-foreground/60 hover:text-muted-foreground"
               aria-label="Open edit menu"
             >
-              <RiMore2Fill className="size-5" aria-hidden="true" />
+              <MoreVertical className="size-5" aria-hidden="true" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -241,7 +250,7 @@ const { nodeTypes } = {
     tableNode: TableNode,
   },
 };
-export function SchemaVisualizerInner({
+function SchemaVisualizerInner({
   initialNodes,
   initialEdges,
 }: SchemaVisualizerProps) {
@@ -299,7 +308,7 @@ export function SchemaVisualizerInner({
               onClick={() => zoomIn()}
               aria-label="Zoom in"
             >
-              <RiAddLine className="size-5" aria-hidden="true" />
+              <Plus className="size-5" aria-hidden="true" />
             </Button>
             <Button
               variant="outline"
@@ -308,7 +317,7 @@ export function SchemaVisualizerInner({
               onClick={() => zoomOut()}
               aria-label="Zoom out"
             >
-              <RiSubtractLine className="size-5" aria-hidden="true" />
+              <Minus className="size-5" aria-hidden="true" />
             </Button>
             <Button
               variant="outline"
@@ -317,7 +326,8 @@ export function SchemaVisualizerInner({
               onClick={onFitView}
               aria-label="Fit view"
             >
-              <RiFullscreenLine className="size-5" aria-hidden="true" />
+              <Fullscreen className="size-5" aria-hidden="true" />
+              {/* <RiFullscreenLine className="size-5" aria-hidden="true" /> */}
             </Button>
           </Panel>
           {/* <MiniMap
@@ -330,7 +340,6 @@ export function SchemaVisualizerInner({
     </main>
   );
 }
-import { MiniMap } from "@xyflow/react";
 
 export function SchemaVisualizer(props: SchemaVisualizerProps) {
   const { initialNodes, initialEdges } = props;

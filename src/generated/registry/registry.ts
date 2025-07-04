@@ -26,6 +26,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records-lists/records-chart.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordsChartProps = {};\n\nexport function RecordsChart({}: RecordsChartProps) {\n  return <div>RecordsChart</div>;\n}\n"
           },
@@ -44,6 +45,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records-lists/records-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordsAutoProps = {};\n\nexport function RecordsAuto({}: RecordsAutoProps) {\n  return <div>RecordsAuto</div>;\n}\n"
           },
@@ -62,6 +64,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records-lists/records-table.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordsTableProps = {};\n\nexport function RecordsTable({}: RecordsTableProps) {\n  return <div>RecordsTable</div>;\n}\n"
           },
@@ -80,6 +83,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records-lists/records-list-card.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\n// item1 | item2 | item3\n// item4 | item5 | item6\n\nexport type RecordsListCardProps = {};\n\nexport function RecordsListCard({}: RecordsListCardProps) {\n  return <div>RecordsListCard</div>;\n}\n"
           },
@@ -98,6 +102,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records-lists/records-list-inline.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\n// item1 | item2 | item3 | item4 | item5 | item6\nexport type RecordsListInlineProps = {};\n\nexport function RecordsListInline({}: RecordsListInlineProps) {\n  return <div>RecordsListInline</div>;\n}\n"
           },
@@ -116,8 +121,35 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records-lists/records-list-row.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\n// item1\n// item2\n// item3\n// item4\n// item5\n// item6\nexport type RecordsListRowProps = {};\n\nexport function RecordsListRow({}: RecordsListRowProps) {\n  return <div>RecordsListRow</div>;\n}\n"
+          }
+        ]
+      },
+      "actions": {
+        "name": "actions",
+        "description": "",
+        "url": "/prisma/actions",
+        "codeDocs": [
+          {
+            "title": "PrismaActions",
+            "description": "",
+            "props": {},
+            "url": "/prisma/actions/prisma-actions",
+            "fileName": "prisma-actions.ts",
+            "filePath": "../shared/prisma/actions/prisma-actions.ts",
+            "name": "prisma-actions",
+            "registryUrl": "https://futurjs.vercel.app/r/prisma-actions.json",
+            "componentName": "PrismaActions",
+            "demo": [],
+            "exemples": {},
+            "target": "@/shared/prisma/actions/prisma-actions.ts",
+            "dependencies": [],
+            "registryDependencies": [],
+            "shadcnDependencies": [],
+            "registryType": "registry:component",
+            "content": "\"use server\";\nimport { Prisma, PrismaClient } from \"@/generated/prisma\";\n\nexport async function getPrismaSchema() {\n  return Prisma.dmmf.datamodel as Prisma.DMMF.Datamodel;\n}\n\nexport async function prismaActions() {\n  return null;\n}\n"
           }
         ]
       },
@@ -141,6 +173,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-string.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldStringProps = {};\n\nexport function RecordFieldString({}: RecordFieldStringProps) {\n  return <div>RecordFieldString</div>;\n}\n"
           },
@@ -159,6 +192,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-number.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldNumberProps = {};\n\nexport function RecordFieldNumber({}: RecordFieldNumberProps) {\n  return <div>RecordFieldNumber</div>;\n}\n"
           },
@@ -177,6 +211,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-boolean.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldBooleanProps = {};\n\nexport function RecordFieldBoolean({}: RecordFieldBooleanProps) {\n  return <div>RecordFieldBoolean</div>;\n}\n"
           },
@@ -195,6 +230,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-range.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldRangeProps = {};\n\nexport function RecordFieldRange({}: RecordFieldRangeProps) {\n  return <div>RecordFieldRange</div>;\n}\n"
           },
@@ -213,6 +249,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-root.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldRootProps = {};\n\nexport function RecordFieldRoot({}: RecordFieldRootProps) {\n  return <div>RecordFieldRoot</div>;\n}\n"
           },
@@ -231,6 +268,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldAutoProps = {};\n\nexport function RecordFieldAuto({}: RecordFieldAutoProps) {\n  return <div>RecordFieldAuto</div>;\n}\n"
           },
@@ -249,6 +287,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-date-time.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldDateTimeProps = {};\n\nexport function RecordFieldDateTime({}: RecordFieldDateTimeProps) {\n  return <div>RecordFieldDateTime</div>;\n}\n"
           },
@@ -267,6 +306,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-enum.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldEnumProps = {};\n\nexport function RecordFieldEnum({}: RecordFieldEnumProps) {\n  return <div>RecordFieldEnum</div>;\n}\n"
           },
@@ -285,6 +325,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-scalars/record-field-bytes.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldBytesProps = {};\n\nexport function RecordFieldBytes({}: RecordFieldBytesProps) {\n  return <div>RecordFieldBytes</div>;\n}\n"
           }
@@ -310,6 +351,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records/record-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordAutoProps = {};\n\nexport function RecordAuto({}: RecordAutoProps) {\n  return <div>RecordAuto</div>;\n}\n"
           },
@@ -328,6 +370,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records/record-row.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordRowProps = {};\n\nexport function RecordRow({}: RecordRowProps) {\n  return <div>RecordRow</div>;\n}\n"
           },
@@ -346,6 +389,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records/record-inline.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordInlineProps = {};\n\nexport function RecordInline({}: RecordInlineProps) {\n  return <div>RecordInline</div>;\n}\n"
           },
@@ -364,6 +408,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/records/record-card.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordCardProps = {};\n\nexport function RecordCard({}: RecordCardProps) {\n  return <div>RecordCard</div>;\n}\n"
           }
@@ -389,6 +434,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-hover-card.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewHoverCardProps = {};\n\nexport function ViewHoverCard({}: ViewHoverCardProps) {\n  return <div>ViewHoverCard</div>;\n}\n"
           },
@@ -407,6 +453,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-avatar.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewAvatarProps = {};\n\nexport function ViewAvatar({}: ViewAvatarProps) {\n  return <div>ViewAvatar</div>;\n}\n"
           },
@@ -425,6 +472,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-date-time.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewDateTimeProps = {};\n\nexport function ViewDateTime({}: ViewDateTimeProps) {\n  return <div>ViewDateTime</div>;\n}\n"
           },
@@ -443,6 +491,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-sheet.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewSheetProps = {};\n\nexport function ViewSheet({}: ViewSheetProps) {\n  return <div>ViewSheet</div>;\n}\n"
           },
@@ -461,6 +510,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-tag.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewTagProps = {};\n\nexport function ViewTag({}: ViewTagProps) {\n  return <div>ViewTag</div>;\n}\n"
           },
@@ -479,6 +529,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-card.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewCardProps = {};\n\nexport function ViewCard({}: ViewCardProps) {\n  return <div>ViewCard</div>;\n}\n"
           },
@@ -497,6 +548,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-popover.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewPopoverProps = {};\n\nexport function ViewPopover({}: ViewPopoverProps) {\n  return <div>ViewPopover</div>;\n}\n"
           },
@@ -515,6 +567,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-dialog.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewDialogProps = {};\n\nexport function ViewDialog({}: ViewDialogProps) {\n  return <div>ViewDialog</div>;\n}\n"
           },
@@ -533,6 +586,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/views/view-block.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type ViewBlockProps = {};\n\nexport function ViewBlock({}: ViewBlockProps) {\n  return <div>ViewBlock</div>;\n}\n"
           }
@@ -558,6 +612,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-relationals/record-field-many-to-one.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldManyToOneProps = {};\n\nexport function RecordFieldManyToOne({}: RecordFieldManyToOneProps) {\n  return <div>RecordFieldManyToOne</div>;\n}\n"
           },
@@ -576,6 +631,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-relationals/record-field-relational-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldRelationalAutoProps = {};\n\nexport function RecordFieldRelationalAuto({}: RecordFieldRelationalAutoProps) {\n  return <div>RecordFieldRelationalAuto</div>;\n}\n"
           },
@@ -594,6 +650,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-relationals/record-field-one-to-many.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldOneToManyProps = {};\n\nexport function RecordFieldOneToMany({}: RecordFieldOneToManyProps) {\n  return <div>RecordFieldOneToMany</div>;\n}\n"
           },
@@ -612,6 +669,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-relationals/record-field-many-to-many.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldManyToManyProps = {};\n\nexport function RecordFieldManyToMany({}: RecordFieldManyToManyProps) {\n  return <div>RecordFieldManyToMany</div>;\n}\n"
           },
@@ -630,6 +688,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-relationals/record-field-one-to-one.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldOneToOneProps = {};\n\nexport function RecordFieldOneToOne({}: RecordFieldOneToOneProps) {\n  return <div>RecordFieldOneToOne</div>;\n}\n"
           }
@@ -655,6 +714,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/forms/form-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FormAutoProps = {};\n\nexport function FormAuto({}: FormAutoProps) {\n  return <div>FormAuto</div>;\n}\n"
           },
@@ -673,6 +733,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/forms/form-update-many.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FormUpdateManyProps = {};\n\nexport function FormUpdateMany({}: FormUpdateManyProps) {\n  return <div>FormUpdateMany</div>;\n}\n"
           },
@@ -691,6 +752,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/forms/form-create-many.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FormCreateManyProps = {};\n\nexport function FormCreateMany({}: FormCreateManyProps) {\n  return <div>FormCreateMany</div>;\n}\n"
           },
@@ -709,6 +771,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/forms/form-delete.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FormDeleteProps = {};\n\nexport function FormDelete({}: FormDeleteProps) {\n  return <div>FormDelete</div>;\n}\n"
           },
@@ -727,6 +790,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/forms/form-create.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FormCreateProps = {};\n\nexport function FormCreate({}: FormCreateProps) {\n  return <div>FormCreate</div>;\n}\n"
           },
@@ -745,6 +809,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/forms/form-root.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FormRootProps = {};\n\nexport function FormRoot({}: FormRootProps) {\n  return <div>FormRoot</div>;\n}\n"
           },
@@ -763,6 +828,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/forms/form-update.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FormUpdateProps = {};\n\nexport function FormUpdate({}: FormUpdateProps) {\n  return <div>FormUpdate</div>;\n}\n"
           }
@@ -818,6 +884,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
               "@tanstack/react-query"
             ],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\nimport {\n  useQuery,\n  useMutation,\n  useQueryClient,\n  UseQueryOptions,\n  QueryKey,\n  QueryFunctionContext,\n  DefaultError,\n  UseMutationOptions,\n} from \"@tanstack/react-query\";\n\nexport type FnHookQuery<\n  T,\n  R,\n  TQueryKey extends QueryKey = QueryKey,\n  TPageParam = never\n> = (\n  dbClient: T,\n  context: QueryFunctionContext<TQueryKey, TPageParam>\n) => R | Promise<R>;\n\nexport type UseHookQueryOptions<T, R, TQueryKey extends QueryKey = QueryKey> = {\n  queryFn: FnHookQuery<T, R, TQueryKey>;\n} & Omit<UseQueryOptions<R, DefaultError, R, TQueryKey>, \"queryFn\">;\n\nexport type FnHookMutation<T, TData = unknown, TVariables = unknown> = (\n  variables: TVariables,\n  dbClient: T\n) => Promise<TData>;\n\nexport type UseHookMutationOptions<\n  T,\n  R,\n  TVariables = unknown,\n  TContext = unknown\n> = {\n  mutationFn: FnHookMutation<T, R, TVariables>;\n  invalidateOnSuccess?: QueryKey[];\n} & Omit<\n  UseMutationOptions<R, DefaultError, TVariables, TContext>,\n  \"mutationFn\"\n>;\nexport type FnActionHandler = ((args: any) => any) | ((args?: any) => any);\nexport type ActionHandler = {\n  [modelName: string]: {\n    [methodName: string]: FnActionHandler;\n  };\n};\n\nexport function createQueryHook<T extends ActionHandler>(handler: T) {\n  return {\n    useActionQuery: createUseActionQuery<T>(handler),\n    useActionMutation: createUseActionMutation<T>(handler),\n  };\n}\ncreateQueryHook.dependencies = [\"@tanstack/react-query\"];\n\nfunction createUseActionQuery<T extends object>(handler: T) {\n  return function useDbQuery<R, TQueryKey extends QueryKey = QueryKey>(\n    options: UseHookQueryOptions<T, R, TQueryKey>\n  ) {\n    return useQuery({\n      ...options,\n      queryFn: (context) => options.queryFn(handler, context),\n    });\n  };\n}\n\nfunction createUseActionMutation<T extends object>(handler: T) {\n  return function useDbMutation<R, TVariables = unknown, TContext = unknown>(\n    options: UseHookMutationOptions<T, R, TVariables, TContext>\n  ) {\n    const queryClient = useQueryClient();\n    return useMutation({\n      ...options,\n      mutationFn: (variables) => options.mutationFn(variables, handler),\n      onSuccess(data, variables, context) {\n        if (options.invalidateOnSuccess) {\n          options.invalidateOnSuccess.forEach((key) => {\n            const queryKey = Array.isArray(key) ? key : [key];\n            queryClient.invalidateQueries({ queryKey });\n          });\n        }\n        if (options.onSuccess) {\n          options.onSuccess(data, variables, context);\n        }\n      },\n    });\n  };\n}\n"
           },
@@ -836,6 +903,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/lib/create-db-api-server.ts",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "export type DbApiServerProps = {\n  modelName: string;\n  methodName: string;\n  args: Record<string, any>;\n};\nexport type DbServer = {\n  [modelName: string]: {\n    [methodName: string]: ((args: any) => any) | ((args?: any) => any);\n  };\n};\n\nexport function createDbApiServer<T extends DbServer>(dbServer: T) {\n  return {\n    handleRequest: async (props: DbApiServerProps) => {\n      const { modelName, methodName, args } = props;\n\n      if (!modelName || !methodName) {\n        throw new Error(\"Model name and method name must be provided.\");\n      }\n      if (typeof modelName !== \"string\" || typeof methodName !== \"string\") {\n        throw new Error(\"Model name and method name must be strings.\");\n      }\n      if (args && (typeof args !== \"object\" || Array.isArray(args))) {\n        throw new Error(\"Args must be an object.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(modelName) === false) {\n        throw new Error(\"Model name contains invalid characters.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(methodName) === false) {\n        throw new Error(\"Method name contains invalid characters.\");\n      }\n      if (!(modelName in dbServer)) {\n        throw new Error(`Model ${modelName} does not exist on the server.`);\n      }\n\n      const model = dbServer[modelName];\n\n      if (!(methodName in model)) {\n        throw new Error(\n          `Method ${methodName} does not exist on model ${modelName}.`\n        );\n      }\n\n      const method = model[methodName];\n\n      if (typeof method !== \"function\") {\n        throw new Error(\n          `${methodName} is not a function on model ${modelName}.`\n        );\n      }\n      try {\n        return {\n          data: await method(args),\n        };\n      } catch (error) {\n        return {\n          error: String(error),\n        };\n      }\n    },\n  };\n}\n"
           },
@@ -858,6 +926,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "registryDependencies": [
               "create-query-hook"
             ],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\nimport axios, { AxiosError } from \"axios\";\nimport { ActionHandler, createQueryHook } from \"./create-query-hook\";\n\nexport type DbHookPrisma<T = any> = {\n  [K in keyof T as K extends `$${infer R}` ? never : K]: Omit<T[K], \"fields\">;\n};\n\nexport type DbConfig = {\n  baseUrl: string;\n};\n\nexport function createDbApiClient<T extends ActionHandler>(config: DbConfig) {\n  const dbClient = createProxy<T>(config);\n  const queryHook = createQueryHook(dbClient);\n  return {\n    useDbQuery: queryHook.useActionQuery,\n    useDbMutation: queryHook.useActionMutation,\n  };\n}\ncreateDbApiClient.registryDependencies = [\"create-query-hook\"];\ncreateDbApiClient.dependencies = [\"axios\"];\n\nfunction createProxy<T extends object>(config: DbConfig) {\n  return new Proxy(\n    {},\n    {\n      get: (_, modelName) => {\n        return new Proxy(\n          {},\n          {\n            get: (_, methodName) => {\n              return (args: Record<string, any>) => {\n                return fetchDbData(\n                  modelName as string,\n                  methodName as string,\n                  args,\n                  config\n                );\n              };\n            },\n          }\n        );\n      },\n    }\n  ) as T;\n}\n\nasync function fetchDbData<T>(\n  modelName: string,\n  methodName: string,\n  args: Record<string, any>,\n  config: DbConfig\n) {\n  if (!modelName || !methodName) {\n    throw new Error(\"Model name and method name must be provided.\");\n  }\n  try {\n    const res = await axios.post(\n      `${config.baseUrl}/${modelName}/${methodName}`,\n      {\n        args,\n      }\n    );\n    return res.data || null;\n  } catch (error) {\n    const axiosError = error as AxiosError;\n    throw new Error(\n      String(axiosError.response?.data || axiosError.message || String(error))\n    );\n  }\n}\n"
           }
@@ -880,20 +949,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "componentName": "SchemaVisualizer",
             "demo": [
               {
-                "title": "schema-data.ts",
-                "description": "",
-                "props": {},
-                "language": "ts",
-                "content": "import type { Node, Edge } from \"@xyflow/react\";\n\n// Define the initial nodes (tables)\nexport const initialNodes: Node[] = [\n  {\n    id: \"users\",\n    type: \"tableNode\",\n    position: { x: 800, y: 150 },\n    data: {\n      label: \"users\",\n      fields: [\n        { name: \"id\", type: \"int\", isPrimary: true },\n        { name: \"full_name\", type: \"varchar\" },\n        { name: \"email\", type: \"varchar\" },\n        { name: \"gender\", type: \"varchar\" },\n        { name: \"date_of_birth\", type: \"date\" },\n        { name: \"country_code\", type: \"varchar\", isForeign: true },\n        { name: \"created_at\", type: \"timestamp\" },\n      ],\n    },\n  },\n  {\n    id: \"orders\",\n    type: \"tableNode\",\n    position: { x: 450, y: 183 },\n    data: {\n      label: \"orders\",\n      fields: [\n        { name: \"id\", type: \"int\", isPrimary: true },\n        { name: \"user_id\", type: \"int\", isForeign: true },\n        { name: \"status\", type: \"varchar\" },\n        { name: \"total_amount\", type: \"decimal\" },\n        { name: \"created_at\", type: \"timestamp\" },\n      ],\n    },\n  },\n  {\n    id: \"order_items\",\n    type: \"tableNode\",\n    position: { x: 100, y: 150 },\n    data: {\n      label: \"order_items\",\n      fields: [\n        { name: \"id\", type: \"int\", isPrimary: true },\n        { name: \"order_id\", type: \"int\", isForeign: true },\n        { name: \"product_id\", type: \"int\", isForeign: true },\n        { name: \"quantity\", type: \"int\" },\n        { name: \"unit_price\", type: \"decimal\" },\n      ],\n    },\n  },\n  {\n    id: \"products\",\n    type: \"tableNode\",\n    position: { x: 100, y: 460 },\n    data: {\n      label: \"products\",\n      fields: [\n        { name: \"id\", type: \"int\", isPrimary: true },\n        { name: \"merchant_id\", type: \"int\", isForeign: true },\n        { name: \"name\", type: \"varchar\" },\n        { name: \"description\", type: \"text\" },\n        { name: \"price\", type: \"decimal\" },\n        { name: \"status\", type: \"varchar\" },\n        { name: \"created_at\", type: \"timestamp\" },\n      ],\n    },\n  },\n  {\n    id: \"merchants\",\n    type: \"tableNode\",\n    position: { x: 450, y: 493 },\n    data: {\n      label: \"merchants\",\n      fields: [\n        { name: \"id\", type: \"int\", isPrimary: true },\n        { name: \"name\", type: \"varchar\" },\n        { name: \"email\", type: \"varchar\" },\n        { name: \"country_code\", type: \"varchar\", isForeign: true },\n        { name: \"created_at\", type: \"timestamp\" },\n      ],\n    },\n  },\n  {\n    id: \"countries\",\n    type: \"tableNode\",\n    position: { x: 800, y: 570 },\n    data: {\n      label: \"countries\",\n      fields: [\n        { name: \"code\", type: \"varchar\", isPrimary: true },\n        { name: \"name\", type: \"varchar\" },\n        { name: \"continent_name\", type: \"varchar\" },\n        { name: \"currency\", type: \"varchar\" },\n        {\n          name: \"nomfdjdgnkdngkdjngkdjngkdngkdngkdngkdngkdngkndkgndk\",\n          type: \"warol\",\n        },\n      ],\n    },\n  },\n];\n\n// Define the edges (relationships) between tables with specific column connections\nexport const initialEdges: Edge[] = [\n  // User to Orders (one-to-many): users.id -> orders.user_id\n  {\n    id: \"users-orders\",\n    source: \"users\",\n    target: \"orders\",\n    sourceHandle: \"id\",\n    targetHandle: \"user_id\",\n  },\n  // Orders to Order Items (one-to-many): orders.id -> order_items.order_id\n  {\n    id: \"orders-order_items\",\n    source: \"orders\",\n    target: \"order_items\",\n    sourceHandle: \"id\",\n    targetHandle: \"order_id\",\n  },\n  // Products to Order Items (one-to-many): products.id -> order_items.product_id\n  {\n    id: \"products-order_items\",\n    source: \"products\",\n    target: \"order_items\",\n    sourceHandle: \"id\",\n    targetHandle: \"product_id\",\n  },\n  // Merchants to Products (one-to-many): merchants.id -> products.merchant_id\n  {\n    id: \"merchants-products\",\n    source: \"merchants\",\n    target: \"products\",\n    sourceHandle: \"id\",\n    targetHandle: \"merchant_id\",\n  },\n  // Countries to Users (one-to-many): countries.code -> users.country_code\n  {\n    id: \"countries-users\",\n    source: \"countries\",\n    target: \"users\",\n    sourceHandle: \"code\",\n    targetHandle: \"country_code\",\n  },\n  // Countries to Merchants (one-to-many): countries.code -> merchants.country_code\n  {\n    id: \"countries-merchants\",\n    source: \"countries\",\n    target: \"merchants\",\n    sourceHandle: \"code\",\n    targetHandle: \"country_code\",\n  },\n];\n",
-                "filename": "schema-data.ts",
-                "path": "../_exemples/schema-visualizer/demo/schema-data.ts"
-              },
-              {
                 "title": "Main",
                 "description": "",
                 "props": {},
                 "language": "tsx",
-                "content": "\"use client\";\n\nimport { initialEdges, initialNodes } from \"./schema-data\";\nimport { SchemaVisualizer } from \"@/shared/prisma/block/schema-visualizer\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  return (\n    <div className=\"min-h-[50svh] flex flex-col\">\n      <SchemaVisualizer\n        initialEdges={initialEdges}\n        initialNodes={initialNodes}\n      />\n    </div>\n  );\n}\n",
+                "content": "\"use client\";\n\nimport { SchemaVisualizer } from \"@/shared/prisma/block/schema-visualizer\";\nimport { usePrismaSchema } from \"@/shared/prisma/hooks/use-prisma-schema\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  const { data, isLoading } = usePrismaSchema();\n\n  if (isLoading)\n    return (\n      <div className=\"min-h-[50svh] flex items-center justify-center\">\n        <p>Loading schema...</p>\n      </div>\n    );\n  const { nodes, edges } = data.xyflow;\n  return (\n    <div className=\"min-h-[50svh] flex flex-col\">\n      <SchemaVisualizer initialNodes={nodes} initialEdges={edges} />\n    </div>\n  );\n}\n",
                 "filename": "main.tsx",
                 "path": "../_exemples/schema-visualizer/demo/main.tsx"
               }
@@ -921,10 +981,19 @@ export const REGISTRY_BUILD: RegistryBuild = {
               ]
             },
             "target": "@/shared/prisma/block/schema-visualizer.tsx",
-            "dependencies": [],
+            "dependencies": [
+              "@tanstack/react-query",
+              "@xyflow/react",
+              "lucide-react"
+            ],
             "registryDependencies": [],
+            "shadcnDependencies": [
+              "dropdown-menu",
+              "tooltip",
+              "button"
+            ],
             "registryType": "registry:component",
-            "content": "\"use client\";\n\nimport { useCallback, useMemo, useRef } from \"react\";\nimport {\n  ReactFlow,\n  ReactFlowProvider,\n  Background,\n  useNodesState,\n  useEdgesState,\n  Panel,\n  useReactFlow,\n  BackgroundVariant,\n  Edge,\n  Node,\n  Handle,\n  Position,\n  NodeProps,\n  BaseEdge,\n  EdgeProps,\n  getSmoothStepPath,\n} from \"@xyflow/react\";\nimport \"@xyflow/react/dist/base.css\";\nimport { RiAddLine, RiSubtractLine, RiFullscreenLine } from \"@remixicon/react\";\nimport { Button } from \"@/components/ui/button\";\nimport { RiMore2Fill } from \"@remixicon/react\";\nimport { cn } from \"@/lib/utils\";\n\n// Register custom node types and edge types\n\nconst edgeTypes = {\n  custom: SchemaEdge,\n};\n\nexport type SchemaVisualizerProps = {\n  initialNodes: Node[];\n  initialEdges: Edge[];\n};\n\nexport function SchemaVisualizerInner({\n  initialNodes,\n  initialEdges,\n}: SchemaVisualizerProps) {\n  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);\n  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);\n  const reactFlowWrapper = useRef<HTMLDivElement>(null);\n  const { fitView, zoomIn, zoomOut } = useReactFlow();\n\n  const onFitView = useCallback(() => {\n    fitView({ padding: 0.2 });\n  }, [fitView]);\n  const TableNode = useCallback(\n    function TableNode({ data, id }: NodeProps<TableNodeType>) {\n      // Find all source connections for this node\n      const sourceConnections = initialEdges\n        .filter((edge) => edge.source === id)\n        .map((edge) => edge.sourceHandle);\n\n      // Find all target connections for this node\n      const targetConnections = initialEdges\n        .filter((edge) => edge.target === id)\n        .map((edge) => edge.targetHandle);\n\n      return (\n        <div\n          className={cn(\n            \"rounded-xl bg-card shadow-[0_1px_1px_rgba(0,0,0,0.02),_0_2px_2px_rgba(0,0,0,0.02),_0_4px_4px_rgba(0,0,0,0.02),_0_8px_8px_rgba(0,0,0,0.02),_0_16px_16px_rgba(0,0,0,0.02),_0_32px_32px_rgba(0,0,0,0.02)] w-66 font-mono\",\n            data.selected ? \"ring-2 ring-primary ring-offset-2\" : \"\"\n          )}\n        >\n          <div className=\"flex items-center justify-between px-4 py-3 border-b border-border/80 bg-gradient-to-t from-background/70 dark:from-background/30\">\n            <div className=\"text-[13px]\">\n              <span className=\"text-muted-foreground/80\">/</span>{\" \"}\n              <span className=\"font-medium\">{data.label}</span>\n            </div>\n            <Button\n              size=\"icon\"\n              variant=\"ghost\"\n              className=\"shadow-none hover:bg-transparent -my-2 -me-2 text-muted-foreground/60 hover:text-muted-foreground\"\n              aria-label=\"Open edit menu\"\n            >\n              <RiMore2Fill className=\"size-5\" aria-hidden=\"true\" />\n            </Button>\n          </div>\n          <div className=\"text-xs py-2\">\n            {data.fields.map((field: TableField) => (\n              <div key={field.name} className=\"px-4 relative group\">\n                <div className=\"flex items-center justify-between gap-2 py-2 border-dashed group-not-last:border-b\">\n                  <span className=\"truncate font-medium\">{field.name}</span>\n                  <span className=\"text-muted-foreground/60\">{field.type}</span>\n\n                  {/* Field handles */}\n                  {((field.isPrimary &&\n                    sourceConnections.includes(field.name)) ||\n                    (field.isForeign &&\n                      targetConnections.includes(field.name))) && (\n                    <Handle\n                      type={field.isPrimary ? \"source\" : \"target\"}\n                      position={\n                        field.isPrimary ? Position.Left : Position.Right\n                      }\n                      id={field.name}\n                      className=\"size-2.5 rounded-full bg-foreground! border-2 border-background\"\n                      isConnectable={false}\n                    />\n                  )}\n                </div>\n              </div>\n            ))}\n          </div>\n        </div>\n      );\n    },\n    [initialEdges]\n  );\n  const { nodeTypes } = useMemo(() => {\n    return {\n      nodeTypes: {\n        tableNode: TableNode,\n      },\n    };\n  }, [TableNode]);\n  return (\n    <main className=\"flex-1 flex items-stretch\">\n      <div className=\"w-full\" ref={reactFlowWrapper}>\n        <ReactFlow\n          nodes={nodes}\n          edges={edges}\n          onNodesChange={onNodesChange}\n          onEdgesChange={onEdgesChange}\n          nodeTypes={nodeTypes}\n          edgeTypes={edgeTypes}\n          fitView\n          minZoom={0.5}\n          maxZoom={1}\n          defaultEdgeOptions={{\n            type: \"custom\",\n            className: \"opacity-25\",\n          }}\n          style={\n            {\n              \"--xy-background-pattern-dots-color-default\":\n                \"var(--color-border)\",\n              \"--xy-edge-stroke-width-default\": 1.5,\n              \"--xy-edge-stroke-default\": \"var(--color-foreground)\",\n              \"--xy-edge-stroke-selected-default\": \"var(--color-foreground)\",\n              \"--xy-attribution-background-color-default\": \"transparent\",\n            } as React.CSSProperties\n          }\n          attributionPosition=\"bottom-left\"\n        >\n          <Background variant={BackgroundVariant.Dots} gap={20} size={2} />\n\n          <Panel\n            position=\"bottom-right\"\n            className=\"inline-flex -space-x-px rounded-md shadow-xs rtl:space-x-reverse\"\n          >\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"text-muted-foreground/80 hover:text-muted-foreground rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg size-10 focus-visible:z-10 bg-card\"\n              onClick={() => zoomIn()}\n              aria-label=\"Zoom in\"\n            >\n              <RiAddLine className=\"size-5\" aria-hidden=\"true\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"text-muted-foreground/80 hover:text-muted-foreground rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg size-10 focus-visible:z-10 bg-card\"\n              onClick={() => zoomOut()}\n              aria-label=\"Zoom out\"\n            >\n              <RiSubtractLine className=\"size-5\" aria-hidden=\"true\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"text-muted-foreground/80 hover:text-muted-foreground rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg size-10 focus-visible:z-10 bg-card\"\n              onClick={onFitView}\n              aria-label=\"Fit view\"\n            >\n              <RiFullscreenLine className=\"size-5\" aria-hidden=\"true\" />\n            </Button>\n          </Panel>\n        </ReactFlow>\n      </div>\n    </main>\n  );\n}\n\nexport function SchemaVisualizer(props: SchemaVisualizerProps) {\n  return (\n    <ReactFlowProvider>\n      <SchemaVisualizerInner {...props} />\n    </ReactFlowProvider>\n  );\n}\n\nfunction SchemaEdge({\n  sourceX,\n  sourceY,\n  targetX,\n  targetY,\n  sourcePosition,\n  targetPosition,\n  style = {},\n  markerEnd,\n}: EdgeProps) {\n  const [edgePath] = getSmoothStepPath({\n    sourceX,\n    sourceY,\n    sourcePosition: sourcePosition || Position.Bottom,\n    targetX,\n    targetY,\n    targetPosition: targetPosition || Position.Top,\n    borderRadius: 8, // Increased border radius for smoother corners\n  });\n\n  return <BaseEdge path={edgePath} style={style} markerEnd={markerEnd} />;\n}\n\nexport interface TableField {\n  name: string;\n  type: string;\n  isPrimary?: boolean;\n  isForeign?: boolean;\n}\n\ninterface TableNodeData extends Record<string, unknown> {\n  label: string;\n  fields: TableField[];\n  selected?: boolean;\n}\n\ntype TableNodeType = Node<TableNodeData, \"tableNode\">;\n"
+            "content": "\"use client\";\n\nimport { useCallback, useEffect, useRef } from \"react\";\nimport {\n  ReactFlow,\n  ReactFlowProvider,\n  Background,\n  useNodesState,\n  useEdgesState,\n  Panel,\n  useReactFlow,\n  BackgroundVariant,\n  Edge,\n  Node,\n  Handle,\n  Position,\n  NodeProps,\n  BaseEdge,\n  EdgeProps,\n  getSmoothStepPath,\n} from \"@xyflow/react\";\nimport \"@xyflow/react/dist/base.css\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { Prisma } from \"@/generated/prisma\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\n\nimport { useState } from \"react\";\n\nimport {\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport { Fullscreen, Minus, MoreVertical, Plus } from \"lucide-react\";\n\nSchemaVisualizer.dependencies = [\n  \"@tanstack/react-query\",\n  \"@xyflow/react\",\n  \"lucide-react\",\n];\n\nSchemaVisualizer.shadcnDependencies = [\"dropdown-menu\", \"tooltip\", \"button\"];\n\nconst edgeTypes = {\n  custom: SchemaEdge,\n};\nexport interface TableField {\n  name: string;\n  type: string;\n  isPrimary?: boolean;\n  isForeign?: boolean;\n  meta?: Prisma.DMMF.Field;\n}\n\ninterface TableNodeData extends Record<string, unknown> {\n  label: string;\n  fields: TableField[];\n  selected?: boolean;\n  sourceConnections: string[];\n  targetConnections: string[];\n}\n\ntype TableNodeType = Node<TableNodeData, \"tableNode\">;\n\nexport type SchemaVisualizerProps = {\n  initialNodes: Node[];\n  initialEdges: Edge[];\n};\nfunction FieldName({\n  field,\n  withTooltip,\n}: {\n  field: TableField;\n  withTooltip?: boolean;\n}) {\n  const fieldName = (\n    <span>\n      {field.isForeign && <span title=\"Foreign key\">⛓️</span>}\n      {field.isPrimary && <span title=\"Primary key\">🔑</span>}\n      {field.meta?.kind === \"object\" && (\n        <span className=\"text-blue-400\" title=\"Virtual field\">\n          🔗\n        </span>\n      )}\n      <span>{field.name}</span>\n    </span>\n  );\n  if (!withTooltip) {\n    return fieldName;\n  }\n  return (\n    <TooltipProvider delayDuration={0}>\n      <Tooltip>\n        <TooltipTrigger asChild>{fieldName}</TooltipTrigger>\n        <TooltipContent className=\"py-3 w-50 bg-muted text-foreground border\">\n          <div className=\"space-y-1\">\n            <p className=\"text-[13px] font-medium border-b\">\n              <div className=\"flex items-center justify-between gap-2 py-2 border-dashed group-not-last:border-b\">\n                <span className=\"truncate font-medium\">{fieldName}</span>\n                <span className=\"text-muted-foreground/60\">\n                  {field.type}\n                  {field.meta?.isUnique && (\n                    <span className=\"text-blue-400\" title=\"Unique field\">\n                      !\n                    </span>\n                  )}\n                  {field.meta?.isRequired === false && (\n                    <span className=\"text-blue-400\" title=\"Optional field\">\n                      ?\n                    </span>\n                  )}\n                  {field.meta?.isList && (\n                    <span className=\"text-blue-400\" title=\"List field\">\n                      []\n                    </span>\n                  )}\n                </span>\n              </div>\n            </p>\n            {field.meta?.documentation?.split(\"\\\\n\").map((line, index) => (\n              <p\n                key={index}\n                className=\"text-xs text-muted-foreground border-b border-dashed\"\n              >\n                {line}\n              </p>\n            ))}\n          </div>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n}\n\ntype Checked = boolean;\nfunction TableNode({ data, id }: NodeProps<TableNodeType>) {\n  const [withTooltip, setWithTooltip] = useState<Checked>(false);\n  const [showVirtualField, setShowVirtualField] = useState<Checked>(false);\n  return (\n    <div\n      className={cn(\n        \"rounded-xl bg-card shadow-[0_1px_1px_rgba(0,0,0,0.02),_0_2px_2px_rgba(0,0,0,0.02),_0_4px_4px_rgba(0,0,0,0.02),_0_8px_8px_rgba(0,0,0,0.02),_0_16px_16px_rgba(0,0,0,0.02),_0_32px_32px_rgba(0,0,0,0.02)] w-66 font-mono\",\n        data.selected ? \"ring-2 ring-primary ring-offset-2\" : \"\"\n      )}\n      style={{\n        border: `.5px solid ${data.color || \"#888\"}`,\n      }}\n    >\n      <div className=\"flex items-center justify-between px-4 py-3 border-b border-border/80 bg-gradient-to-t from-background/70 dark:from-background/30\">\n        <div className=\"flex items-center gap-2 text-[13px]\">\n          <span\n            className=\"w-2 h-2 rounded-full\"\n            style={{ background: String(data.color) }}\n          />\n          <span className=\"text-muted-foreground/80\">/</span>{\" \"}\n          <span className=\"font-medium\">{data.label}</span>\n        </div>\n        <DropdownMenu>\n          <DropdownMenuTrigger asChild>\n            <Button\n              size=\"icon\"\n              variant=\"ghost\"\n              className=\"shadow-none hover:bg-transparent -my-2 -me-2 text-muted-foreground/60 hover:text-muted-foreground\"\n              aria-label=\"Open edit menu\"\n            >\n              <MoreVertical className=\"size-5\" aria-hidden=\"true\" />\n            </Button>\n          </DropdownMenuTrigger>\n          <DropdownMenuContent>\n            <DropdownMenuCheckboxItem\n              checked={withTooltip}\n              onCheckedChange={setWithTooltip}\n            >\n              Show field tooltips\n            </DropdownMenuCheckboxItem>\n            <DropdownMenuCheckboxItem\n              checked={showVirtualField}\n              onCheckedChange={setShowVirtualField}\n            >\n              Show virtual fields\n            </DropdownMenuCheckboxItem>\n          </DropdownMenuContent>\n        </DropdownMenu>\n      </div>\n      <div className=\"text-xs py-2\">\n        {data.fields\n          .filter((field) => {\n            if (showVirtualField) return true;\n            return field.meta?.kind !== \"object\";\n          })\n          .map((field: TableField) => {\n            const isPrimaryConnection =\n              field.isPrimary && data.sourceConnections.includes(field.name);\n            const isForeignConnection =\n              field.isForeign && data.targetConnections.includes(field.name);\n            return (\n              <div key={field.name} className=\"px-4 relative group\">\n                <div className=\"flex items-center justify-between gap-2 py-2 border-dashed group-not-last:border-b\">\n                  <span className=\"truncate font-medium\">\n                    <FieldName field={field} withTooltip={withTooltip} />\n                  </span>\n                  <span className=\"text-muted-foreground/60\">\n                    {field.type}\n                    {field.meta?.isUnique && (\n                      <span className=\"text-blue-400\" title=\"Unique field\">\n                        !\n                      </span>\n                    )}\n                    {field.meta?.isRequired === false && (\n                      <span className=\"text-blue-400\" title=\"Optional field\">\n                        ?\n                      </span>\n                    )}\n                    {field.meta?.isList && (\n                      <span className=\"text-blue-400\" title=\"List field\">\n                        []\n                      </span>\n                    )}\n                  </span>\n\n                  {/* Field handles */}\n                  {(isPrimaryConnection || isForeignConnection) && (\n                    <Handle\n                      type={field.isPrimary ? \"source\" : \"target\"}\n                      position={\n                        field.isPrimary ? Position.Left : Position.Right\n                      }\n                      id={field.name}\n                      className=\"size-2.5 rounded-full bg-foreground! border-2 border-background\"\n                      isConnectable={false}\n                    />\n                  )}\n                </div>\n              </div>\n            );\n          })}\n      </div>\n    </div>\n  );\n}\nconst { nodeTypes } = {\n  nodeTypes: {\n    tableNode: TableNode,\n  },\n};\nfunction SchemaVisualizerInner({\n  initialNodes,\n  initialEdges,\n}: SchemaVisualizerProps) {\n  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);\n  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);\n  const reactFlowWrapper = useRef<HTMLDivElement>(null);\n  const { fitView, zoomIn, zoomOut } = useReactFlow();\n\n  useEffect(() => setNodes(initialNodes), [initialNodes, setNodes]);\n  useEffect(() => setEdges(initialEdges), [initialEdges, setEdges]);\n\n  const onFitView = useCallback(() => {\n    fitView({ padding: 0.2 });\n  }, [fitView]);\n\n  return (\n    <main className=\"flex-1 flex items-stretch\">\n      <div className=\"w-full\" ref={reactFlowWrapper}>\n        <ReactFlow\n          nodes={nodes}\n          edges={edges}\n          onNodesChange={onNodesChange}\n          onEdgesChange={onEdgesChange}\n          nodeTypes={nodeTypes}\n          edgeTypes={edgeTypes}\n          fitView\n          minZoom={0.5}\n          maxZoom={1}\n          defaultEdgeOptions={{\n            type: \"custom\",\n            className: \"opacity-25\",\n          }}\n          style={\n            {\n              \"--xy-background-pattern-dots-color-default\":\n                \"var(--color-border)\",\n              \"--xy-edge-stroke-width-default\": 1.5,\n              \"--xy-edge-stroke-default\": \"var(--color-foreground)\",\n              \"--xy-edge-stroke-selected-default\": \"var(--color-foreground)\",\n              \"--xy-attribution-background-color-default\": \"transparent\",\n            } as React.CSSProperties\n          }\n          attributionPosition=\"bottom-left\"\n        >\n          <Background variant={BackgroundVariant.Dots} gap={20} size={2} />\n\n          <Panel\n            position=\"bottom-right\"\n            className=\"inline-flex -space-x-px rounded-md shadow-xs rtl:space-x-reverse\"\n          >\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"text-muted-foreground/80 hover:text-muted-foreground rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg size-10 focus-visible:z-10 bg-card\"\n              onClick={() => zoomIn()}\n              aria-label=\"Zoom in\"\n            >\n              <Plus className=\"size-5\" aria-hidden=\"true\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"text-muted-foreground/80 hover:text-muted-foreground rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg size-10 focus-visible:z-10 bg-card\"\n              onClick={() => zoomOut()}\n              aria-label=\"Zoom out\"\n            >\n              <Minus className=\"size-5\" aria-hidden=\"true\" />\n            </Button>\n            <Button\n              variant=\"outline\"\n              size=\"icon\"\n              className=\"text-muted-foreground/80 hover:text-muted-foreground rounded-none shadow-none first:rounded-s-lg last:rounded-e-lg size-10 focus-visible:z-10 bg-card\"\n              onClick={onFitView}\n              aria-label=\"Fit view\"\n            >\n              <Fullscreen className=\"size-5\" aria-hidden=\"true\" />\n              {/* <RiFullscreenLine className=\"size-5\" aria-hidden=\"true\" /> */}\n            </Button>\n          </Panel>\n          {/* <MiniMap\n            nodeColor={(node) => (node.data as any)?.color || \"#999\"}\n            nodeStrokeWidth={2}\n            // maskColor=\"#00000010\"\n          /> */}\n        </ReactFlow>\n      </div>\n    </main>\n  );\n}\n\nexport function SchemaVisualizer(props: SchemaVisualizerProps) {\n  const { initialNodes, initialEdges } = props;\n\n  props.initialNodes.map((node) => {\n    if (node.type === \"tableNode\") {\n      const data = node.data as TableNodeData;\n\n      // Find all source connections for this node\n      const sourceConnections = initialEdges\n        .filter((edge) => edge.source === node.id)\n        .map((edge) => edge.sourceHandle);\n\n      // Find all target connections for this node\n      const targetConnections = initialEdges\n        .filter((edge) => edge.target === node.id)\n        .map((edge) => edge.targetHandle);\n\n      data.sourceConnections = sourceConnections as string[];\n      data.targetConnections = targetConnections as string[];\n    }\n  });\n  return (\n    <ReactFlowProvider>\n      <SchemaVisualizerInner\n        initialEdges={props.initialEdges}\n        initialNodes={props.initialNodes}\n      />\n    </ReactFlowProvider>\n  );\n}\n\nfunction SchemaEdge({\n  sourceX,\n  sourceY,\n  targetX,\n  targetY,\n  sourcePosition,\n  targetPosition,\n  style = {},\n  markerEnd,\n}: EdgeProps) {\n  const [edgePath] = getSmoothStepPath({\n    sourceX,\n    sourceY,\n    sourcePosition: sourcePosition || Position.Bottom,\n    targetX,\n    targetY,\n    targetPosition: targetPosition || Position.Top,\n    borderRadius: 8, // Increased border radius for smoother corners\n  });\n\n  return <BaseEdge path={edgePath} style={style} markerEnd={markerEnd} />;\n}\n"
           }
         ]
       },
@@ -948,6 +1017,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-root.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldRootProps = {};\n\nexport function FieldRoot({}: FieldRootProps) {\n  return <div>FieldRoot</div>;\n}\n"
           },
@@ -966,6 +1036,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-enum.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldEnumProps = {};\n\nexport function FieldEnum({}: FieldEnumProps) {\n  return <div>FieldEnum</div>;\n}\n"
           },
@@ -984,6 +1055,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-string.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\n// string\n// text\n// password\n// password-create\n// email\n// url\n// json\n// otp\n// description\nexport type FieldStringProps = {};\n\nexport function FieldString({}: FieldStringProps) {\n  return <div>FieldString</div>;\n}\n"
           },
@@ -1002,6 +1074,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-date-time.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\n// date time\n// date\n// time\n// timestamp\nexport type FieldDateTimeProps = {};\n\nexport function FieldDateTime({}: FieldDateTimeProps) {\n  return <div>FieldDateTime</div>;\n}\n"
           },
@@ -1020,6 +1093,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-number.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\n// big int\n// int\n// float\n// decimal\nexport type FieldNumberProps = {};\n\nexport function FieldNumber({}: FieldNumberProps) {\n  return <div>FieldNumber</div>;\n}\n"
           },
@@ -1038,6 +1112,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-range.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\n// range date time\n// range date\n// range time\n// range timestamp\n// range int\n// range float\n// range decimal\n// range big int\nexport type FieldRangeProps = {};\n\nexport function FieldRange({}: FieldRangeProps) {\n  return <div>FieldRange</div>;\n}\n"
           },
@@ -1056,6 +1131,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldAutoProps = {};\n\nexport function FieldAuto({}: FieldAutoProps) {\n  return <div>FieldAuto</div>;\n}\n"
           },
@@ -1074,6 +1150,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-boolean.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldBooleanProps = {};\n\nexport function FieldBoolean({}: FieldBooleanProps) {\n  return <div>FieldBoolean</div>;\n}\n"
           },
@@ -1092,8 +1169,50 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-scalars/field-bytes.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldBytesProps = {};\n\nexport function FieldBytes({}: FieldBytesProps) {\n  return <div>FieldBytes</div>;\n}\n"
+          }
+        ]
+      },
+      "hooks": {
+        "name": "hooks",
+        "description": "",
+        "url": "/prisma/hooks",
+        "codeDocs": [
+          {
+            "title": "UsePrismaSchema",
+            "description": "",
+            "props": {},
+            "url": "/prisma/hooks/use-prisma-schema",
+            "fileName": "use-prisma-schema.tsx",
+            "filePath": "../shared/prisma/hooks/use-prisma-schema.tsx",
+            "name": "use-prisma-schema",
+            "registryUrl": "https://futurjs.vercel.app/r/use-prisma-schema.json",
+            "componentName": "UsePrismaSchema",
+            "demo": [
+              {
+                "title": "Main",
+                "description": "",
+                "props": {},
+                "language": "tsx",
+                "content": "\"use client\";\n\nimport { usePrismaSchema } from \"@/shared/prisma/hooks/use-prisma-schema\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  const { data, isLoading } = usePrismaSchema();\n  return (\n    <div>\n      {isLoading && <p>Loading...</p>}\n      {data && (\n        <pre className=\"h-[50svh] flex flex-col overflow-auto\">\n          {JSON.stringify(data, null, 2)}\n        </pre>\n      )}\n    </div>\n  );\n}\n",
+                "filename": "main.tsx",
+                "path": "../_exemples/use-prisma-schema/demo/main.tsx"
+              }
+            ],
+            "exemples": {},
+            "target": "@/shared/prisma/hooks/use-prisma-schema.tsx",
+            "dependencies": [
+              "@tanstack/react-query",
+              "@xyflow/react"
+            ],
+            "registryDependencies": [
+              "prisma-actions"
+            ],
+            "shadcnDependencies": [],
+            "registryType": "registry:component",
+            "content": "\"use client\";\n\nimport { Prisma } from \"@/generated/prisma\";\nimport { Edge, Node } from \"@xyflow/react\";\nimport { useQuery } from \"@tanstack/react-query\";\nimport { getPrismaSchema } from \"@/shared/prisma/actions/prisma-actions\";\n\nexport type PrismaSchema = {\n  datamodel: Prisma.DMMF.Datamodel;\n  xyflow: {\n    nodes: Node[];\n    edges: Edge[];\n  };\n};\nexport const defaultPrismaSchema: PrismaSchema = {\n  datamodel: {\n    models: [],\n    enums: [],\n    indexes: [],\n    types: [],\n  },\n  xyflow: {\n    nodes: [],\n    edges: [],\n  },\n};\n\nexport function usePrismaSchema() {\n  const { data, isLoading } = useQuery({\n    queryKey: [\"prisma-schema\"],\n    queryFn: async () => {\n      const datamodel = await getPrismaSchema();\n      const schema: PrismaSchema = {\n        datamodel,\n        xyflow: datamodelToXyflow(datamodel),\n      };\n      return schema;\n    },\n    refetchOnWindowFocus: false,\n    refetchOnReconnect: false,\n  });\n  if (!data)\n    return {\n      isLoading,\n      data: defaultPrismaSchema,\n    };\n  return {\n    isLoading,\n    data,\n  };\n}\n\nusePrismaSchema.registryDependencies = [\"prisma-actions\"];\nusePrismaSchema.dependencies = [\"@tanstack/react-query\", \"@xyflow/react\"];\n\nfunction getStableColor(modelName: string): string {\n  const hash = [...modelName].reduce((acc, c) => acc + c.charCodeAt(0), 0);\n  const hue = hash % 360;\n  return `hsl(${hue}, 70%, 60%)`;\n}\n\nfunction datamodelToXyflow(datamodel: Prisma.DMMF.Datamodel): {\n  nodes: Node[];\n  edges: Edge[];\n} {\n  const modelColorMap = new Map<string, string>();\n  const numColumns = 6;\n  const columnWidth = 300;\n  const columnHeights = new Array(numColumns).fill(100); // start y=100 pour chaque colonne\n\n  const nodes: Node[] = datamodel.models.map((model, i) => {\n    const height = model.fields.length * 30 + 100;\n\n    // Trouver la colonne la moins haute\n    const minCol = columnHeights.indexOf(Math.min(...columnHeights));\n    const x = minCol * columnWidth;\n    const y = columnHeights[minCol];\n\n    columnHeights[minCol] += height + 50; // 50px de marge verticale\n\n    const color = getStableColor(model.name);\n    modelColorMap.set(model.name, color);\n\n    return {\n      id: model.name,\n      type: \"tableNode\",\n      position: { x, y },\n      data: {\n        label: model.name,\n        color,\n        fields: model.fields.map((field) => ({\n          name: field.name,\n          type: field.type,\n          isPrimary: field.isId,\n          isForeign: field.isReadOnly,\n          meta: field,\n        })),\n      },\n    };\n  });\n\n  const edges: Edge[] = datamodel.models.flatMap((model) => {\n    return model.fields\n      .filter(\n        (field) =>\n          field.relationName &&\n          field?.relationFromFields?.length &&\n          field?.relationToFields?.length\n      )\n      .map((field) => {\n        return {\n          id: `${field.relationName}`,\n          source: field.type,\n          target: model.name,\n          sourceHandle: field?.relationToFields?.at(0),\n          targetHandle: field?.relationFromFields?.at(0),\n          animated: true,\n          // style: {\n          //   stroke: modelColorMap.get(model.name) || \"#999\",\n          // },\n        };\n      });\n  });\n\n  return { nodes, edges };\n}\n"
           }
         ]
       },
@@ -1117,6 +1236,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-lists/record-field-scalar.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldScalarProps = {};\n\nexport function RecordFieldScalar({}: RecordFieldScalarProps) {\n  return <div>RecordFieldScalar</div>;\n}\n"
           },
@@ -1135,6 +1255,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-lists/record-field-list-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldListAutoProps = {};\n\nexport function RecordFieldListAuto({}: RecordFieldListAutoProps) {\n  return <div>RecordFieldListAuto</div>;\n}\n"
           },
@@ -1153,6 +1274,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/record-field-lists/record-field-list-relational.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type RecordFieldListRelationalProps = {};\n\nexport function RecordFieldListRelational({}: RecordFieldListRelationalProps) {\n  return <div>RecordFieldListRelational</div>;\n}\n"
           }
@@ -1178,6 +1300,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-relationals/field-relational-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldRelationalAutoProps = {};\n\nexport function FieldRelationalAuto({}: FieldRelationalAutoProps) {\n  return <div>FieldRelationalAuto</div>;\n}\n"
           },
@@ -1196,6 +1319,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-relationals/field-one-to-many.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldOneToManyProps = {};\n\nexport function FieldOneToMany({}: FieldOneToManyProps) {\n  return <div>FieldOneToMany</div>;\n}\n"
           },
@@ -1214,6 +1338,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-relationals/field-many-to-many.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldManyToManyProps = {};\n\nexport function FieldManyToMany({}: FieldManyToManyProps) {\n  return <div>FieldManyToMany</div>;\n}\n"
           },
@@ -1232,6 +1357,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-relationals/field-one-to-one.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldOneToOneProps = {};\n\nexport function FieldOneToOne({}: FieldOneToOneProps) {\n  return <div>FieldOneToOne</div>;\n}\n"
           },
@@ -1250,6 +1376,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-relationals/field-many-to-one.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldManyToOneProps = {};\n\nexport function FieldManyToOne({}: FieldManyToOneProps) {\n  return <div>FieldManyToOne</div>;\n}\n"
           }
@@ -1275,6 +1402,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/pages/page-record-list.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type PageRecordListProps = {};\n\nexport function PageRecordList({}: PageRecordListProps) {\n  return <div>PageRecordList</div>;\n}\n"
           },
@@ -1293,6 +1421,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/pages/page-record.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type PageRecordProps = {};\n\nexport function PageRecord({}: PageRecordProps) {\n  return <div>PageRecord</div>;\n}\n"
           },
@@ -1311,6 +1440,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/pages/page-database.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type PageDatabaseProps = {};\n\nexport function PageDatabase({}: PageDatabaseProps) {\n  return <div>PageDatabase</div>;\n}\n"
           }
@@ -1336,6 +1466,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-lists/field-list-relational.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldListRelationalProps = {};\n\nexport function FieldListRelational({}: FieldListRelationalProps) {\n  return <div>FieldListRelational</div>;\n}\n"
           },
@@ -1354,6 +1485,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-lists/field-list-scalar.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldListScalarProps = {};\n\nexport function FieldListScalar({}: FieldListScalarProps) {\n  return <div>FieldListScalar</div>;\n}\n"
           },
@@ -1372,6 +1504,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "target": "@/shared/prisma/field-lists/field-list-auto.tsx",
             "dependencies": [],
             "registryDependencies": [],
+            "shadcnDependencies": [],
             "registryType": "registry:component",
             "content": "\"use client\";\n\nexport type FieldListAutoProps = {};\n\nexport function FieldListAuto({}: FieldListAutoProps) {\n  return <div>FieldListAuto</div>;\n}\n"
           }

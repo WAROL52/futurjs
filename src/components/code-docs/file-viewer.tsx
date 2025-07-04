@@ -41,7 +41,14 @@ export function FileViewer({ codes, registryUrl }: FileViewerProps) {
         </ResizablePanel>
       </ResizablePanelGroup>
       <div className="mt-1">
-        <CodeSnippetRegistryInstall registryUrl={registryUrl || ""} />
+        {registryUrl && (
+          <div>
+            <p className="text-sm text-muted-foreground mb-2">
+              Install the following registry dependencies:
+            </p>
+            <CodeSnippetRegistryInstall dependencies={[registryUrl]} />
+          </div>
+        )}
       </div>
     </div>
   );

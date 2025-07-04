@@ -2,13 +2,11 @@
 
 import { CodeSnippet } from "./code-snippet";
 
-export type CodeSnippetRegistryInstallProps = {
+export type CodeSnippetInstallProps = {
   dependencies: string[];
 };
 
-export function CodeSnippetRegistryInstall({
-  dependencies,
-}: CodeSnippetRegistryInstallProps) {
+export function CodeSnippetInstall({ dependencies }: CodeSnippetInstallProps) {
   if (!dependencies.length) return null;
   return (
     <CodeSnippet
@@ -16,22 +14,22 @@ export function CodeSnippetRegistryInstall({
         {
           label: "npm",
           // icon: BoxIcon,
-          code: "npx shadcn@latest add " + dependencies.join(" "),
+          code: "npm install " + dependencies.join(" "),
         },
         {
           label: "yarn",
           // icon: BoxIcon,
-          code: "yarn shadcn@latest add " + dependencies.join(" "),
+          code: "yarn add " + dependencies.join(" "),
         },
         {
           label: "pnpm",
           // icon: BoxIcon,
-          code: "pnpm dlx shadcn@latest add " + dependencies.join(" "),
+          code: "pnpm add " + dependencies.join(" "),
         },
         {
           label: "bun",
           // icon: BoxIcon,
-          code: "bunx --bun shadcn@latest add " + dependencies.join(" "),
+          code: "bun add " + dependencies.join(" "),
         },
       ]}
     />
