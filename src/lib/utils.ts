@@ -99,3 +99,7 @@ export function normalizePath(path: string) {
 export function getExampleName(docName: string, codeName: string) {
   return `${docName}-${codeName}`.replaceAll(" ", "-").toLowerCase();
 }
+
+export function getUrlExampleName(docName: string, codeName: string) {
+  return `${BASE_URL}/r/${getExampleName(docName, codeName)}.json`;
+}

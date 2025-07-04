@@ -9,12 +9,19 @@ import {
   TableRow,
 } from "../ui/table";
 import { Badge } from "../ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { CodeViewer, CodeViewerProps } from "./code-viewer";
 import { CodeSnippet } from "./code-snippet";
 import {
   BASE_URL,
   CategoryType,
+  getUrlExampleName,
   getUrlRegistryDependencies,
   getUrlRegistryNeeds,
 } from "@/lib/utils";
@@ -228,6 +235,14 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
             <div className="px-2">
               <TabsContent value="CLI">
                 <CodeSnippetRegistryInstall dependencies={[registry]} />
+                {codeDocs.demo.length > 0 && (
+                  <div className="mt-4">
+                    <p>Install with demo</p>
+                    <CodeSnippetRegistryInstall
+                      dependencies={[getUrlExampleName(codeDocs.name, "demo")]}
+                    />
+                  </div>
+                )}
               </TabsContent>
               <TabsContent value="Manual">
                 {codeDocs.dependencies.length > 0 && (
@@ -286,6 +301,16 @@ export function CodeDocs({ children, ...codeDocs }: CodeDocsProps) {
               <CardContent className="bg-background">
                 <CodeExample codes={exempleCodes} />
               </CardContent>
+              <CardFooter className="block w-full">
+                <div>
+                  <p>install: {exempleTitle} </p>
+                  <CodeSnippetRegistryInstall
+                    dependencies={[
+                      getUrlExampleName(codeDocs.name, exempleTitle),
+                    ]}
+                  />
+                </div>
+              </CardFooter>
             </Card>
           ))}
         </div>
