@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-prisma-schema",
+  "type": "registry:component",
+  "title": "UsePrismaSchema",
+  "description": "",
+  "dependencies": [
+    "@tanstack/react-query",
+    "@xyflow/react"
+  ],
+  "registryDependencies": [
+    "https://futurjs.vercel.app/r/prisma-actions.json"
+  ],
+  "files": [
+    {
+      "path": "src/shared/prisma/hooks/use-prisma-schema.tsx",
+      "content": "\"use client\";\n\nimport { Prisma } from \"@/generated/prisma\";\nimport { Edge, Node } from \"@xyflow/react\";\nimport { useQuery } from \"@tanstack/react-query\";\nimport { getPrismaSchema } from \"@/shared/prisma/actions/prisma-actions\";\n\nexport type PrismaSchema = {\n  datamodel: Prisma.DMMF.Datamodel;\n  xyflow: {\n    nodes: Node[];\n    edges: Edge[];\n  };\n};\nexport const defaultPrismaSchema: PrismaSchema = {\n  datamodel: {\n    models: [],\n    enums: [],\n    indexes: [],\n    types: [],\n  },\n  xyflow: {\n    nodes: [],\n    edges: [],\n  },\n};\n\nexport function usePrismaSchema() {\n  const { data, isLoading } = useQuery({\n    queryKey: [\"prisma-schema\"],\n    queryFn: async () => {\n      const datamodel = await getPrismaSchema();\n      const schema: PrismaSchema = {\n        datamodel,\n        xyflow: datamodelToXyflow(datamodel),\n      };\n      return schema;\n    },\n    refetchOnWindowFocus: false,\n    refetchOnReconnect: false,\n  });\n  if (!data)\n    return {\n      isLoading,\n      data: defaultPrismaSchema,\n    };\n  return {\n    isLoading,\n    data,\n  };\n}\n\nusePrismaSchema.registryDependencies = [\"prisma-actions\"];\nusePrismaSchema.dependencies = [\"@tanstack/react-query\", \"@xyflow/react\"];\n\nfunction getStableColor(modelName: string): string {\n  const hash = [...modelName].reduce((acc, c) => acc + c.charCodeAt(0), 0);\n  const hue = hash % 360;\n  return `hsl(${hue}, 70%, 60%)`;\n}\n\nfunction datamodelToXyflow(datamodel: Prisma.DMMF.Datamodel): {\n  nodes: Node[];\n  edges: Edge[];\n} {\n  const modelColorMap = new Map<string, string>();\n  const numColumns = 6;\n  const columnWidth = 300;\n  const columnHeights = new Array(numColumns).fill(100); // start y=100 pour chaque colonne\n\n  const nodes: Node[] = datamodel.models.map((model, i) => {\n    const height = model.fields.length * 30 + 100;\n\n    // Trouver la colonne la moins haute\n    const minCol = columnHeights.indexOf(Math.min(...columnHeights));\n    const x = minCol * columnWidth;\n    const y = columnHeights[minCol];\n\n    columnHeights[minCol] += height + 50; // 50px de marge verticale\n\n    const color = getStableColor(model.name);\n    modelColorMap.set(model.name, color);\n\n    return {\n      id: model.name,\n      type: \"tableNode\",\n      position: { x, y },\n      data: {\n        label: model.name,\n        color,\n        fields: model.fields.map((field) => ({\n          name: field.name,\n          type: field.type,\n          isPrimary: field.isId,\n          isForeign: field.isReadOnly,\n          meta: field,\n        })),\n      },\n    };\n  });\n\n  const edges: Edge[] = datamodel.models.flatMap((model) => {\n    return model.fields\n      .filter(\n        (field) =>\n          field.relationName &&\n          field?.relationFromFields?.length &&\n          field?.relationToFields?.length\n      )\n      .map((field) => {\n        return {\n          id: `${field.relationName}`,\n          source: field.type,\n          target: model.name,\n          sourceHandle: field?.relationToFields?.at(0),\n          targetHandle: field?.relationFromFields?.at(0),\n          animated: true,\n          // style: {\n          //   stroke: modelColorMap.get(model.name) || \"#999\",\n          // },\n        };\n      });\n  });\n\n  return { nodes, edges };\n}\n",
+      "type": "registry:component",
+      "target": "shared/prisma/hooks/use-prisma-schema.tsx"
+    }
+  ]
+}

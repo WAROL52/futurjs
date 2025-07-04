@@ -93,6 +93,21 @@
       ]
     },
     {
+      "name": "prisma-actions",
+      "title": "PrismaActions",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/shared/prisma/actions/prisma-actions.ts",
+          "type": "registry:component",
+          "target": "shared/prisma/actions/prisma-actions.ts"
+        }
+      ]
+    },
+    {
       "name": "record-field-string",
       "title": "RecordFieldString",
       "description": "",
@@ -654,6 +669,29 @@
       ]
     },
     {
+      "name": "schema-visualizer",
+      "title": "SchemaVisualizer",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [
+        "@tanstack/react-query",
+        "@xyflow/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dropdown-menu",
+        "tooltip",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/shared/prisma/block/schema-visualizer.tsx",
+          "type": "registry:component",
+          "target": "shared/prisma/block/schema-visualizer.tsx"
+        }
+      ]
+    },
+    {
       "name": "field-root",
       "title": "FieldRoot",
       "description": "",
@@ -785,6 +823,26 @@
           "path": "src/shared/prisma/field-scalars/field-bytes.tsx",
           "type": "registry:component",
           "target": "shared/prisma/field-scalars/field-bytes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-prisma-schema",
+      "title": "UsePrismaSchema",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [
+        "@tanstack/react-query",
+        "@xyflow/react"
+      ],
+      "registryDependencies": [
+        "https://futurjs.vercel.app/r/prisma-actions.json"
+      ],
+      "files": [
+        {
+          "path": "src/shared/prisma/hooks/use-prisma-schema.tsx",
+          "type": "registry:component",
+          "target": "shared/prisma/hooks/use-prisma-schema.tsx"
         }
       ]
     },
