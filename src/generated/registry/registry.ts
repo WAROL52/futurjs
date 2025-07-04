@@ -133,7 +133,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
         "url": "/prisma/actions",
         "codeDocs": [
           {
-            "title": "PrismaActions",
+            "title": "prismaActions",
             "description": "",
             "props": {},
             "url": "/prisma/actions/prisma-actions",
@@ -148,7 +148,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "dependencies": [],
             "registryDependencies": [],
             "shadcnDependencies": [],
-            "registryType": "registry:component",
+            "registryType": "registry:lib",
             "content": "\"use server\";\nimport { Prisma, PrismaClient } from \"@/generated/prisma\";\n\nexport async function getPrismaSchema() {\n  return Prisma.dmmf.datamodel as Prisma.DMMF.Datamodel;\n}\n\nexport async function prismaActions() {\n  return null;\n}\n"
           }
         ]
@@ -840,7 +840,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
         "url": "/prisma/lib",
         "codeDocs": [
           {
-            "title": "CreateQueryHook",
+            "title": "createQueryHook",
             "description": "",
             "props": {},
             "url": "/prisma/lib/create-query-hook",
@@ -885,11 +885,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             ],
             "registryDependencies": [],
             "shadcnDependencies": [],
-            "registryType": "registry:component",
+            "registryType": "registry:lib",
             "content": "\"use client\";\nimport {\n  useQuery,\n  useMutation,\n  useQueryClient,\n  UseQueryOptions,\n  QueryKey,\n  QueryFunctionContext,\n  DefaultError,\n  UseMutationOptions,\n} from \"@tanstack/react-query\";\n\nexport type FnHookQuery<\n  T,\n  R,\n  TQueryKey extends QueryKey = QueryKey,\n  TPageParam = never\n> = (\n  dbClient: T,\n  context: QueryFunctionContext<TQueryKey, TPageParam>\n) => R | Promise<R>;\n\nexport type UseHookQueryOptions<T, R, TQueryKey extends QueryKey = QueryKey> = {\n  queryFn: FnHookQuery<T, R, TQueryKey>;\n} & Omit<UseQueryOptions<R, DefaultError, R, TQueryKey>, \"queryFn\">;\n\nexport type FnHookMutation<T, TData = unknown, TVariables = unknown> = (\n  variables: TVariables,\n  dbClient: T\n) => Promise<TData>;\n\nexport type UseHookMutationOptions<\n  T,\n  R,\n  TVariables = unknown,\n  TContext = unknown\n> = {\n  mutationFn: FnHookMutation<T, R, TVariables>;\n  invalidateOnSuccess?: QueryKey[];\n} & Omit<\n  UseMutationOptions<R, DefaultError, TVariables, TContext>,\n  \"mutationFn\"\n>;\nexport type FnActionHandler = ((args: any) => any) | ((args?: any) => any);\nexport type ActionHandler = {\n  [modelName: string]: {\n    [methodName: string]: FnActionHandler;\n  };\n};\n\nexport function createQueryHook<T extends ActionHandler>(handler: T) {\n  return {\n    useActionQuery: createUseActionQuery<T>(handler),\n    useActionMutation: createUseActionMutation<T>(handler),\n  };\n}\ncreateQueryHook.dependencies = [\"@tanstack/react-query\"];\n\nfunction createUseActionQuery<T extends object>(handler: T) {\n  return function useDbQuery<R, TQueryKey extends QueryKey = QueryKey>(\n    options: UseHookQueryOptions<T, R, TQueryKey>\n  ) {\n    return useQuery({\n      ...options,\n      queryFn: (context) => options.queryFn(handler, context),\n    });\n  };\n}\n\nfunction createUseActionMutation<T extends object>(handler: T) {\n  return function useDbMutation<R, TVariables = unknown, TContext = unknown>(\n    options: UseHookMutationOptions<T, R, TVariables, TContext>\n  ) {\n    const queryClient = useQueryClient();\n    return useMutation({\n      ...options,\n      mutationFn: (variables) => options.mutationFn(variables, handler),\n      onSuccess(data, variables, context) {\n        if (options.invalidateOnSuccess) {\n          options.invalidateOnSuccess.forEach((key) => {\n            const queryKey = Array.isArray(key) ? key : [key];\n            queryClient.invalidateQueries({ queryKey });\n          });\n        }\n        if (options.onSuccess) {\n          options.onSuccess(data, variables, context);\n        }\n      },\n    });\n  };\n}\n"
           },
           {
-            "title": "CreateDbApiServer",
+            "title": "createDbApiServer",
             "description": "",
             "props": {},
             "url": "/prisma/lib/create-db-api-server",
@@ -904,11 +904,11 @@ export const REGISTRY_BUILD: RegistryBuild = {
             "dependencies": [],
             "registryDependencies": [],
             "shadcnDependencies": [],
-            "registryType": "registry:component",
+            "registryType": "registry:lib",
             "content": "export type DbApiServerProps = {\n  modelName: string;\n  methodName: string;\n  args: Record<string, any>;\n};\nexport type DbServer = {\n  [modelName: string]: {\n    [methodName: string]: ((args: any) => any) | ((args?: any) => any);\n  };\n};\n\nexport function createDbApiServer<T extends DbServer>(dbServer: T) {\n  return {\n    handleRequest: async (props: DbApiServerProps) => {\n      const { modelName, methodName, args } = props;\n\n      if (!modelName || !methodName) {\n        throw new Error(\"Model name and method name must be provided.\");\n      }\n      if (typeof modelName !== \"string\" || typeof methodName !== \"string\") {\n        throw new Error(\"Model name and method name must be strings.\");\n      }\n      if (args && (typeof args !== \"object\" || Array.isArray(args))) {\n        throw new Error(\"Args must be an object.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(modelName) === false) {\n        throw new Error(\"Model name contains invalid characters.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(methodName) === false) {\n        throw new Error(\"Method name contains invalid characters.\");\n      }\n      if (!(modelName in dbServer)) {\n        throw new Error(`Model ${modelName} does not exist on the server.`);\n      }\n\n      const model = dbServer[modelName];\n\n      if (!(methodName in model)) {\n        throw new Error(\n          `Method ${methodName} does not exist on model ${modelName}.`\n        );\n      }\n\n      const method = model[methodName];\n\n      if (typeof method !== \"function\") {\n        throw new Error(\n          `${methodName} is not a function on model ${modelName}.`\n        );\n      }\n      try {\n        return {\n          data: await method(args),\n        };\n      } catch (error) {\n        return {\n          error: String(error),\n        };\n      }\n    },\n  };\n}\n"
           },
           {
-            "title": "CreateDbApiClient",
+            "title": "createDbApiClient",
             "description": "",
             "props": {},
             "url": "/prisma/lib/create-db-api-client",
@@ -927,7 +927,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
               "create-query-hook"
             ],
             "shadcnDependencies": [],
-            "registryType": "registry:component",
+            "registryType": "registry:lib",
             "content": "\"use client\";\nimport axios, { AxiosError } from \"axios\";\nimport { ActionHandler, createQueryHook } from \"./create-query-hook\";\n\nexport type DbHookPrisma<T = any> = {\n  [K in keyof T as K extends `$${infer R}` ? never : K]: Omit<T[K], \"fields\">;\n};\n\nexport type DbConfig = {\n  baseUrl: string;\n};\n\nexport function createDbApiClient<T extends ActionHandler>(config: DbConfig) {\n  const dbClient = createProxy<T>(config);\n  const queryHook = createQueryHook(dbClient);\n  return {\n    useDbQuery: queryHook.useActionQuery,\n    useDbMutation: queryHook.useActionMutation,\n  };\n}\ncreateDbApiClient.registryDependencies = [\"create-query-hook\"];\ncreateDbApiClient.dependencies = [\"axios\"];\n\nfunction createProxy<T extends object>(config: DbConfig) {\n  return new Proxy(\n    {},\n    {\n      get: (_, modelName) => {\n        return new Proxy(\n          {},\n          {\n            get: (_, methodName) => {\n              return (args: Record<string, any>) => {\n                return fetchDbData(\n                  modelName as string,\n                  methodName as string,\n                  args,\n                  config\n                );\n              };\n            },\n          }\n        );\n      },\n    }\n  ) as T;\n}\n\nasync function fetchDbData<T>(\n  modelName: string,\n  methodName: string,\n  args: Record<string, any>,\n  config: DbConfig\n) {\n  if (!modelName || !methodName) {\n    throw new Error(\"Model name and method name must be provided.\");\n  }\n  try {\n    const res = await axios.post(\n      `${config.baseUrl}/${modelName}/${methodName}`,\n      {\n        args,\n      }\n    );\n    return res.data || null;\n  } catch (error) {\n    const axiosError = error as AxiosError;\n    throw new Error(\n      String(axiosError.response?.data || axiosError.message || String(error))\n    );\n  }\n}\n"
           }
         ]
@@ -1181,7 +1181,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
         "url": "/prisma/hooks",
         "codeDocs": [
           {
-            "title": "UsePrismaSchema",
+            "title": "usePrismaSchema",
             "description": "",
             "props": {},
             "url": "/prisma/hooks/use-prisma-schema",
@@ -1211,7 +1211,7 @@ export const REGISTRY_BUILD: RegistryBuild = {
               "prisma-actions"
             ],
             "shadcnDependencies": [],
-            "registryType": "registry:component",
+            "registryType": "registry:hook",
             "content": "\"use client\";\n\nimport { Prisma } from \"@/generated/prisma\";\nimport { Edge, Node } from \"@xyflow/react\";\nimport { useQuery } from \"@tanstack/react-query\";\nimport { getPrismaSchema } from \"@/shared/prisma/actions/prisma-actions\";\n\nexport type PrismaSchema = {\n  datamodel: Prisma.DMMF.Datamodel;\n  xyflow: {\n    nodes: Node[];\n    edges: Edge[];\n  };\n};\nexport const defaultPrismaSchema: PrismaSchema = {\n  datamodel: {\n    models: [],\n    enums: [],\n    indexes: [],\n    types: [],\n  },\n  xyflow: {\n    nodes: [],\n    edges: [],\n  },\n};\n\nexport function usePrismaSchema() {\n  const { data, isLoading } = useQuery({\n    queryKey: [\"prisma-schema\"],\n    queryFn: async () => {\n      const datamodel = await getPrismaSchema();\n      const schema: PrismaSchema = {\n        datamodel,\n        xyflow: datamodelToXyflow(datamodel),\n      };\n      return schema;\n    },\n    refetchOnWindowFocus: false,\n    refetchOnReconnect: false,\n  });\n  if (!data)\n    return {\n      isLoading,\n      data: defaultPrismaSchema,\n    };\n  return {\n    isLoading,\n    data,\n  };\n}\n\nusePrismaSchema.registryDependencies = [\"prisma-actions\"];\nusePrismaSchema.dependencies = [\"@tanstack/react-query\", \"@xyflow/react\"];\n\nfunction getStableColor(modelName: string): string {\n  const hash = [...modelName].reduce((acc, c) => acc + c.charCodeAt(0), 0);\n  const hue = hash % 360;\n  return `hsl(${hue}, 70%, 60%)`;\n}\n\nfunction datamodelToXyflow(datamodel: Prisma.DMMF.Datamodel): {\n  nodes: Node[];\n  edges: Edge[];\n} {\n  const modelColorMap = new Map<string, string>();\n  const numColumns = 6;\n  const columnWidth = 300;\n  const columnHeights = new Array(numColumns).fill(100); // start y=100 pour chaque colonne\n\n  const nodes: Node[] = datamodel.models.map((model, i) => {\n    const height = model.fields.length * 30 + 100;\n\n    // Trouver la colonne la moins haute\n    const minCol = columnHeights.indexOf(Math.min(...columnHeights));\n    const x = minCol * columnWidth;\n    const y = columnHeights[minCol];\n\n    columnHeights[minCol] += height + 50; // 50px de marge verticale\n\n    const color = getStableColor(model.name);\n    modelColorMap.set(model.name, color);\n\n    return {\n      id: model.name,\n      type: \"tableNode\",\n      position: { x, y },\n      data: {\n        label: model.name,\n        color,\n        fields: model.fields.map((field) => ({\n          name: field.name,\n          type: field.type,\n          isPrimary: field.isId,\n          isForeign: field.isReadOnly,\n          meta: field,\n        })),\n      },\n    };\n  });\n\n  const edges: Edge[] = datamodel.models.flatMap((model) => {\n    return model.fields\n      .filter(\n        (field) =>\n          field.relationName &&\n          field?.relationFromFields?.length &&\n          field?.relationToFields?.length\n      )\n      .map((field) => {\n        return {\n          id: `${field.relationName}`,\n          source: field.type,\n          target: model.name,\n          sourceHandle: field?.relationToFields?.at(0),\n          targetHandle: field?.relationFromFields?.at(0),\n          animated: true,\n          // style: {\n          //   stroke: modelColorMap.get(model.name) || \"#999\",\n          // },\n        };\n      });\n  });\n\n  return { nodes, edges };\n}\n"
           }
         ]

@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "create-db-api-server",
-  "type": "registry:component",
-  "title": "CreateDbApiServer",
+  "type": "registry:lib",
+  "title": "createDbApiServer",
   "description": "",
   "dependencies": [],
   "registryDependencies": [],
@@ -10,7 +10,7 @@
     {
       "path": "src/shared/prisma/lib/create-db-api-server.ts",
       "content": "export type DbApiServerProps = {\n  modelName: string;\n  methodName: string;\n  args: Record<string, any>;\n};\nexport type DbServer = {\n  [modelName: string]: {\n    [methodName: string]: ((args: any) => any) | ((args?: any) => any);\n  };\n};\n\nexport function createDbApiServer<T extends DbServer>(dbServer: T) {\n  return {\n    handleRequest: async (props: DbApiServerProps) => {\n      const { modelName, methodName, args } = props;\n\n      if (!modelName || !methodName) {\n        throw new Error(\"Model name and method name must be provided.\");\n      }\n      if (typeof modelName !== \"string\" || typeof methodName !== \"string\") {\n        throw new Error(\"Model name and method name must be strings.\");\n      }\n      if (args && (typeof args !== \"object\" || Array.isArray(args))) {\n        throw new Error(\"Args must be an object.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(modelName) === false) {\n        throw new Error(\"Model name contains invalid characters.\");\n      }\n      if (/^[a-zA-Z0-9_]+$/.test(methodName) === false) {\n        throw new Error(\"Method name contains invalid characters.\");\n      }\n      if (!(modelName in dbServer)) {\n        throw new Error(`Model ${modelName} does not exist on the server.`);\n      }\n\n      const model = dbServer[modelName];\n\n      if (!(methodName in model)) {\n        throw new Error(\n          `Method ${methodName} does not exist on model ${modelName}.`\n        );\n      }\n\n      const method = model[methodName];\n\n      if (typeof method !== \"function\") {\n        throw new Error(\n          `${methodName} is not a function on model ${modelName}.`\n        );\n      }\n      try {\n        return {\n          data: await method(args),\n        };\n      } catch (error) {\n        return {\n          error: String(error),\n        };\n      }\n    },\n  };\n}\n",
-      "type": "registry:component",
+      "type": "registry:lib",
       "target": "shared/prisma/lib/create-db-api-server.ts"
     }
   ]

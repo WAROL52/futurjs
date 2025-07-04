@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "prisma-actions",
-  "type": "registry:component",
-  "title": "PrismaActions",
+  "type": "registry:lib",
+  "title": "prismaActions",
   "description": "",
   "dependencies": [],
   "registryDependencies": [],
@@ -10,7 +10,7 @@
     {
       "path": "src/shared/prisma/actions/prisma-actions.ts",
       "content": "\"use server\";\nimport { Prisma, PrismaClient } from \"@/generated/prisma\";\n\nexport async function getPrismaSchema() {\n  return Prisma.dmmf.datamodel as Prisma.DMMF.Datamodel;\n}\n\nexport async function prismaActions() {\n  return null;\n}\n",
-      "type": "registry:component",
+      "type": "registry:lib",
       "target": "shared/prisma/actions/prisma-actions.ts"
     }
   ]

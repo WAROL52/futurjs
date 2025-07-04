@@ -148,7 +148,7 @@ async function getCodeDocs(name: string, path: string) {
           )?.[1] || [];
         delete allExmples[EXEMPLE_DEMO_FOLDER];
         return {
-          title: component.title || componentName,
+          title: component.title || rest[libName] ? libName : componentName,
           description: component.description || "",
           props: component.props || {},
           url: `/${name}/${namebase}`,
@@ -163,7 +163,11 @@ async function getCodeDocs(name: string, path: string) {
           dependencies: component.dependencies || [],
           registryDependencies: component.registryDependencies || [],
           shadcnDependencies: component.shadcnDependencies || [],
-          registryType: "registry:component",
+          registryType: rest[libName]
+            ? libName.startsWith("use")
+              ? "registry:hook"
+              : "registry:lib"
+            : "registry:component",
           content: readFileSync(filePath, { encoding: "utf-8" }),
         };
       })
