@@ -1,5 +1,10 @@
 import { REGISTRY_BUILD } from "@/generated/registry/registry";
-import { BASE_URL, getAllCodeDocs, normalizePath } from "@/lib/utils";
+import {
+  BASE_URL,
+  getAllCodeDocs,
+  getExampleName,
+  normalizePath,
+} from "@/lib/utils";
 import { CodeDocType, CodeView, RegistryBuild } from "@/types";
 import { writeFileSync } from "fs";
 import { Registry, RegistryItem } from "shadcn/registry";
@@ -38,10 +43,10 @@ function createItemsExample(exemple: ItemExample): RegistryItem {
   const { codes, ...rest } = exemple;
   return {
     ...rest,
-    type: "registry:example",
+    type: "registry:file",
     files: codes.map((code) => ({
-      type: "registry:example",
-      path: code.path,
+      type: "registry:file",
+      path: code.path.replace("../_exemples", "src/_exemples"),
       target: normalizePath(code.path),
     })),
   };
@@ -55,9 +60,9 @@ function normalizeRegistry(build: RegistryBuild): Registry {
     .map((doc) => {
       return Object.entries(doc.exemples).map(([name, codes]) => {
         return {
-          name: name,
-          title: name,
-          description: "",
+          name: getExampleName(doc.name, name),
+          title: getExampleName(doc.name, name),
+          description: name,
           dependencies: [],
           registryDependencies: [doc.registryUrl],
           codes,
@@ -69,9 +74,9 @@ function normalizeRegistry(build: RegistryBuild): Registry {
     .filter((doc) => doc.demo.length)
     .map((doc) => {
       return {
-        name: `${doc.name}-demo`,
-        title: `${doc.name}-demo`,
-        description: "",
+        name: getExampleName(doc.name, "demo"),
+        title: getExampleName(doc.name, "demo"),
+        description: "demo",
         dependencies: [],
         registryDependencies: [doc.registryUrl],
         codes: doc.demo,

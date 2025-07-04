@@ -1055,6 +1055,89 @@
           "target": "shared/prisma/field-lists/field-list-auto.tsx"
         }
       ]
+    },
+    {
+      "name": "create-query-hook-demo",
+      "title": "create-query-hook-demo",
+      "description": "demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://futurjs.vercel.app/r/create-query-hook.json"
+      ],
+      "type": "registry:file",
+      "files": [
+        {
+          "type": "registry:file",
+          "path": "src/_exemples/create-query-hook/demo/main.tsx",
+          "target": "exemples/create-query-hook/demo/main.tsx"
+        },
+        {
+          "type": "registry:file",
+          "path": "src/_exemples/create-query-hook/demo/client.tsx",
+          "target": "exemples/create-query-hook/demo/client.tsx"
+        },
+        {
+          "type": "registry:file",
+          "path": "src/_exemples/create-query-hook/demo/action.tsx",
+          "target": "exemples/create-query-hook/demo/action.tsx"
+        }
+      ]
+    },
+    {
+      "name": "schema-visualizer-demo",
+      "title": "schema-visualizer-demo",
+      "description": "demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://futurjs.vercel.app/r/schema-visualizer.json"
+      ],
+      "type": "registry:file",
+      "files": [
+        {
+          "type": "registry:file",
+          "path": "src/_exemples/schema-visualizer/demo/main.tsx",
+          "target": "exemples/schema-visualizer/demo/main.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-prisma-schema-demo",
+      "title": "use-prisma-schema-demo",
+      "description": "demo",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://futurjs.vercel.app/r/use-prisma-schema.json"
+      ],
+      "type": "registry:file",
+      "files": [
+        {
+          "type": "registry:file",
+          "path": "src/_exemples/use-prisma-schema/demo/main.tsx",
+          "target": "exemples/use-prisma-schema/demo/main.tsx"
+        }
+      ]
+    },
+    {
+      "name": "schema-visualizer-with-custom-node-and-edge",
+      "title": "schema-visualizer-with-custom-node-and-edge",
+      "description": "With custom node and edge",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://futurjs.vercel.app/r/schema-visualizer.json"
+      ],
+      "type": "registry:file",
+      "files": [
+        {
+          "type": "registry:file",
+          "path": "src/_exemples/schema-visualizer/With custom node and edge/schema-data.ts",
+          "target": "exemples/schema-visualizer/With custom node and edge/schema-data.ts"
+        },
+        {
+          "type": "registry:file",
+          "path": "src/_exemples/schema-visualizer/With custom node and edge/main.tsx",
+          "target": "exemples/schema-visualizer/With custom node and edge/main.tsx"
+        }
+      ]
     }
   ]
 }

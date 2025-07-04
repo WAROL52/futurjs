@@ -95,3 +95,7 @@ export function normalizePath(path: string) {
     .replace("../shared", "@/shared")
     .replace("../_exemples", "exemples");
 }
+
+export function getExampleName(docName: string, codeName: string) {
+  return `${docName}-${codeName}`.replaceAll(" ", "-").toLowerCase();
+}

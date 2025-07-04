@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-prisma-schema-demo",
+  "type": "registry:file",
+  "title": "use-prisma-schema-demo",
+  "description": "demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://futurjs.vercel.app/r/use-prisma-schema.json"
+  ],
+  "files": [
+    {
+      "path": "src/_exemples/use-prisma-schema/demo/main.tsx",
+      "content": "\"use client\";\n\nimport { usePrismaSchema } from \"@/shared/prisma/hooks/use-prisma-schema\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  const { data, isLoading } = usePrismaSchema();\n  return (\n    <div>\n      {isLoading && <p>Loading...</p>}\n      {data && (\n        <pre className=\"h-[50svh] flex flex-col overflow-auto\">\n          {JSON.stringify(data, null, 2)}\n        </pre>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "exemples/use-prisma-schema/demo/main.tsx"
+    }
+  ]
+}
