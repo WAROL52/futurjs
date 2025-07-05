@@ -1,14 +1,3 @@
-const nextConfig = {
-  assetPrefix: "/exp7-static",
-  transpilePackages: ["@workspace/ui"],
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-      },
-    ],    
-  },  
-}
+const nextConfig = {};
 
-export default nextConfig
+export default nextConfig;

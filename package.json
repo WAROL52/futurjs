@@ -49,6 +49,7 @@
     "@remixicon/react": "^4.6.0",
     "@shikijs/transformers": "^3.7.0",
     "@tanstack/react-query": "^5.81.5",
+    "@uiw/react-json-view": "^2.0.0-alpha.32",
     "@xyflow/react": "^12.8.1",
     "axios": "^1.10.0",
     "citty": "^0.1.6",
