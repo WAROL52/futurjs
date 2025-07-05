@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/field-scalars/field-date-time.tsx",
-      "content": "\"use client\";\n\n// date time\n// date\n// time\n// timestamp\nexport type FieldDateTimeProps = {};\n\nexport function FieldDateTime({}: FieldDateTimeProps) {\n  return <div>FieldDateTime</div>;\n}\n",
+      "path": "src/shared/auto-form/field-scalars/field-date-time.tsx",
+      "content": "\"use client\";\n\nimport { FieldRoot, FieldRootProps } from \"./field-root\";\n\n// date time\n// date\n// time\n// timestamp\nexport type FieldDateTimeProps = FieldRootProps;\n\nexport function FieldDateTime(props: FieldDateTimeProps) {\n  return <FieldRoot {...props} />;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/field-scalars/field-date-time.tsx"
+      "target": "shared/auto-form/field-scalars/field-date-time.tsx"
     }
   ]
 }

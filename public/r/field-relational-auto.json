@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/field-relationals/field-relational-auto.tsx",
-      "content": "\"use client\";\n\nexport type FieldRelationalAutoProps = {};\n\nexport function FieldRelationalAuto({}: FieldRelationalAutoProps) {\n  return <div>FieldRelationalAuto</div>;\n}\n",
+      "path": "src/shared/auto-form/field-relationals/field-relational-auto.tsx",
+      "content": "\"use client\";\n\nimport { FieldRoot, FieldRootProps } from \"../field-scalars/field-root\";\n\nexport type FieldRelationalAutoProps = FieldRootProps;\n\nexport function FieldRelationalAuto(props: FieldRelationalAutoProps) {\n  return <FieldRoot {...props} />;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/field-relationals/field-relational-auto.tsx"
+      "target": "shared/auto-form/field-relationals/field-relational-auto.tsx"
     }
   ]
 }

@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/field-scalars/field-number.tsx",
-      "content": "\"use client\";\n\n// big int\n// int\n// float\n// decimal\nexport type FieldNumberProps = {};\n\nexport function FieldNumber({}: FieldNumberProps) {\n  return <div>FieldNumber</div>;\n}\n",
+      "path": "src/shared/auto-form/field-scalars/field-number.tsx",
+      "content": "\"use client\";\n\nimport { FieldRoot, FieldRootProps } from \"./field-root\";\n\n// big int\n// int\n// float\n// decimal\nexport type FieldNumberProps = FieldRootProps;\n\nexport function FieldNumber(props: FieldNumberProps) {\n  return <FieldRoot {...props} inputProps={{ type: \"number\" }} />;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/field-scalars/field-number.tsx"
+      "target": "shared/auto-form/field-scalars/field-number.tsx"
     }
   ]
 }

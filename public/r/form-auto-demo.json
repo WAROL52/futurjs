@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-auto-demo",
+  "type": "registry:file",
+  "title": "form-auto-demo",
+  "description": "demo",
+  "dependencies": [],
+  "registryDependencies": [
+    "https://futurjs.vercel.app/r/form-auto.json"
+  ],
+  "files": [
+    {
+      "path": "src/_exemples/form-auto/demo/main.tsx",
+      "content": "\"use client\";\n\nimport { FormAuto } from \"@/shared/auto-form/forms/form-auto\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  return (\n    <div>\n      <FormAuto />\n    </div>\n  );\n}\n",
+      "type": "registry:file",
+      "target": "exemples/form-auto/demo/main.tsx"
+    }
+  ]
+}

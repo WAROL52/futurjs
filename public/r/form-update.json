@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/forms/form-update.tsx",
+      "path": "src/shared/auto-form/forms/form-update.tsx",
       "content": "\"use client\";\n\nexport type FormUpdateProps = {};\n\nexport function FormUpdate({}: FormUpdateProps) {\n  return <div>FormUpdate</div>;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/forms/form-update.tsx"
+      "target": "shared/auto-form/forms/form-update.tsx"
     }
   ]
 }

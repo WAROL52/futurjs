@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/forms/form-auto.tsx",
-      "content": "\"use client\";\n\nexport type FormAutoProps = {};\n\nexport function FormAuto({}: FormAutoProps) {\n  return <div>FormAuto</div>;\n}\n",
+      "path": "src/shared/auto-form/forms/form-auto.tsx",
+      "content": "\"use client\";\nimport * as z from \"zod/v4\";\nexport type FormAutoProps = {};\nimport JsonView from \"@uiw/react-json-view\";\nimport { JsonViewVscode } from \"@/components/json-view-vscode\";\nimport { usePrismaSchema } from \"@/shared/prisma/hooks/use-prisma-schema\";\nimport { FieldAuto } from \"../field-scalars/field-auto\";\nimport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport React from \"react\";\nimport { FormRoot } from \"./form-root\";\n\nexport function FormAuto({}: FormAutoProps) {\n  const { data, isLoading } = usePrismaSchema();\n  const [modelName, setModelName] = React.useState(\"User\");\n  if (isLoading)\n    return <div>state: {isLoading ? \"chargement...\" : \"finish\"}</div>;\n  const model = data.form.models.find((model) => model.name === modelName);\n  const selectModel = (\n    <Select onValueChange={setModelName} value={modelName}>\n      <SelectTrigger className=\"w-[180px]\">\n        <SelectValue placeholder=\"Select a fruit\" />\n      </SelectTrigger>\n      <SelectContent>\n        <SelectGroup>\n          {data.form.models.map((model) => (\n            <SelectItem key={model.name} value={model.name}>\n              {model.name}\n            </SelectItem>\n          ))}\n        </SelectGroup>\n      </SelectContent>\n    </Select>\n  );\n  if (!model) {\n    return (\n      <div>\n        {selectModel}\n        model not Found!\n      </div>\n    );\n  }\n  return (\n    <div>\n      state: {isLoading ? \"chargement...\" : \"finish\"}\n      {selectModel}\n      <br />\n      <div className=\"border p-4 rounded-md \">\n        <FormRoot model={model} onSubmit={(data) => console.log(data)} />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/forms/form-auto.tsx"
+      "target": "shared/auto-form/forms/form-auto.tsx"
     }
   ]
 }

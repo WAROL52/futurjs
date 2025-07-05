@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/forms/form-create.tsx",
+      "path": "src/shared/auto-form/forms/form-create.tsx",
       "content": "\"use client\";\n\nexport type FormCreateProps = {};\n\nexport function FormCreate({}: FormCreateProps) {\n  return <div>FormCreate</div>;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/forms/form-create.tsx"
+      "target": "shared/auto-form/forms/form-create.tsx"
     }
   ]
 }

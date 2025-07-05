@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/forms/form-update-many.tsx",
+      "path": "src/shared/auto-form/forms/form-update-many.tsx",
       "content": "\"use client\";\n\nexport type FormUpdateManyProps = {};\n\nexport function FormUpdateMany({}: FormUpdateManyProps) {\n  return <div>FormUpdateMany</div>;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/forms/form-update-many.tsx"
+      "target": "shared/auto-form/forms/form-update-many.tsx"
     }
   ]
 }

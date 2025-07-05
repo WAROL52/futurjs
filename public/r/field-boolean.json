@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/field-scalars/field-boolean.tsx",
-      "content": "\"use client\";\n\nexport type FieldBooleanProps = {};\n\nexport function FieldBoolean({}: FieldBooleanProps) {\n  return <div>FieldBoolean</div>;\n}\n",
+      "path": "src/shared/auto-form/field-scalars/field-boolean.tsx",
+      "content": "\"use client\";\n\nimport {\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n} from \"@/components/ui/form\";\nimport { FieldRoot, FieldRootProps } from \"./field-root\";\nimport { Switch } from \"@/components/ui/switch\";\n\nexport type FieldBooleanProps = FieldRootProps;\n\nexport function FieldBoolean(props: FieldBooleanProps) {\n  return (\n    <FieldRoot\n      {...props}\n      render={({ field, fieldSchema, form }) => {\n        return (\n          <FormField\n            control={form.control}\n            name={fieldSchema.props.name}\n            render={({ field }) => (\n              <FormItem className=\"flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm\">\n                <div className=\"space-y-0.5\">\n                  <FormLabel>{fieldSchema.props.name}</FormLabel>\n                  <FormDescription>\n                    {fieldSchema.meta?.description}\n                  </FormDescription>\n                </div>\n                <FormControl>\n                  <Switch\n                    checked={field.value}\n                    defaultChecked={false}\n                    onCheckedChange={field.onChange}\n                  />\n                </FormControl>\n              </FormItem>\n            )}\n          />\n        );\n      }}\n    />\n  );\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/field-scalars/field-boolean.tsx"
+      "target": "shared/auto-form/field-scalars/field-boolean.tsx"
     }
   ]
 }

@@ -43,6 +43,7 @@ model User {
   Notification Notification[]
   Address      Address[]
   AuditLog     AuditLog[]
+  isActive     Boolean        @default(true)
 }
 
 model Profile {

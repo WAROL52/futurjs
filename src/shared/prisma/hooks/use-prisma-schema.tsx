@@ -6,7 +6,12 @@ import { useQuery } from "@tanstack/react-query";
 import { getPrismaSchema } from "@/shared/prisma/actions/prisma-actions";
 import z, { ZodEnum, ZodType } from "zod/v4";
 
-export type FieldMeta = {};
+export type FieldMeta = {
+  enumProps: Prisma.DMMF.Datamodel["enums"][number];
+  description: string;
+  label: string;
+  placeholder: string;
+};
 export type FormMeta = {};
 export type EnumMeta = {};
 
@@ -29,10 +34,12 @@ export type FormEnum = {
   zodType: ZodEnum<any>;
   meta?: Partial<EnumMeta>;
 };
+
 export type PrismaForm = {
   models: FormModel[];
   enums: FormEnum[];
 };
+
 export type PrismaSchema = {
   datamodel: Prisma.DMMF.Datamodel;
   xyflow: {
@@ -41,6 +48,7 @@ export type PrismaSchema = {
   };
   form: PrismaForm;
 };
+
 export function datamodelToPrismaFormModel(
   datamodel: Prisma.DMMF.Datamodel,
   enums: FormEnum[]
@@ -58,7 +66,12 @@ export function datamodelToPrismaFormModel(
         return {
           props: field,
           zodType: zodfields[field.name],
-          meta: {},
+          meta: {
+            enumProps:
+              field.kind === "enum"
+                ? enums.find((e) => e.name === field.type)?.props
+                : undefined,
+          },
         };
       }),
       zodType: z.object(zodfields),

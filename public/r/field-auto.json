@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/field-scalars/field-auto.tsx",
-      "content": "\"use client\";\n\nexport type FieldAutoProps = {};\n\nexport function FieldAuto({}: FieldAutoProps) {\n  return <div>FieldAuto</div>;\n}\n",
+      "path": "src/shared/auto-form/field-scalars/field-auto.tsx",
+      "content": "\"use client\";\n\nimport { FormModelField } from \"@/shared/prisma/hooks/use-prisma-schema\";\nimport { FieldString } from \"./field-string\";\nimport { FieldBoolean } from \"./field-boolean\";\nimport { FieldBytes } from \"./field-bytes\";\nimport { FieldDateTime } from \"./field-date-time\";\nimport { FieldNumber } from \"./field-number\";\nimport { FieldEnum } from \"./field-enum\";\nimport { FieldRelationalAuto } from \"../field-relationals/field-relational-auto\";\nimport { FieldRoot, FieldRootProps } from \"./field-root\";\nimport { UseFormReturn } from \"react-hook-form\";\nimport { FieldListAuto } from \"../field-lists/field-list-auto\";\n\nexport type FieldAutoProps = FieldRootProps;\n\nexport function FieldAuto(props: FieldAutoProps) {\n  const { fieldSchema: field, form } = props;\n  if (field.props.isList) return <FieldListAuto {...props} />;\n  if (field.props.type == \"String\") return <FieldString {...props} />;\n  if (field.props.type == \"Boolean\") return <FieldBoolean {...props} />;\n  if (field.props.type == \"Bytes\") return <FieldBytes {...props} />;\n  if (field.props.type == \"DateTime\") return <FieldDateTime {...props} />;\n  if ([\"Int\", \"Float\", \"Decimal\", \"BigInt\"].includes(field.props.type))\n    return <FieldNumber {...props} />;\n  if (field.props.kind === \"enum\") return <FieldEnum {...props} />;\n  if (field.props.kind === \"object\") return <FieldRelationalAuto {...props} />;\n  return <FieldRoot {...props} />;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/field-scalars/field-auto.tsx"
+      "target": "shared/auto-form/field-scalars/field-auto.tsx"
     }
   ]
 }

@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/forms/form-delete.tsx",
+      "path": "src/shared/auto-form/forms/form-delete.tsx",
       "content": "\"use client\";\n\nexport type FormDeleteProps = {};\n\nexport function FormDelete({}: FormDeleteProps) {\n  return <div>FormDelete</div>;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/forms/form-delete.tsx"
+      "target": "shared/auto-form/forms/form-delete.tsx"
     }
   ]
 }

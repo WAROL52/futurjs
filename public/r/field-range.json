@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/field-scalars/field-range.tsx",
-      "content": "\"use client\";\n\n// range date time\n// range date\n// range time\n// range timestamp\n// range int\n// range float\n// range decimal\n// range big int\nexport type FieldRangeProps = {};\n\nexport function FieldRange({}: FieldRangeProps) {\n  return <div>FieldRange</div>;\n}\n",
+      "path": "src/shared/auto-form/field-scalars/field-range.tsx",
+      "content": "\"use client\";\n\nimport { FieldRoot, FieldRootProps } from \"./field-root\";\n\n// range date time\n// range date\n// range time\n// range timestamp\n// range int\n// range float\n// range decimal\n// range big int\nexport type FieldRangeProps = FieldRootProps;\n\nexport function FieldRange(props: FieldRangeProps) {\n  return <FieldRoot {...props} />;\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/field-scalars/field-range.tsx"
+      "target": "shared/auto-form/field-scalars/field-range.tsx"
     }
   ]
 }

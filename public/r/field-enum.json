@@ -8,10 +8,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/shared/prisma/field-scalars/field-enum.tsx",
-      "content": "\"use client\";\n\nexport type FieldEnumProps = {};\n\nexport function FieldEnum({}: FieldEnumProps) {\n  return <div>FieldEnum</div>;\n}\n",
+      "path": "src/shared/auto-form/field-scalars/field-enum.tsx",
+      "content": "\"use client\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { FieldRoot, FieldRootProps } from \"./field-root\";\nimport {\n  FormControl,\n  FormDescription,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport Link from \"next/link\";\n\nexport type FieldEnumProps = FieldRootProps;\n\nexport function FieldEnum(props: FieldEnumProps) {\n  return (\n    <FieldRoot\n      {...props}\n      render={({ form, field, fieldSchema }) => {\n        return (\n          <FormItem>\n            <FormLabel>{fieldSchema.props.name}</FormLabel>\n            <Select onValueChange={field.onChange} defaultValue={field.value}>\n              <FormControl>\n                <SelectTrigger className=\"w-full\">\n                  <SelectValue />\n                </SelectTrigger>\n              </FormControl>\n              <SelectContent>\n                {fieldSchema.meta?.enumProps?.values.map((value) => (\n                  <SelectItem key={value.name} value={value.name}>\n                    {value.name}\n                  </SelectItem>\n                ))}\n              </SelectContent>\n            </Select>\n            <FormDescription></FormDescription>\n            <FormMessage />\n          </FormItem>\n        );\n      }}\n    />\n  );\n}\n",
       "type": "registry:component",
-      "target": "shared/prisma/field-scalars/field-enum.tsx"
+      "target": "shared/auto-form/field-scalars/field-enum.tsx"
     }
   ]
 }
