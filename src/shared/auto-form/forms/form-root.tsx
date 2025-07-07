@@ -23,8 +23,15 @@ export type FormRootProps = {
 };
 
 export function FormRoot({ model, defaultValues, onSubmit }: FormRootProps) {
+  const resolver = zodResolver(model.zodType);
   const form = useForm<z.infer<typeof model.zodType>>({
-    resolver: zodResolver(model.zodType),
+    resolver: async (val, ...ctx) => {
+      console.log("resolver", val);
+      const result = resolver(val, ...ctx);
+      console.log("result", await result);
+
+      return result;
+    },
     defaultValues: defaultValues,
   });
   return (

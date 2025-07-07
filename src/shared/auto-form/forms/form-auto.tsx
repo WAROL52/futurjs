@@ -53,7 +53,11 @@ export function FormAuto({}: FormAutoProps) {
       {selectModel}
       <br />
       <div className="border p-4 rounded-md ">
-        <FormRoot model={model} onSubmit={(data) => console.log(data)} />
+        <FormRoot
+          key={model.name}
+          model={model}
+          onSubmit={(data) => console.log(data)}
+        />
       </div>
     </div>
   );

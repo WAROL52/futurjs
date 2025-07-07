@@ -11,6 +11,8 @@ export type FieldMeta = {
   description: string;
   label: string;
   placeholder: string;
+  allowDuplicates?: boolean;
+  maxItems?: number;
 };
 export type FormMeta = {};
 export type EnumMeta = {};
@@ -53,8 +55,8 @@ export function datamodelToPrismaFormModel(
   datamodel: Prisma.DMMF.Datamodel,
   enums: FormEnum[]
 ): FormModel[] {
-  const zodfields: Record<string, z.ZodType<any, any, any>> = {};
   const models = datamodel.models.map((model) => {
+    const zodfields: Record<string, z.ZodType<any, any, any>> = {};
     console.log("model:", model);
 
     return {
@@ -62,7 +64,6 @@ export function datamodelToPrismaFormModel(
       meta: {},
       fields: model.fields
         .map((field) => {
-          console.log("  field:", field.name);
           if (field.isId) return null;
           if (field.isReadOnly) return null;
           if (field.isUpdatedAt) return null;
@@ -79,6 +80,7 @@ export function datamodelToPrismaFormModel(
               }
             }
           }
+          console.log("  field:", field.name);
           zodfields[field.name] = prismaFieldToZodType(field, enums);
           return {
             props: field,

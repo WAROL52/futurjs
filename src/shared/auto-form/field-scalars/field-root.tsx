@@ -67,5 +67,6 @@ export function getFieldInfo(field: FieldRootRenderProps) {
     description: field.fieldSchema.meta?.description || "",
     label: field.fieldSchema.meta?.label || field.fieldSchema.props.name,
     placeholder: field.fieldSchema.meta?.placeholder || "",
+    required: field.fieldSchema.props.isRequired || false,
   };
 }

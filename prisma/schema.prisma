@@ -44,6 +44,11 @@ model User {
   Address      Address[]
   AuditLog     AuditLog[]
   isActive     Boolean        @default(true)
+
+  listStrings  String[]   @default([])
+  listNumbers  Int[]      @default([])
+  listBooleans Boolean[]  @default([])
+  listDates    DateTime[] @default([])
 }
 
 model Profile {
