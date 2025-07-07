@@ -60,20 +60,39 @@ export function datamodelToPrismaFormModel(
     return {
       name: model.name,
       meta: {},
-      fields: model.fields.map((field) => {
-        console.log("  field:", field.name);
-        zodfields[field.name] = prismaFieldToZodType(field, enums);
-        return {
-          props: field,
-          zodType: zodfields[field.name],
-          meta: {
-            enumProps:
-              field.kind === "enum"
-                ? enums.find((e) => e.name === field.type)?.props
-                : undefined,
-          },
-        };
-      }),
+      fields: model.fields
+        .map((field) => {
+          console.log("  field:", field.name);
+          if (field.isId) return null;
+          if (field.isReadOnly) return null;
+          if (field.isUpdatedAt) return null;
+          if (field.hasDefaultValue) {
+            if (typeof field.default === "object" && "name" in field.default) {
+              if (
+                field.default.name === "now" ||
+                field.default.name === "cuid" ||
+                field.default.name === "uuid" ||
+                field.default.name === "autoincrement" ||
+                field.default.name === "updatedAt"
+              ) {
+                return null; // Skip rendering if default value is now, cuid, or uuid
+              }
+            }
+          }
+          zodfields[field.name] = prismaFieldToZodType(field, enums);
+          return {
+            props: field,
+            zodType: zodfields[field.name],
+            meta: {
+              enumProps:
+                field.kind === "enum"
+                  ? enums.find((e) => e.name === field.type)?.props
+                  : undefined,
+            },
+          };
+        })
+        .filter(Boolean) as FormModelField[], // Filter out null fields
+      // Filter out empty fields
       zodType: z.object(zodfields),
     };
   });

@@ -1,9 +1,9 @@
 "use client";
 
-import { FieldRootProps } from "../field-scalars/field-root";
+import { FieldRoot, FieldRootProps } from "../field-scalars/field-root";
 
 export type FieldListAutoProps = FieldRootProps;
 
-export function FieldListAuto({}: FieldListAutoProps) {
-  return <div>FieldListAuto</div>;
+export function FieldListAuto(props: FieldListAutoProps) {
+  return <FieldRoot {...props} />;
 }

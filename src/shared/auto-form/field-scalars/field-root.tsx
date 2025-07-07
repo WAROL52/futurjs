@@ -30,25 +30,6 @@ export function FieldRoot({
   render,
   inputProps,
 }: FieldRootProps) {
-  if (fieldSchema.props.isId) return null;
-  if (fieldSchema.props.isReadOnly) return null;
-  if (fieldSchema.props.isUpdatedAt) return null;
-  if (fieldSchema.props.hasDefaultValue) {
-    if (
-      typeof fieldSchema.props.default === "object" &&
-      "name" in fieldSchema.props.default
-    ) {
-      if (
-        fieldSchema.props.default.name === "now" ||
-        fieldSchema.props.default.name === "cuid" ||
-        fieldSchema.props.default.name === "uuid" ||
-        fieldSchema.props.default.name === "autoincrement" ||
-        fieldSchema.props.default.name === "updatedAt"
-      ) {
-        return null; // Skip rendering if default value is now, cuid, or uuid
-      }
-    }
-  }
   return (
     <FormField
       control={form.control}
