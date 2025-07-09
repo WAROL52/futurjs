@@ -9,6 +9,11 @@ generator client {
   output   = "../src/generated/prisma"
 }
 
+generator dbSchema {
+  provider = "npx bun@latest ./src/bin/dbSchema.ts"
+  output   = "../src/generated/dbSchema.ts"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")

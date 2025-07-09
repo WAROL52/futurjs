@@ -1,11 +1,14 @@
 "use client";
 
+import { Switch } from "@/components/ui/switch";
 import {
   FieldRoot,
   FieldRootProps,
   getFieldInfo,
 } from "../field-scalars/field-root";
 import { FieldListRoot } from "./field-list-root";
+import { useId } from "react";
+import { Input } from "@/components/ui/input";
 
 export type FieldListAutoProps = FieldRootProps;
 
@@ -62,7 +65,32 @@ function FieldListBoolean(props: FieldListAutoProps) {
       {...props}
       render={(props) => {
         return (
-          <FieldListRoot {...props} type="checkbox" convertValue={Boolean} />
+          <FieldListRoot
+            {...props}
+            convertValue={Boolean}
+            renderInput={({
+              value,
+              onValueChange,
+              name,
+              disabled,
+              placeholder,
+            }) => {
+              return (
+                <div>
+                  {name}
+                  <Input
+                    className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 data-[state=checked]:[&_span]:translate-x-2 data-[state=checked]:[&_span]:rtl:-translate-x-2"
+                    checked={value}
+                    defaultChecked={false}
+                    onChange={(v) => onValueChange(Boolean(v.target.checked))}
+                    name={name}
+                    id={name}
+                    disabled={disabled}
+                  />
+                </div>
+              );
+            }}
+          />
         );
       }}
     />

@@ -6,39 +6,48 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { FieldRoot, FieldRootProps } from "./field-root";
 import { Switch } from "@/components/ui/switch";
+import { useId } from "react";
 
 export type FieldBooleanProps = FieldRootProps;
 
 export function FieldBoolean(props: FieldBooleanProps) {
+  const id = useId();
   return (
     <FieldRoot
       {...props}
       render={({ field, fieldSchema, form }) => {
         return (
-          <FormField
-            control={form.control}
-            name={fieldSchema.props.name}
-            render={({ field }) => (
-              <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
-                <div className="space-y-0.5">
-                  <FormLabel>{fieldSchema.props.name}</FormLabel>
-                  <FormDescription>
-                    {fieldSchema.meta?.description}
-                  </FormDescription>
-                </div>
-                <FormControl>
-                  <Switch
-                    checked={field.value}
-                    defaultChecked={false}
-                    onCheckedChange={field.onChange}
-                  />
-                </FormControl>
-              </FormItem>
-            )}
-          />
+          <div className="border-input has-data-[state=checked]:border-primary/50 relative flex w-full items-start gap-2 rounded-md border p-4 shadow-xs outline-none">
+            <Switch
+              id={id}
+              className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 data-[state=checked]:[&_span]:translate-x-2 data-[state=checked]:[&_span]:rtl:-translate-x-2"
+              aria-describedby={`${id}-description`}
+              checked={field.value}
+              defaultChecked={false}
+              onCheckedChange={field.onChange}
+            />
+            <div className="grid grow gap-2">
+              <FormLabel htmlFor={id}>
+                {fieldSchema.props.name}
+                {/* <span className="text-muted-foreground text-xs leading-[inherit] font-normal">
+                  (Sublabel)
+                </span> */}
+              </FormLabel>
+              <p
+                id={`${id}-description`}
+                className="text-muted-foreground text-xs"
+              >
+                <FormDescription>
+                  {fieldSchema.meta?.description}
+                </FormDescription>
+              </p>
+              <FormMessage />
+            </div>
+          </div>
         );
       }}
     />

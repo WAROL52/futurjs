@@ -16,13 +16,16 @@ import {
 } from "@/components/ui/select";
 import React from "react";
 import { FormRoot } from "./form-root";
+import { dbSchema } from "@/shared/db-tools/db-schema/dbSchema";
 
 export function FormAuto({}: FormAutoProps) {
-  const { data, isLoading } = usePrismaSchema();
+  // const { data, isLoading } = usePrismaSchema();
   const [modelName, setModelName] = React.useState("User");
-  if (isLoading)
-    return <div>state: {isLoading ? "chargement..." : "finish"}</div>;
-  const model = data.form.models.find((model) => model.name === modelName);
+  // if (isLoading)
+  //   return <div>state: {isLoading ? "chargement..." : "finish"}</div>;
+  // const model = data.form.models.find((model) => model.name === modelName);
+  const { models } = dbSchema;
+  const model = models.find((model) => model.name === modelName);
   const selectModel = (
     <Select onValueChange={setModelName} value={modelName}>
       <SelectTrigger className="w-[180px]">
@@ -30,7 +33,7 @@ export function FormAuto({}: FormAutoProps) {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          {data.form.models.map((model) => (
+          {models.map((model) => (
             <SelectItem key={model.name} value={model.name}>
               {model.name}
             </SelectItem>
@@ -49,7 +52,6 @@ export function FormAuto({}: FormAutoProps) {
   }
   return (
     <div>
-      state: {isLoading ? "chargement..." : "finish"}
       {selectModel}
       <br />
       <div className="border p-4 rounded-md ">

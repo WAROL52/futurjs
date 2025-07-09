@@ -201,7 +201,7 @@ function getStableColor(modelName: string): string {
   return `hsl(${hue}, 70%, 60%)`;
 }
 
-function datamodelToXyflow(datamodel: Prisma.DMMF.Datamodel): {
+export function datamodelToXyflow(datamodel: Prisma.DMMF.Datamodel): {
   nodes: Node[];
   edges: Edge[];
 } {
@@ -267,7 +267,9 @@ function datamodelToXyflow(datamodel: Prisma.DMMF.Datamodel): {
   return { nodes, edges };
 }
 
-function datamodelToPrismaForm(datamodel: Prisma.DMMF.Datamodel): PrismaForm {
+export function datamodelToPrismaForm(
+  datamodel: Prisma.DMMF.Datamodel
+): PrismaForm {
   const enums = datamodelToPrismaFormEnums(datamodel);
   return {
     enums,
@@ -275,7 +277,7 @@ function datamodelToPrismaForm(datamodel: Prisma.DMMF.Datamodel): PrismaForm {
   };
 }
 
-function datamodelToPrismaFormEnums(
+export function datamodelToPrismaFormEnums(
   datamodel: Prisma.DMMF.Datamodel
 ): FormEnum[] {
   return datamodel.enums.map((enumItem) => {

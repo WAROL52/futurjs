@@ -1027,6 +1027,21 @@
       ]
     },
     {
+      "name": "field-list-root",
+      "title": "FieldListRoot",
+      "description": "",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/shared/auto-form/field-lists/field-list-root.tsx",
+          "type": "registry:component",
+          "target": "shared/auto-form/field-lists/field-list-root.tsx"
+        }
+      ]
+    },
+    {
       "name": "field-list-scalar",
       "title": "FieldListScalar",
       "description": "",

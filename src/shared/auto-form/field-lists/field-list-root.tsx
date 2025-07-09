@@ -23,17 +23,35 @@ import { FieldError } from "react-hook-form";
 export type FieldListRootProps = FieldRootRenderProps & {
   type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
   convertValue?: (value: any) => any;
+  renderInput?: (props: {
+    value: any;
+    onValueChange: (value: any) => void;
+    name: string;
+    disabled?: boolean;
+    placeholder?: string;
+  }) => React.ReactNode;
+  renderItem?: (props: FieldRootRenderProps) => React.ReactNode;
 };
 
 export function FieldListRoot(props: FieldListRootProps) {
-  const { fieldSchema, form, field, type, convertValue } = props;
-  const [inputValue, setInputValue] = useState("");
+  const {
+    fieldSchema,
+    form,
+    field,
+    type,
+    convertValue,
+    renderInput: RenderInput,
+    renderItem: RenderItem,
+  } = props;
+  const [inputValue, setInputValue] = useState<any>();
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [editValue, setEditValue] = useState("");
-  const allowDuplicates = fieldSchema.meta?.allowDuplicates || false;
+  const allowDuplicates = fieldSchema.meta?.allowDuplicates || true;
   const maxItems = fieldSchema.meta?.maxItems || 10;
   const value = (field.value || []) as string[];
   const { onChange: onChangeValue, onBlur, ref, disabled } = field;
+  console.log(field);
+
   const onChange = (newValue: string[]) => {
     if (convertValue) {
       newValue = newValue.map(convertValue);
@@ -47,9 +65,12 @@ export function FieldListRoot(props: FieldListRootProps) {
   });
   const errors = (form.formState.errors[field.name] || []) as FieldError[];
   const handleAddItem = () => {
-    if (!inputValue.trim() || disabled) return;
+    const _inputValue =
+      typeof inputValue == "string" ? String(inputValue).trim() : inputValue;
+    if (typeof inputValue == "string" && !_inputValue.length) return;
+    if (disabled) return;
 
-    if (!allowDuplicates && value.includes(inputValue.trim())) {
+    if (!allowDuplicates && value.includes(_inputValue)) {
       return;
     }
 
@@ -57,9 +78,9 @@ export function FieldListRoot(props: FieldListRootProps) {
       return;
     }
 
-    const newItems = [...value, inputValue.trim()];
+    const newItems = [...value, _inputValue];
     onChange?.(newItems);
-    setInputValue("");
+    setInputValue(undefined);
   };
 
   const handleRemoveItem = (index: number) => {
@@ -112,6 +133,7 @@ export function FieldListRoot(props: FieldListRootProps) {
     <FormItem>
       {label && (
         <FormLabel
+          htmlFor={field.name}
           className={
             required
               ? "after:content-['*'] after:ml-0.5 after:text-red-500"
@@ -124,25 +146,38 @@ export function FieldListRoot(props: FieldListRootProps) {
       <FormControl>
         <div ref={ref} className="space-y-3" onBlur={onBlur}>
           {/* Zone d'ajout */}
-          <div className="flex gap-2">
-            <Input
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder={placeholder}
-              onKeyPress={(e) => handleKeyPress(e, "add")}
-              disabled={
-                disabled || (maxItems ? value.length >= maxItems : false)
-              }
-              name={name}
-              className="flex-1"
-              type={type}
-            />
+          <div className="flex gap-2 justify-between">
+            {RenderInput ? (
+              <div>
+                <RenderInput
+                  value={inputValue}
+                  onValueChange={setInputValue}
+                  name={name}
+                  disabled={disabled}
+                  placeholder={placeholder}
+                />
+              </div>
+            ) : (
+              <Input
+                value={inputValue}
+                id={field.name}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder={placeholder}
+                onKeyPress={(e) => handleKeyPress(e, "add")}
+                disabled={
+                  disabled || (maxItems ? value.length >= maxItems : false)
+                }
+                name={name}
+                className="flex-1"
+                type={type}
+              />
+            )}
             <Button
               type="button"
               onClick={handleAddItem}
               disabled={
                 disabled ||
-                !inputValue.trim() ||
+                !String(inputValue).trim() ||
                 (maxItems ? value.length >= maxItems : false)
               }
               size="icon"
@@ -163,15 +198,25 @@ export function FieldListRoot(props: FieldListRootProps) {
                   >
                     {editingIndex === index ? (
                       <>
-                        <Input
-                          value={editValue}
-                          onChange={(e) => setEditValue(e.target.value)}
-                          onKeyPress={(e) => handleKeyPress(e, "edit")}
-                          className="flex-1 h-7 text-sm"
-                          autoFocus
-                          disabled={disabled}
-                          type={type}
-                        />
+                        {RenderInput ? (
+                          <RenderInput
+                            value={editValue}
+                            onValueChange={setEditValue}
+                            name={name}
+                            disabled={disabled}
+                            placeholder={placeholder}
+                          />
+                        ) : (
+                          <Input
+                            value={editValue}
+                            onChange={(e) => setEditValue(e.target.value)}
+                            onKeyPress={(e) => handleKeyPress(e, "edit")}
+                            className="flex-1 h-7 text-sm"
+                            autoFocus
+                            disabled={disabled}
+                            type={type}
+                          />
+                        )}
                         <Button
                           type="button"
                           onClick={handleSaveEdit}
@@ -196,7 +241,15 @@ export function FieldListRoot(props: FieldListRootProps) {
                     ) : (
                       <>
                         <span className="flex-1 text-sm truncate px-1">
-                          {String(item)}
+                          {RenderItem ? (
+                            <RenderItem
+                              field={field}
+                              fieldSchema={fieldSchema}
+                              form={form}
+                            />
+                          ) : (
+                            String(item)
+                          )}
                         </span>
                         {errors?.[index] && (
                           <div>
