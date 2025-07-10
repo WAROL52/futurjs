@@ -18,10 +18,23 @@ import React from "react";
 import { FormRoot } from "./form-root";
 import { dbSchema } from "@/shared/db-tools/db-schema/dbSchema";
 import { toast } from "sonner";
+import { useDbMutation } from "@/lib/api-db-client";
 
 export function FormAuto({}: FormAutoProps) {
   // const { data, isLoading } = usePrismaSchema();
   const [modelName, setModelName] = React.useState("User");
+  const { mutate } = useDbMutation((db) => ({
+    mutationFn: async (data: any) => {
+      console.log("data", data);
+      return "end";
+    },
+    invalidateOnSuccess: [["dbSchema"]],
+    onSuccess(data, variables, context) {
+      toast("Event has been created", {
+        description: <div>Operation successful!</div>,
+      });
+    },
+  }));
   // if (isLoading)
   //   return <div>state: {isLoading ? "chargement..." : "finish"}</div>;
   // const model = data.form.models.find((model) => model.name === modelName);
@@ -59,20 +72,7 @@ export function FormAuto({}: FormAutoProps) {
         <FormRoot
           key={model.name}
           model={model}
-          onSubmit={(data) =>
-            toast("Event has been created", {
-              description: (
-                <pre className="w-[20rem]">
-                  <JsonViewVscode
-                    value={data}
-                    displayDataTypes={false}
-                    displayObjectSize={false}
-                    indentWidth={2}
-                  />
-                </pre>
-              ),
-            })
-          }
+          onSubmit={(data) => mutate(data)}
         />
       </div>
     </div>

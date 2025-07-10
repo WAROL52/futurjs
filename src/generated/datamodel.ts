@@ -65,12 +65,90 @@ export const datamodel: Prisma.DMMF.Datamodel = {
   ],
   "models": [
     {
+      "name": "Home",
+      "dbName": null,
+      "schema": null,
+      "fields": [
+        {
+          "name": "id_home",
+          "dbName": "id",
+          "kind": "scalar",
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "isId": true,
+          "isReadOnly": false,
+          "hasDefaultValue": true,
+          "type": "String",
+          "nativeType": null,
+          "default": {
+            "name": "cuid",
+            "args": [
+              1
+            ]
+          },
+          "isGenerated": false,
+          "isUpdatedAt": false
+        },
+        {
+          "name": "updatedAt",
+          "kind": "scalar",
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "isId": false,
+          "isReadOnly": false,
+          "hasDefaultValue": false,
+          "type": "DateTime",
+          "nativeType": null,
+          "isGenerated": false,
+          "isUpdatedAt": true
+        },
+        {
+          "name": "name",
+          "kind": "scalar",
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "isId": false,
+          "isReadOnly": false,
+          "hasDefaultValue": false,
+          "type": "String",
+          "nativeType": null,
+          "isGenerated": false,
+          "isUpdatedAt": false
+        },
+        {
+          "name": "users",
+          "kind": "object",
+          "isList": true,
+          "isRequired": true,
+          "isUnique": false,
+          "isId": false,
+          "isReadOnly": false,
+          "hasDefaultValue": false,
+          "type": "User",
+          "nativeType": null,
+          "relationName": "HomeToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
+          "isGenerated": false,
+          "isUpdatedAt": false
+        }
+      ],
+      "primaryKey": null,
+      "uniqueFields": [],
+      "uniqueIndexes": [],
+      "isGenerated": false
+    },
+    {
       "name": "User",
       "dbName": null,
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_user",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -299,66 +377,6 @@ export const datamodel: Prisma.DMMF.Datamodel = {
           "isUpdatedAt": false
         },
         {
-          "name": "listStrings",
-          "kind": "scalar",
-          "isList": true,
-          "isRequired": true,
-          "isUnique": false,
-          "isId": false,
-          "isReadOnly": false,
-          "hasDefaultValue": true,
-          "type": "String",
-          "nativeType": null,
-          "default": [],
-          "isGenerated": false,
-          "isUpdatedAt": false
-        },
-        {
-          "name": "listNumbers",
-          "kind": "scalar",
-          "isList": true,
-          "isRequired": true,
-          "isUnique": false,
-          "isId": false,
-          "isReadOnly": false,
-          "hasDefaultValue": true,
-          "type": "Int",
-          "nativeType": null,
-          "default": [],
-          "isGenerated": false,
-          "isUpdatedAt": false
-        },
-        {
-          "name": "listBooleans",
-          "kind": "scalar",
-          "isList": true,
-          "isRequired": true,
-          "isUnique": false,
-          "isId": false,
-          "isReadOnly": false,
-          "hasDefaultValue": true,
-          "type": "Boolean",
-          "nativeType": null,
-          "default": [],
-          "isGenerated": false,
-          "isUpdatedAt": false
-        },
-        {
-          "name": "listDates",
-          "kind": "scalar",
-          "isList": true,
-          "isRequired": true,
-          "isUnique": false,
-          "isId": false,
-          "isReadOnly": false,
-          "hasDefaultValue": true,
-          "type": "DateTime",
-          "nativeType": null,
-          "default": [],
-          "isGenerated": false,
-          "isUpdatedAt": false
-        },
-        {
           "name": "roles",
           "kind": "enum",
           "isList": true,
@@ -369,6 +387,23 @@ export const datamodel: Prisma.DMMF.Datamodel = {
           "hasDefaultValue": false,
           "type": "UserRole",
           "nativeType": null,
+          "isGenerated": false,
+          "isUpdatedAt": false
+        },
+        {
+          "name": "homes",
+          "kind": "object",
+          "isList": true,
+          "isRequired": true,
+          "isUnique": false,
+          "isId": false,
+          "isReadOnly": false,
+          "hasDefaultValue": false,
+          "type": "Home",
+          "nativeType": null,
+          "relationName": "HomeToUser",
+          "relationFromFields": [],
+          "relationToFields": [],
           "isGenerated": false,
           "isUpdatedAt": false
         }
@@ -384,7 +419,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_profile",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -433,7 +469,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "userId"
           ],
           "relationToFields": [
-            "id"
+            "id_user"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -468,7 +504,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "avatarId"
           ],
           "relationToFields": [
-            "id"
+            "id_media"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -499,7 +535,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_post",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -562,7 +599,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "authorId"
           ],
           "relationToFields": [
-            "id"
+            "id_user"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -645,7 +682,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_comment",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -694,7 +732,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "postId"
           ],
           "relationToFields": [
-            "id"
+            "id_post"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -729,7 +767,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "authorId"
           ],
           "relationToFields": [
-            "id"
+            "id_user"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -778,7 +816,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_tag",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -840,7 +879,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_category",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -902,7 +942,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_product",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -993,7 +1034,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "mediaId"
           ],
           "relationToFields": [
-            "id"
+            "id_media"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1014,7 +1055,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "categoryId"
           ],
           "relationToFields": [
-            "id"
+            "id_category"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1076,7 +1117,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_order",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -1111,7 +1153,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "userId"
           ],
           "relationToFields": [
-            "id"
+            "id_user"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1206,7 +1248,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_orderItem",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -1241,7 +1284,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "orderId"
           ],
           "relationToFields": [
-            "id"
+            "id_order"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1276,7 +1319,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "productId"
           ],
           "relationToFields": [
-            "id"
+            "id_product"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1335,7 +1378,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_media",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -1446,7 +1490,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_notification",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -1509,7 +1554,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "userId"
           ],
           "relationToFields": [
-            "id"
+            "id_user"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1573,7 +1618,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_address",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -1608,7 +1654,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "userId"
           ],
           "relationToFields": [
-            "id"
+            "id_user"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1710,7 +1756,8 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "schema": null,
       "fields": [
         {
-          "name": "id",
+          "name": "id_auditLog",
+          "dbName": "id",
           "kind": "scalar",
           "isList": false,
           "isRequired": true,
@@ -1759,7 +1806,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
             "userId"
           ],
           "relationToFields": [
-            "id"
+            "id_user"
           ],
           "isGenerated": false,
           "isUpdatedAt": false
@@ -1820,12 +1867,22 @@ export const datamodel: Prisma.DMMF.Datamodel = {
   "types": [],
   "indexes": [
     {
+      "model": "Home",
+      "type": "id",
+      "isDefinedOnField": true,
+      "fields": [
+        {
+          "name": "id_home"
+        }
+      ]
+    },
+    {
       "model": "User",
       "type": "id",
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_user"
         }
       ]
     },
@@ -1845,7 +1902,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_profile"
         }
       ]
     },
@@ -1865,7 +1922,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_post"
         }
       ]
     },
@@ -1875,7 +1932,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_comment"
         }
       ]
     },
@@ -1885,7 +1942,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_tag"
         }
       ]
     },
@@ -1905,7 +1962,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_category"
         }
       ]
     },
@@ -1925,7 +1982,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_product"
         }
       ]
     },
@@ -1935,7 +1992,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_order"
         }
       ]
     },
@@ -1945,7 +2002,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_orderItem"
         }
       ]
     },
@@ -1955,7 +2012,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_media"
         }
       ]
     },
@@ -1965,7 +2022,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_notification"
         }
       ]
     },
@@ -1975,7 +2032,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_address"
         }
       ]
     },
@@ -1985,7 +2042,7 @@ export const datamodel: Prisma.DMMF.Datamodel = {
       "isDefinedOnField": true,
       "fields": [
         {
-          "name": "id"
+          "name": "id_auditLog"
         }
       ]
     }

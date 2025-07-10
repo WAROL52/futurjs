@@ -25,6 +25,7 @@ export function FieldListAuto(props: FieldListAutoProps) {
   if (["Int", "Float", "Decimal", "BigInt"].includes(field.props.type))
     return <FieldListNumber {...props} />;
   if (field.props.kind === "enum") return <FieldListEnum {...props} />;
+
   // if (field.props.kind === "object") return <FieldRelationalAuto {...props} />;
   return (
     <FieldRoot

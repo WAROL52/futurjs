@@ -35,5 +35,12 @@ export async function POST(
 
 export async function GET() {
   const users = await prisma.user.findMany();
+  prisma.post.create({
+    data: {
+      content: "Hello World",
+      title: "My first post",
+      authorId: "1",
+    },
+  });
   return Response.json({ users });
 }

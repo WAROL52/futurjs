@@ -69,9 +69,14 @@ function createUseActionQuery<T extends object>(handler: T) {
 
 function createUseActionMutation<T extends object>(handler: T) {
   return function useDbMutation<R, TVariables = unknown, TContext = unknown>(
-    options: UseHookMutationOptions<T, R, TVariables, TContext>
+    options:
+      | UseHookMutationOptions<T, R, TVariables, TContext>
+      | ((db: T) => UseHookMutationOptions<T, R, TVariables, TContext>)
   ) {
     const queryClient = useQueryClient();
+    if (typeof options === "function") {
+      options = options(handler);
+    }
     return useMutation({
       ...options,
       mutationFn: (variables) => options.mutationFn(variables, handler),
