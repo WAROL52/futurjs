@@ -36,7 +36,7 @@ export function FieldListEnum(props: FieldListEnumProps) {
                     label: "Select " + fieldSchema.props.name,
                   }}
                   value={
-                    (field.value as string[]).map((v) => ({
+                    ((field.value as string[]) || []).map((v) => ({
                       value: v,
                       label: v,
                     })) || []
@@ -57,13 +57,13 @@ export function FieldListEnum(props: FieldListEnumProps) {
                   }
                 />
               </FormControl>
-              <p
+              <div
                 className="text-muted-foreground mt-2 text-xs"
                 role="region"
                 aria-live="polite"
               >
                 <FormDescription>{fieldInfo.description}</FormDescription>
-              </p>
+              </div>
             </div>
             <FormMessage />
           </FormItem>

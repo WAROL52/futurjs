@@ -39,14 +39,14 @@ export function FieldBoolean(props: FieldBooleanProps) {
                   (Sublabel)
                 </span> */}
               </FormLabel>
-              <p
+              <div
                 id={`${id}-description`}
                 className="text-muted-foreground text-xs"
               >
                 <FormDescription>
                   {fieldSchema.meta?.description}
                 </FormDescription>
-              </p>
+              </div>
               <FormMessage />
             </div>
           </div>
@@ -81,9 +81,9 @@ export function FieldCheckbox(props: FieldCheckboxProps) {
             {props.sublabel}
           </span>
         </FormLabel>
-        <p id={`${id}-description`} className="text-muted-foreground text-xs">
+        <div id={`${id}-description`} className="text-muted-foreground text-xs">
           {props.description}
-        </p>
+        </div>
         <FormMessage />
       </div>
     </div>

@@ -57,7 +57,6 @@ export function datamodelToPrismaFormModel(
 ): FormModel[] {
   const models = datamodel.models.map((model) => {
     const zodfields: Record<string, z.ZodType<any, any, any>> = {};
-    console.log("model:", model);
 
     return {
       name: model.name,
@@ -80,7 +79,6 @@ export function datamodelToPrismaFormModel(
               }
             }
           }
-          console.log("  field:", field.name);
           zodfields[field.name] = prismaFieldToZodType(field, enums);
           return {
             props: field,
@@ -98,7 +96,6 @@ export function datamodelToPrismaFormModel(
       zodType: z.object(zodfields),
     };
   });
-  console.log("==FINISH==");
 
   return models;
 }
