@@ -17,6 +17,7 @@ import {
 import React from "react";
 import { FormRoot } from "./form-root";
 import { dbSchema } from "@/shared/db-tools/db-schema/dbSchema";
+import { toast } from "sonner";
 
 export function FormAuto({}: FormAutoProps) {
   // const { data, isLoading } = usePrismaSchema();
@@ -58,7 +59,20 @@ export function FormAuto({}: FormAutoProps) {
         <FormRoot
           key={model.name}
           model={model}
-          onSubmit={(data) => console.log(data)}
+          onSubmit={(data) =>
+            toast("Event has been created", {
+              description: (
+                <pre className="w-[20rem]">
+                  <JsonViewVscode
+                    value={data}
+                    displayDataTypes={false}
+                    displayObjectSize={false}
+                    indentWidth={2}
+                  />
+                </pre>
+              ),
+            })
+          }
         />
       </div>
     </div>

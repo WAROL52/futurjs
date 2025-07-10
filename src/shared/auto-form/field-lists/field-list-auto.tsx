@@ -9,6 +9,10 @@ import {
 import { FieldListRoot } from "./field-list-root";
 import { useId } from "react";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { FieldCheckbox } from "../field-scalars/field-boolean";
+import { FieldListEnum } from "./field-list-enum";
 
 export type FieldListAutoProps = FieldRootProps;
 
@@ -20,7 +24,7 @@ export function FieldListAuto(props: FieldListAutoProps) {
   if (field.props.type == "DateTime") return <FieldListDateTime {...props} />;
   if (["Int", "Float", "Decimal", "BigInt"].includes(field.props.type))
     return <FieldListNumber {...props} />;
-  // if (field.props.kind === "enum") return <FieldEnum {...props} />;
+  if (field.props.kind === "enum") return <FieldListEnum {...props} />;
   // if (field.props.kind === "object") return <FieldRelationalAuto {...props} />;
   return (
     <FieldRoot
@@ -74,20 +78,18 @@ function FieldListBoolean(props: FieldListAutoProps) {
               name,
               disabled,
               placeholder,
+              index,
             }) => {
               return (
-                <div>
-                  {name}
-                  <Input
-                    className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 data-[state=checked]:[&_span]:translate-x-2 data-[state=checked]:[&_span]:rtl:-translate-x-2"
-                    checked={value}
-                    defaultChecked={false}
-                    onChange={(v) => onValueChange(Boolean(v.target.checked))}
-                    name={name}
-                    id={name}
-                    disabled={disabled}
-                  />
-                </div>
+                <FieldCheckbox
+                  value={value}
+                  onCheckedChange={onValueChange}
+                  name={name}
+                  disabled={disabled}
+                  description={field.meta?.description}
+                  sublabel={index + 1}
+                  label={field.props.name}
+                />
               );
             }}
           />

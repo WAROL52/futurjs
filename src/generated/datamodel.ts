@@ -357,6 +357,20 @@ export const datamodel: Prisma.DMMF.Datamodel = {
           "default": [],
           "isGenerated": false,
           "isUpdatedAt": false
+        },
+        {
+          "name": "roles",
+          "kind": "enum",
+          "isList": true,
+          "isRequired": true,
+          "isUnique": false,
+          "isId": false,
+          "isReadOnly": false,
+          "hasDefaultValue": false,
+          "type": "UserRole",
+          "nativeType": null,
+          "isGenerated": false,
+          "isUpdatedAt": false
         }
       ],
       "primaryKey": null,

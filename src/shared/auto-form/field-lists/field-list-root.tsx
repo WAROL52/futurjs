@@ -5,6 +5,7 @@ import { useState, forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+
 import {
   FormControl,
   FormDescription,
@@ -29,6 +30,7 @@ export type FieldListRootProps = FieldRootRenderProps & {
     name: string;
     disabled?: boolean;
     placeholder?: string;
+    index: number;
   }) => React.ReactNode;
   renderItem?: (props: FieldRootRenderProps) => React.ReactNode;
 };
@@ -45,12 +47,11 @@ export function FieldListRoot(props: FieldListRootProps) {
   } = props;
   const [inputValue, setInputValue] = useState<any>();
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
-  const [editValue, setEditValue] = useState("");
+  const [editValue, setEditValue] = useState<any>();
   const allowDuplicates = fieldSchema.meta?.allowDuplicates || true;
   const maxItems = fieldSchema.meta?.maxItems || 10;
   const value = (field.value || []) as string[];
   const { onChange: onChangeValue, onBlur, ref, disabled } = field;
-  console.log(field);
 
   const onChange = (newValue: string[]) => {
     if (convertValue) {
@@ -65,12 +66,9 @@ export function FieldListRoot(props: FieldListRootProps) {
   });
   const errors = (form.formState.errors[field.name] || []) as FieldError[];
   const handleAddItem = () => {
-    const _inputValue =
-      typeof inputValue == "string" ? String(inputValue).trim() : inputValue;
-    if (typeof inputValue == "string" && !_inputValue.length) return;
     if (disabled) return;
 
-    if (!allowDuplicates && value.includes(_inputValue)) {
+    if (!allowDuplicates && value.includes(inputValue)) {
       return;
     }
 
@@ -78,7 +76,7 @@ export function FieldListRoot(props: FieldListRootProps) {
       return;
     }
 
-    const newItems = [...value, _inputValue];
+    const newItems = [...value, inputValue];
     onChange?.(newItems);
     setInputValue(undefined);
   };
@@ -96,26 +94,26 @@ export function FieldListRoot(props: FieldListRootProps) {
   };
 
   const handleSaveEdit = () => {
-    if (!editValue.trim() || editingIndex === null || disabled) return;
+    if (editingIndex === null || disabled) return;
 
     if (
       !allowDuplicates &&
-      value.includes(editValue.trim()) &&
-      value[editingIndex] !== editValue.trim()
+      value.includes(editValue) &&
+      value[editingIndex] !== editValue
     ) {
       return;
     }
 
     const newItems = [...value];
-    newItems[editingIndex] = editValue.trim();
+    newItems[editingIndex] = editValue;
     onChange?.(newItems);
     setEditingIndex(null);
-    setEditValue("");
+    setEditValue(undefined);
   };
 
   const handleCancelEdit = () => {
     setEditingIndex(null);
-    setEditValue("");
+    setEditValue(undefined);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent, action: "add" | "edit") => {
@@ -146,24 +144,31 @@ export function FieldListRoot(props: FieldListRootProps) {
       <FormControl>
         <div ref={ref} className="space-y-3" onBlur={onBlur}>
           {/* Zone d'ajout */}
-          <div className="flex gap-2 justify-between">
+          <div className="flex gap-2 ">
             {RenderInput ? (
-              <div>
+              <div className="flex-1">
                 <RenderInput
                   value={inputValue}
                   onValueChange={setInputValue}
                   name={name}
                   disabled={disabled}
                   placeholder={placeholder}
+                  index={value.length}
                 />
               </div>
             ) : (
               <Input
-                value={inputValue}
+                value={inputValue ?? ""}
                 id={field.name}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={(e) =>
+                  e.target.value.trim() === ""
+                    ? setInputValue(undefined)
+                    : setInputValue(e.target.value.trim())
+                }
                 placeholder={placeholder}
-                onKeyPress={(e) => handleKeyPress(e, "add")}
+                onKeyPress={(e) =>
+                  inputValue?.trim() && handleKeyPress(e, "add")
+                }
                 disabled={
                   disabled || (maxItems ? value.length >= maxItems : false)
                 }
@@ -177,7 +182,7 @@ export function FieldListRoot(props: FieldListRootProps) {
               onClick={handleAddItem}
               disabled={
                 disabled ||
-                !String(inputValue).trim() ||
+                typeof inputValue === "undefined" ||
                 (maxItems ? value.length >= maxItems : false)
               }
               size="icon"
@@ -205,12 +210,19 @@ export function FieldListRoot(props: FieldListRootProps) {
                             name={name}
                             disabled={disabled}
                             placeholder={placeholder}
+                            index={index}
                           />
                         ) : (
                           <Input
-                            value={editValue}
-                            onChange={(e) => setEditValue(e.target.value)}
-                            onKeyPress={(e) => handleKeyPress(e, "edit")}
+                            value={editValue ?? ""}
+                            onChange={(e) =>
+                              e.target.value.trim()
+                                ? setEditValue(e.target.value.trim())
+                                : setEditValue(editValue)
+                            }
+                            onKeyPress={(e) =>
+                              editValue?.trim() && handleKeyPress(e, "edit")
+                            }
                             className="flex-1 h-7 text-sm"
                             autoFocus
                             disabled={disabled}

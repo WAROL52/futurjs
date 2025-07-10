@@ -54,6 +54,7 @@ model User {
   listNumbers  Int[]      @default([])
   listBooleans Boolean[]  @default([])
   listDates    DateTime[] @default([])
+  roles        UserRole[]
 }
 
 model Profile {
