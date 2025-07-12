@@ -7,7 +7,7 @@ export type MainProps = {};
 
 export default function Main({}: MainProps) {
   return (
-    <div className="min-h-[50svh] flex flex-col">
+    <div className="h-screen flex flex-col">
       <SchemaVisualizer
         initialEdges={initialEdges}
         initialNodes={initialNodes}

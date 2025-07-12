@@ -10,13 +10,13 @@ export default function Main({}: MainProps) {
 
   if (isLoading)
     return (
-      <div className="min-h-[50svh] flex items-center justify-center">
+      <div className="h-screen flex items-center justify-center">
         <p>Loading schema...</p>
       </div>
     );
   const { nodes, edges } = data.xyflow;
   return (
-    <div className="min-h-[50svh] flex flex-col">
+    <div className="h-screen flex flex-col">
       <SchemaVisualizer initialNodes={nodes} initialEdges={edges} />
     </div>
   );

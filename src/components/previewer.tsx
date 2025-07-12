@@ -26,7 +26,7 @@ function DynamicComponent({ path }: { path: string }) {
     );
   const PreviewComponent = dynamic(moduleImport, { ssr: false });
   return (
-    <div ref={ref} className="relative h-full w-full bg-muted/10">
+    <div ref={ref} className="relative h-full w-full bg-muted/30 m-4">
       <div className="flex justify-end p-2">
         <Button onClick={toggle} color={fullscreen ? "red" : "blue"}>
           {fullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
