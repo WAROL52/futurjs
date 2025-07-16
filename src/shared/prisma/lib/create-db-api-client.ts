@@ -1,6 +1,21 @@
 "use client";
 import axios, { AxiosError } from "axios";
-import { ActionHandler, createQueryHook } from "./create-query-hook";
+import {
+  ActionHandler,
+  createQueryHook,
+  createReducerQueryHook,
+} from "./create-query-hook";
+import { PrismaClient } from "@/generated/prisma";
+import {
+  MutateOptions,
+  MutationFunction,
+  useMutation,
+  UseMutationOptions,
+  UseMutationResult,
+  useQuery,
+  UseQueryOptions,
+  UseQueryResult,
+} from "@tanstack/react-query";
 
 export type DbHookPrisma<T = any> = {
   [K in keyof T as K extends `$${infer R}` ? never : K]: Omit<T[K], "fields">;
@@ -70,3 +85,32 @@ async function fetchDbData<T>(
     );
   }
 }
+
+const prisma = new PrismaClient();
+
+const userApi = createReducerQueryHook(
+  prisma,
+  ({ action: prisma, useMutation, useQuery }) => {
+    const useGetOne = (id: string) =>
+      useQuery({
+        queryKey: ["users", id],
+        queryFn: () =>
+          prisma.user.findFirst({
+            where: {
+              id,
+            },
+          }),
+      });
+    const useGetMany = () =>
+      useQuery({
+        queryKey: ["users"],
+        queryFn: () => prisma.user.findMany(),
+      });
+    return {
+      useGetOne,
+      useGetMany,
+    };
+  }
+);
+
+userApi.useGetOne("fdgdfg");

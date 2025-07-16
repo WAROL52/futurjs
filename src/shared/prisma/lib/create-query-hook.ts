@@ -94,3 +94,22 @@ function createUseActionMutation<T extends object>(handler: T) {
     });
   };
 }
+
+export function createReducerQueryHook<
+  T extends object,
+  K extends string,
+  F extends Function
+>(
+  action: T,
+  func: (option: {
+    action: T;
+    useQuery: typeof useQuery;
+    useMutation: typeof useMutation;
+  }) => Record<K, F>
+) {
+  return func({
+    action,
+    useMutation,
+    useQuery,
+  });
+}
