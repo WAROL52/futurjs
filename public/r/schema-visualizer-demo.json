@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "src/_exemples/schema-visualizer/demo/main.tsx",
-      "content": "\"use client\";\n\nimport { SchemaVisualizer } from \"@/shared/prisma/block/schema-visualizer\";\nimport { usePrismaSchema } from \"@/shared/prisma/hooks/use-prisma-schema\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  const { data, isLoading } = usePrismaSchema();\n\n  if (isLoading)\n    return (\n      <div className=\"min-h-[50svh] flex items-center justify-center\">\n        <p>Loading schema...</p>\n      </div>\n    );\n  const { nodes, edges } = data.xyflow;\n  return (\n    <div className=\"min-h-[50svh] flex flex-col\">\n      <SchemaVisualizer initialNodes={nodes} initialEdges={edges} />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { SchemaVisualizer } from \"@/shared/prisma/block/schema-visualizer\";\nimport { usePrismaSchema } from \"@/shared/prisma/hooks/use-prisma-schema\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  const { data, isLoading } = usePrismaSchema();\n\n  if (isLoading)\n    return (\n      <div className=\"h-screen flex items-center justify-center\">\n        <p>Loading schema...</p>\n      </div>\n    );\n  const { nodes, edges } = data.xyflow;\n  return (\n    <div className=\"h-screen flex flex-col\">\n      <SchemaVisualizer initialNodes={nodes} initialEdges={edges} />\n    </div>\n  );\n}\n",
       "type": "registry:file",
       "target": "exemples/schema-visualizer/demo/main.tsx"
     }

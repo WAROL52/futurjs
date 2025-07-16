@@ -98,7 +98,7 @@ function createUseActionMutation<T extends object>(handler: T) {
 export function createReducerQueryHook<
   T extends object,
   K extends string,
-  F extends Function
+  F extends (...args: unknown[]) => unknown
 >(
   action: T,
   func: (option: {

@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/shared/auto-form/field-relationals/field-many-to-one.tsx",
-      "content": "\"use client\";\n\nexport type FieldManyToOneProps = {};\n\nexport function FieldManyToOne({}: FieldManyToOneProps) {\n  return <div>FieldManyToOne</div>;\n}\n",
+      "content": "\"use client\";\n\nimport { FieldRootProps } from \"../field-scalars/field-root\";\n\nexport type FieldManyToOneProps = FieldRootProps;\n\nexport function FieldManyToOne({}: FieldManyToOneProps) {\n  return <div>FieldManyToOne</div>;\n}\n",
       "type": "registry:component",
       "target": "shared/auto-form/field-relationals/field-many-to-one.tsx"
     }

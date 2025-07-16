@@ -85,32 +85,3 @@ async function fetchDbData<T>(
     );
   }
 }
-
-const prisma = new PrismaClient();
-
-const userApi = createReducerQueryHook(
-  prisma,
-  ({ action: prisma, useMutation, useQuery }) => {
-    const useGetOne = (id: string) =>
-      useQuery({
-        queryKey: ["users", id],
-        queryFn: () =>
-          prisma.user.findFirst({
-            where: {
-              id,
-            },
-          }),
-      });
-    const useGetMany = () =>
-      useQuery({
-        queryKey: ["users"],
-        queryFn: () => prisma.user.findMany(),
-      });
-    return {
-      useGetOne,
-      useGetMany,
-    };
-  }
-);
-
-userApi.useGetOne("fdgdfg");

@@ -17,7 +17,7 @@
     },
     {
       "path": "src/_exemples/schema-visualizer/With custom node and edge/main.tsx",
-      "content": "\"use client\";\n\nimport { initialEdges, initialNodes } from \"./schema-data\";\nimport { SchemaVisualizer } from \"@/shared/prisma/block/schema-visualizer\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  return (\n    <div className=\"min-h-[50svh] flex flex-col\">\n      <SchemaVisualizer\n        initialEdges={initialEdges}\n        initialNodes={initialNodes}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { initialEdges, initialNodes } from \"./schema-data\";\nimport { SchemaVisualizer } from \"@/shared/prisma/block/schema-visualizer\";\n\nexport type MainProps = {};\n\nexport default function Main({}: MainProps) {\n  return (\n    <div className=\"h-screen flex flex-col\">\n      <SchemaVisualizer\n        initialEdges={initialEdges}\n        initialNodes={initialNodes}\n      />\n    </div>\n  );\n}\n",
       "type": "registry:file",
       "target": "exemples/schema-visualizer/With custom node and edge/main.tsx"
     }

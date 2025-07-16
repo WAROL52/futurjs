@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/shared/auto-form/field-relationals/field-relational-auto.tsx",
-      "content": "\"use client\";\n\nimport { FieldRoot, FieldRootProps } from \"../field-scalars/field-root\";\n\nexport type FieldRelationalAutoProps = FieldRootProps;\n\nexport function FieldRelationalAuto(props: FieldRelationalAutoProps) {\n  return <FieldRoot {...props} />;\n}\n",
+      "content": "\"use client\";\n\nimport { FieldRoot, FieldRootProps } from \"../field-scalars/field-root\";\nimport { FieldManyToMany } from \"./field-many-to-many\";\nimport { FieldManyToOne } from \"./field-many-to-one\";\nimport { FieldOneToMany } from \"./field-one-to-many\";\nimport { FieldOneToOne } from \"./field-one-to-one\";\n\nexport type FieldRelationalAutoProps = FieldRootProps;\n\nexport function FieldRelationalAuto(props: FieldRelationalAutoProps) {\n  const { fieldSchema } = props;\n  if (fieldSchema.relationType === \"oneToMany\")\n    return <FieldOneToMany {...props} />;\n  if (fieldSchema.relationType === \"manyToOne\")\n    return <FieldManyToOne {...props} />;\n  if (fieldSchema.relationType === \"manyToMany\")\n    return <FieldManyToMany {...props} />;\n  if (fieldSchema.relationType === \"oneToOne\")\n    return <FieldOneToOne {...props} />;\n  return <FieldRoot {...props} />;\n}\n",
       "type": "registry:component",
       "target": "shared/auto-form/field-relationals/field-relational-auto.tsx"
     }

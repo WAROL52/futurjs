@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-list-enum",
+  "type": "registry:component",
+  "title": "FieldListEnum",
+  "description": "",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/shared/auto-form/field-lists/field-list-enum.tsx",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport MultipleSelector, { Option } from \"@/components/ui/multiselect\";\nimport {\n  FieldRoot,\n  FieldRootProps,\n  getFieldInfo,\n} from \"../field-scalars/field-root\";\nimport {\n  FormControl,\n  FormDescription,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\n\nexport type FieldListEnumProps = FieldRootProps;\n\nexport function FieldListEnum(props: FieldListEnumProps) {\n  return (\n    <FieldRoot\n      {...props}\n      render={(props) => {\n        const { fieldSchema, form, field } = props;\n        form.formState.errors[field.name];\n        const fieldInfo = getFieldInfo({ fieldSchema, form, field });\n        return (\n          <FormItem>\n            <div className=\"*:not-first:mt-2\">\n              <FormLabel>{fieldInfo.label}</FormLabel>\n              <FormControl>\n                <MultipleSelector\n                  {...field}\n                  commandProps={{\n                    label: \"Select \" + fieldSchema.props.name,\n                  }}\n                  value={\n                    ((field.value as string[]) || []).map((v) => ({\n                      value: v,\n                      label: v,\n                    })) || []\n                  }\n                  onChange={(value: Option[]) => {\n                    const newValue = value.map((v) => v.value);\n                    field.onChange(newValue);\n                  }}\n                  options={fieldSchema.meta?.enumProps?.values.map((value) => ({\n                    value: value.name,\n                    label: value.name,\n                  }))}\n                  placeholder={\n                    \"Select \" + (fieldSchema.meta?.enumProps?.name || \"options\")\n                  }\n                  emptyIndicator={\n                    <p className=\"text-center text-sm\">No results found</p>\n                  }\n                />\n              </FormControl>\n              <div\n                className=\"text-muted-foreground mt-2 text-xs\"\n                role=\"region\"\n                aria-live=\"polite\"\n              >\n                <FormDescription>{fieldInfo.description}</FormDescription>\n              </div>\n            </div>\n            <FormMessage />\n          </FormItem>\n        );\n      }}\n    />\n  );\n}\n",
+      "type": "registry:component",
+      "target": "shared/auto-form/field-lists/field-list-enum.tsx"
+    }
+  ]
+}
